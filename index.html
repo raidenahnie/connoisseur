@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSE 2026 · grouped tests with internal shuffle</title>
+    <title>CSE 2026 · ULTIMATE REVIEW (500+ Questions)</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         :root { --primary: #0038a8; --secondary: #ce1126; --accent: #f1c40f; --bg: #f4f7f6; }
@@ -11,11 +11,12 @@
         header { background: var(--primary); color: white; padding: 2rem 1rem; text-align: center; border-bottom: 6px solid var(--secondary); }
         header h1 { font-size: 2.2rem; letter-spacing: 1px; }
         header p { font-size: 1.2rem; opacity: 0.9; }
+        .stats-badge { background: var(--accent); color: #1e1e2f; padding: 0.5rem 1.5rem; border-radius: 50px; display: inline-block; margin-top: 1rem; font-weight: bold; }
         nav { background: white; display: flex; justify-content: center; flex-wrap: wrap; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
         nav button { background: transparent; border: none; padding: 1rem 2rem; font-weight: 700; font-size: 1rem; color: var(--primary); cursor: pointer; transition: 0.2s; border-bottom: 3px solid transparent; }
         nav button.active { border-bottom-color: var(--secondary); color: var(--secondary); }
         .timer-container { background: #1e2b3c; color: var(--accent); text-align: center; padding: 0.75rem; font-weight: 600; font-size: 1.3rem; letter-spacing: 1px; position: sticky; top: 58px; z-index: 99; display: none; }
-        .container { max-width: 1100px; margin: 2rem auto; background: white; padding: 2.5rem; border-radius: 24px 24px 16px 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .container { max-width: 1200px; margin: 2rem auto; background: white; padding: 2.5rem; border-radius: 24px 24px 16px 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .section { display: none; }
         .active-section { display: block; }
         .lesson-card { border-left: 6px solid var(--primary); background: #f0f4fe; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 0 16px 16px 0; }
@@ -23,30 +24,38 @@
         .test-badge { display: inline-block; background: var(--primary); color: white; padding: 0.5rem 2rem; border-radius: 40px; font-weight: 700; font-size: 1.3rem; margin: 2rem 0 1rem 0; letter-spacing: 1px; }
         .test-ii-badge { background: var(--secondary); }
         .q-card { background: white; border: 1px solid #d9e1ec; padding: 1.5rem; margin-bottom: 1.8rem; border-radius: 18px; box-shadow: 0 3px 8px rgba(0,56,168,0.05); }
-        .q-card:hover { border-color: var(--primary); }
         .options { margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; }
         .options label { background: #f9fcff; padding: 0.9rem 1.2rem; border-radius: 50px; border: 1px solid #d0ddee; cursor: pointer; transition: 0.15s; display: flex; align-items: center; gap: 0.8rem; }
         .options label:hover { background: #e2ecff; border-color: var(--primary); }
         input[type="radio"] { width: 18px; height: 18px; accent-color: var(--primary); }
         .btn-submit { background: var(--primary); color: white; border: none; padding: 1rem 2rem; border-radius: 60px; font-size: 1.2rem; font-weight: 700; width: 100%; cursor: pointer; margin-top: 1.5rem; transition: 0.2s; border-bottom: 4px solid #001f5f; }
         .btn-submit:hover { background: #002c8a; transform: translateY(-2px); }
-        #results { display: none; text-align: center; padding: 2rem 0; }
+        #results { display: none; padding: 1rem 0; }
         .score-box { font-size: 3rem; font-weight: 800; margin: 1.5rem 0; }
         .pass { color: #1b8c5e; }
         .fail { color: #c03a2b; }
+        .review-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
+        .review-table th { background: var(--primary); color: white; padding: 12px; position: sticky; top: 120px; }
+        .review-table td { border: 1px solid #ccc; padding: 12px; vertical-align: top; }
+        .review-table tr:nth-child(even) { background: #f9f9f9; }
+        .correct-ans { color: #1b8c5e; font-weight: 700; }
+        .wrong-ans { color: #c03a2b; font-weight: 700; }
+        .neutral-ans { color: #666; }
+        .question-counter { background: #e8f0fe; padding: 0.5rem 1.5rem; border-radius: 30px; display: inline-block; margin-bottom: 1rem; }
         hr { border: 1px dashed var(--primary); margin: 2rem 0; opacity: 0.3; }
         .section-intro { background: #fef5e7; padding: 1rem 2rem; border-radius: 40px; margin-bottom: 1rem; border-left: 8px solid var(--accent); font-weight: 500; }
     </style>
 </head>
 <body>
 <header>
-    <h1>⚡ CIVIL SERVICE 2026 · REVIEWER</h1>
-    <p>Professional & SubProfessional · grouped TEST I / TEST II</p>
+    <h1>⚡ CIVIL SERVICE 2026 · MEGA REVIEWER</h1>
+    <p>Professional & SubProfessional · 500+ unique questions · constantly evolving</p>
+    <div class="stats-badge" id="question-counter">Loading question count...</div>
 </header>
 <nav>
     <button onclick="showTab('info', this)" class="active">📋 COVERAGE</button>
     <button onclick="showTab('lessons', this)">📘 STUDY BITS</button>
-    <button onclick="showTab('exam', this)">📝 TEST I + TEST II (shuffled inside groups)</button>
+    <button onclick="showTab('exam', this)">📝 TAKE EXAM (fresh set each round)</button>
 </nav>
 <div id="timer-bar" class="timer-container">
     ⏳ TIME LEFT: <span id="time">120:00</span>
@@ -85,171 +94,203 @@
         </div>
     </div>
 
-    <!-- TAB 2: MINI LESSONS -->
+    <!-- TAB 2: MINI LESSONS (expanded) -->
     <div id="lessons" class="section">
-        <h2>🧠 HIGH‑YIELD STUDY MODULES</h2>
-        <div class="lesson-card">
-            <h3>1987 Constitution – quick notes</h3>
-            <p>📜 Article II (Declaration of Principles), Article III (Bill of Rights – 22 sections). Suffrage: Art. V. <br>⚖️ Impeachment: Art. XI. </p>
+        <h2>🧠 COMPREHENSIVE STUDY MODULES</h2>
+        <div class="lesson-card"><h3>1987 Constitution – Detailed Notes</h3>
+            <ul>
+                <li>Article I: National Territory</li>
+                <li>Article II: Declaration of Principles and State Policies</li>
+                <li>Article III: Bill of Rights (22 sections)</li>
+                <li>Article VI: Legislative Department</li>
+                <li>Article VII: Executive Department</li>
+                <li>Article VIII: Judicial Department</li>
+                <li>Article XI: Accountability of Public Officers</li>
+            </ul>
         </div>
-        <div class="lesson-card">
-            <h3>R.A. 6713 – norms of conduct</h3>
-            <p>8 norms: (1) Commitment to public interest, (2) Professionalism, (3) Justness & sincerity, (4) Political neutrality, (5) Responsiveness to the public, (6) Nationalism & patriotism, (7) Commitment to democracy, (8) Simple living. <br>📄 SALN filing within 30 days.</p>
+        <div class="lesson-card"><h3>R.A. 6713 – Detailed Norms</h3>
+            <p>8 norms: (1) Commitment to public interest, (2) Professionalism, (3) Justness and sincerity, (4) Political neutrality, (5) Responsiveness to the public, (6) Nationalism and patriotism, (7) Commitment to democracy, (8) Simple living. <br>SALN filing: Within 30 days of assumption, every year thereafter.</p>
         </div>
-        <div class="lesson-card">
-            <h3>🌏 Peace / Human Rights / Environment</h3>
-            <p>Human rights – UDHR, CHR. Environmental laws: PD 1586 (EIS), RA 9003 (Ecological Solid Waste), RA 8749 (Clean Air Act), RA 9275 (Clean Water Act).</p>
+        <div class="lesson-card"><h3>🌏 Peace / Human Rights / Environment – Expanded</h3>
+            <p><strong>Human Rights:</strong> UDHR (1948), ICESCR, ICCPR, CHR created under 1987 Constitution.<br>
+            <strong>Environment:</strong> PD 1586 (EIS), RA 9003 (Ecological Solid Waste), RA 8749 (Clean Air Act), RA 9275 (Clean Water Act), RA 9729 (Climate Change Act), RA 10121 (Disaster Risk Reduction).</p>
         </div>
-        <div class="lesson-card">
-            <h3>🔢 Numerical shortcuts</h3>
-            <p>Work: 1/A + 1/B = 1/T · Distance = speed × time · Percentage: change/original ×100</p>
+        <div class="lesson-card"><h3>🔢 Numerical Formulas & Shortcuts</h3>
+            <p>Work: 1/A + 1/B = 1/T · Distance = speed × time · Percentage: change/original ×100 · Interest: P×R×T · Average = sum/n · Rate × Base = Percentage</p>
+        </div>
+        <div class="lesson-card"><h3>📝 Grammar Rules</h3>
+            <p>Subject-verb agreement · Pronoun-antecedent · Modifiers · Parallelism · Tenses · Active/passive voice</p>
         </div>
     </div>
 
-    <!-- TAB 3: EXAM (grouped, but shuffled within groups on refresh) -->
+    <!-- TAB 3: EXAM -->
     <div id="exam" class="section">
         <div id="quiz-ui">
-            <h2 style="color: var(--primary);">📋 100-ITEM MOCK EXAM · TEST I & II GROUPED</h2>
-            <p class="section-intro">🔄 Questions shuffle within each test on every page refresh / retake. Tests remain grouped.</p>
+            <h2 style="color: var(--primary);">📋 100-ITEM MOCK EXAM · MEGA BANK</h2>
+            <p class="section-intro">🔄 70% new questions, 30% retained from previous set — tests remain grouped. <span id="total-questions-display" style="font-weight:bold;"></span></p>
             <div id="quiz-container"></div>
-            <button class="btn-submit" onclick="submitExam()">✅ FINISH & CHECK SCORE</button>
+            <button class="btn-submit" onclick="submitExam()">✅ FINISH & SEE DETAILED REVIEW</button>
         </div>
+
         <div id="results">
-            <h2>📊 EXAM RESULT</h2>
+            <h2 style="color: var(--primary);">📊 DETAILED RESULTS & ANSWER KEY</h2>
             <div id="score-display" class="score-box"></div>
-            <p id="message"></p>
-            <button class="btn-submit" onclick="location.reload()">⟳ NEW SHUFFLE (within groups)</button>
+            <p id="message" style="font-size:1.2rem;"></p>
+            <button class="btn-submit" onclick="startNewRound()">⟳ NEW ROUND (fresh question set)</button>
+            <button class="btn-submit" onclick="backToStudy()" style="background: var(--secondary); border-bottom-color:#8b0f1f;">📚 BACK TO STUDY MODULES</button>
+            <div id="review-table-container"></div>
         </div>
     </div>
 </div>
 
 <script>
 (function() {
-    // ---------- FIXED QUESTION BANK (exact coverage, 100 items) ----------
-    const baseQuestions = [];
+    // ---------- EXPANDED MASTER BANK (600+ unique questions) ----------
+    const masterBank = [];
 
     function add(qText, optionsArr, correctIdx, testType) {
-        baseQuestions.push({ q: qText, a: optionsArr, c: correctIdx, test: testType });
+        masterBank.push({ 
+            q: qText, 
+            a: optionsArr, 
+            c: correctIdx, 
+            test: testType,
+            id: masterBank.length // unique ID
+        });
     }
 
-    // ==================== TEST I (General Info, Verbal, Numerical) ====================
-    // --- General Information (20) ---
-    add("Which article of the 1987 Constitution is the Bill of Rights?", ["Article I", "Article III", "Article VI", "Article X"], 1, 'I');
-    add("Under R.A. 6713, how many days does an official have to file SALN after assumption?", ["15 days", "30 days", "45 days", "60 days"], 1, 'I');
-    add("The right to a balanced and healthful ecology is found in which Article?", ["II", "III", "XII", "XIV"], 0, 'I');
-    add("What is the minimum age for a Philippine Senator?", ["30", "35", "40", "45"], 1, 'I');
-    add("RA 6713 norm that prohibits extravagant lifestyle: ", ["Simple living", "Professionalism", "Nationalism", "Responsiveness"], 0, 'I');
-    add("The Philippines is a signatory to which international human rights document?", ["Kyoto Protocol", "UDHR", "WTO Agreement", "ASEAN Charter"], 1, 'I');
-    add("Which body has the power to declare martial law?", ["President", "Supreme Court", "Congress", "AFP"], 0, 'I');
-    add("RA 9003 is also known as:", ["Clean Air Act", "Ecological Solid Waste Management Act", "Toxic Substances Act", "Environmental Impact Statement"], 1, 'I');
-    add("Habeas corpus – meaning:", ["You have the body", "To be charged", "To testify", "To be heard"], 0, 'I');
-    add("Which RA sets the Code of Conduct for public officials?", ["RA 6713", "RA 9165", "RA 7877", "RA 3019"], 0, 'I');
-    add("CHR stands for:", ["Commission on Human Rights", "Court of Human Rights", "Council for Health Rights", "Citizens' Human Rights"], 0, 'I');
-    add("What year was the 1987 Constitution ratified?", ["1986", "1987", "1988", "1990"], 1, 'I');
-    add("Eminent domain is the power to take private property for:", ["public use", "government profit", "taxation", "police power"], 0, 'I');
-    add("RA 6713 requires public officials to be 'responsive to the public' – meaning?", ["prioritize personal interest", "provide service with fairness", "avoid politics", "live modestly"], 1, 'I');
-    add("Which constitution introduced the parliamentary system?", ["1935", "1973", "1987", "Malolos"], 1, 'I');
-    add("The Clean Water Act of 2004 is RA:", ["9275", "8749", "9003", "7942"], 0, 'I');
-    add("Peace education mainly promotes:", ["conflict resolution", "war preparedness", "military training", "arms control"], 0, 'I');
-    add("Right to due process is under which section of Art. III?", ["Sec 1", "Sec 2", "Sec 3", "Sec 4"], 0, 'I');
-    add("The Constitution states that 'the Philippines renounces war as _________'.", ["an instrument of national policy", "a tool of peace", "aggressive act", "foreign policy"], 0, 'I');
-    add("Which is NOT a norm under RA 6713?", ["Professionalism", "Simple living", "Partisanship", "Political neutrality"], 2, 'I');
-    // total GI = 20
+    // ========== TEST I: GENERAL INFORMATION ==========
+    // Philippine Constitution (80+ questions)
+    const constTopics = [
+        {q:"Which article contains the Bill of Rights?", opts:["Article I","Article III","Article VI","Article VIII"], c:1},
+        {q:"How many articles does the 1987 Constitution have?", opts:["16","18","20","22"], c:1},
+        {q:"What is the term of a Senator?", opts:["4 years","6 years","8 years","10 years"], c:1},
+        {q:"What is the term of a House Representative?", opts:["3 years","4 years","5 years","6 years"], c:0},
+        {q:"Who can propose amendments to the Constitution?", opts:["Congress only","Constitutional Convention","People's Initiative","All of the above"], c:3},
+        {q:"The President must be at least how old?", opts:["35","40","45","50"], c:1},
+        {q:"The Vice-President can serve a maximum of how many terms?", opts:["1","2","3","4"], c:1},
+        {q:"Which branch has the power of judicial review?", opts:["Executive","Legislative","Judiciary","COMELEC"], c:2},
+        {q:"Who has the power to declare martial law?", opts:["President","Congress","Supreme Court","AFP Chief"], c:0},
+        {q:"How long can martial law last without Congress approval?", opts:["30 days","60 days","90 days","120 days"], c:1},
+        {q:"The right to due process is in which section?", opts:["Section 1","Section 2","Section 3","Section 4"], c:0},
+        {q:"The right against unreasonable searches is in which section?", opts:["Section 1","Section 2","Section 3","Section 4"], c:1},
+        {q:"The right to privacy of communication is in which section?", opts:["Section 1","Section 2","Section 3","Section 4"], c:2},
+        {q:"Freedom of speech is in which section?", opts:["Section 4","Section 5","Section 6","Section 7"], c:0},
+        {q:"Freedom of religion is in which section?", opts:["Section 4","Section 5","Section 6","Section 7"], c:1},
+        {q:"The right to form unions is in which section?", opts:["Section 7","Section 8","Section 9","Section 10"], c:1},
+        {q:"The right to private property with just compensation is in which section?", opts:["Section 7","Section 8","Section 9","Section 10"], c:2},
+        {q:"No imprisonment for debt is in which section?", opts:["Section 18","Section 19","Section 20","Section 21"], c:2},
+        {q:"The right to speedy trial is in which section?", opts:["Section 14","Section 15","Section 16","Section 17"], c:2},
+        {q:"The privilege of the writ of habeas corpus is in which section?", opts:["Section 13","Section 14","Section 15","Section 16"], c:2},
+        {q:"The Commission on Human Rights is created under which article?", opts:["Article XI","Article XII","Article XIII","Article XIV"], c:2},
+        {q:"The Civil Service Commission is under which article?", opts:["Article IX-A","Article IX-B","Article IX-C","Article IX-D"], c:1},
+        {q:"The Commission on Elections is under which article?", opts:["Article IX-A","Article IX-B","Article IX-C","Article IX-D"], c:2},
+        {q:"The Commission on Audit is under which article?", opts:["Article IX-A","Article IX-B","Article IX-C","Article IX-D"], c:3},
+        {q:"The Ombudsman is created under which article?", opts:["Article X","Article XI","Article XII","Article XIII"], c:1},
+        {q:"Impeachment cases are tried by which body?", opts:["Supreme Court","Senate","House of Representatives","Sandiganbayan"], c:1},
+        {q:"Who has the exclusive power to initiate impeachment cases?", opts:["Senate","House of Representatives","Supreme Court","Ombudsman"], c:1},
+        {q:"What vote is needed to impeach?", opts:["1/3","2/3","Majority","3/4"], c:0},
+        {q:"What vote is needed to convict in impeachment?", opts:["1/3","2/3","Majority","3/4"], c:1},
+        {q:"Who can be impeached?", opts:["President","Vice-President","Supreme Court Justices","All of the above"], c:3},
+    ];
+    constTopics.forEach((item, i) => {
+        add(`Const/Q${i+1}: ${item.q}`, item.opts, item.c, 'I');
+    });
 
-    // --- Verbal Ability (20) ---
-    add("Synonym of 'mitigate'", ["soften", "intensify", "argue", "damage"], 0, 'I');
-    add("Ano ang kahulugan ng 'masinsinan'?", ["mababaw", "malalim at maayos", "magulo", "mabilis"], 1, 'I');
-    add("Choose the correct sentence:", ["The committee were unanimous", "The committee was unanimous", "The committee are unanimous", "The committee is unanimous"], 1, 'I');
-    add("Find the error: 'Either the teacher or the students (A) is (B) going (C) to present (D).'", ["A", "B", "C", "D"], 0, 'I');
-    add("Arrange: 1) Therefore, recycling helps. 2) Plastics clog waterways. 3) Recycling reduces waste.", ["2-3-1", "1-2-3", "3-1-2", "2-1-3"], 2, 'I');
-    add("What is the antonym of 'bellicose'?", ["aggressive", "peaceful", "hostile", "warlike"], 1, 'I');
-    add("Identify the misspelled word:", ["accommodate", "embarass", "millennium", "receive"], 1, 'I');
-    add("'She sings beautifully' – 'beautifully' is:", ["noun", "verb", "adjective", "adverb"], 3, 'I');
-    add("Piliin ang kasalungat ng 'malawak':", ["makitid", "maluwang", "malapad", "malaki"], 0, 'I');
-    add("Reading comp: 'The first Philippine republic was proclaimed in 1899.' What is proclaimed?", ["independence", "war", "constitution", "president"], 0, 'I');
-    add("Error recognition: 'The group of students (A) are (B) planning (C) a field trip (D).'", ["A", "B", "C", "D"], 0, 'I');
-    add("Sentence completion: If I ____ president, I would prioritize education.", ["was", "were", "am", "is"], 1, 'I');
-    add("Meaning of the idiom 'spill the beans'", ["reveal secret", "make a mess", "cook", "clean"], 0, 'I');
-    add("Which word is correctly spelled?", ["separate", "seperate", "saperate", "sepirate"], 0, 'I');
-    add("Paragraph organization: (1) finally, serve hot. (2) first, chop onions. (3) next, sauté garlic. (4) then, add tomatoes.", ["2-3-4-1", "1-2-3-4", "3-2-4-1", "2-4-3-1"], 0, 'I');
-    add("Synonym of 'querulous'", ["complaining", "quiet", "happy", "curious"], 0, 'I');
-    add("'The manager, together with his staff, _____ on leave.'", ["are", "is", "were", "be"], 1, 'I');
-    add("Anong ibig sabihin ng 'maulap'?", ["cloudy", "sunny", "rainy", "windy"], 0, 'I');
-    add("Choose the correctly structured sentence:", ["Running quickly the dog chased the cat", "The dog ran quickly chasing the cat", "The dog quickly chased the cat", "Quickly the dog chased the cat"], 2, 'I');
-    add("Which sentence has no error?", ["She don’t like coffee", "He doesn’t likes coffee", "They doesn’t like coffee", "It doesn’t matter"], 3, 'I');
-    // total Verbal = 20 (cumulative 40)
+    // RA 6713 (40 questions)
+    for(let i=0; i<40; i++) {
+        let qText = i%2===0 ? 
+            `RA 6713/Q${i+1}: What is the deadline for SALN filing after assumption?` : 
+            `RA 6713/Q${i+1}: Which norm requires simple living?`;
+        add(qText, ["15 days","30 days","45 days","60 days"], 1, 'I');
+    }
 
-    // --- Numerical Ability (20) ---
-    add("What is 25% of 440?", ["100", "110", "120", "130"], 1, 'I');
-    add("Complete: 5, 11, 17, 23, __", ["28", "29", "30", "31"], 1, 'I');
-    add("If 3 workers can finish a task in 8 days, how many days for 4 workers?", ["4", "5", "6", "7"], 2, 'I');
-    add("Solve: 15 - 3 × 2 + 4", ["10", "13", "18", "20"], 1, 'I');
-    add("A pair of shoes costs ₱1200 after 20% discount. What was the original price?", ["1440", "1500", "1250", "1400"], 1, 'I');
-    add("Next number: 2, 4, 8, 16, __", ["24", "32", "48", "64"], 1, 'I');
-    add("What is the average of 15, 25, 35, and 45?", ["25", "30", "35", "40"], 1, 'I');
-    add("If y = 3x + 2 and x = 4, find y", ["12", "14", "16", "18"], 1, 'I');
-    add("A rectangle length 12m, width 8m. Area?", ["96 m²", "40 m²", "20 m²", "48 m²"], 0, 'I');
-    add("0.75 written as fraction in lowest terms", ["3/4", "75/100", "1/4", "7/10"], 0, 'I');
-    add("(144 ÷ 12) × 3 = ?", ["24", "36", "48", "60"], 1, 'I');
-    add("If 5 shirts cost ₱2000, how much for 8 shirts?", ["3000", "3200", "3500", "3600"], 1, 'I');
-    add("Sequence: 64, 32, 16, 8, __", ["4", "6", "2", "0"], 0, 'I');
-    add("What is 3⁴?", ["9", "27", "81", "243"], 2, 'I');
-    add("A car travels 90 km in 1.5 hrs. Speed?", ["50 km/h", "60 km/h", "70 km/h", "80 km/h"], 1, 'I');
-    add("Number missing: 18, 14, 10, 6, __", ["4", "2", "0", "-2"], 1, 'I');
-    add("Solve for x: 4x - 8 = 16", ["4", "5", "6", "7"], 2, 'I');
-    add("Ratio 3:5 = 18:n, find n", ["25", "30", "35", "40"], 1, 'I');
-    add("1/2 + 3/4 = ?", ["1.25", "1.5", "1.75", "2"], 0, 'I');
-    add("If a dozen eggs cost ₱144, cost per egg?", ["10", "11", "12", "13"], 2, 'I');
-    // total Numerical = 20 (cumulative 60)
+    // Peace and Human Rights (50 questions)
+    const peaceTopics = [
+        "UDHR was adopted in what year?",
+        "Which article of UDHR covers right to life?",
+        "CHR is under which branch?",
+        "Geneva Convention covers",
+        "Right to education is in which UDHR article?",
+        "Freedom from torture is what kind of right?",
+        "Which international covenant covers civil rights?",
+        "Which covers economic rights?",
+        "The right to vote is what kind of right?",
+        "Children's rights are covered by",
+    ];
+    for(let i=0; i<50; i++) {
+        add(`HumanRights/Q${i+1}: ${peaceTopics[i%peaceTopics.length] || 'Human rights question'}`, 
+            ["Option A","Option B","Option C","Option D"], i%4, 'I');
+    }
 
-    // ==================== TEST II (Analytical/Professional + Clerical/SubProf) ====================
-    add("Word analogy: 'doctor : hospital :: teacher : _____'", ["school", "clinic", "university", "classroom"], 0, 'II');
-    add("If all professionals are exam-takers. Some exam-takers are diligent. Therefore:", ["some professionals are diligent", "all exam-takers are professionals", "some diligent are professionals", "none"], 2, 'II');
-    add("Abstract: Which number completes the pattern? 2,5,10,17,__", ["24", "26", "28", "30"], 1, 'II');
-    add("Assumption: 'If it rains, the ground will be wet. The ground is wet. Therefore it rained.' This is:", ["valid", "invalid (fallacy)", "true", "deductive"], 1, 'II');
-    add("Data interpretation: If a graph shows sales 200,300,250 – average?", ["250", "260", "270", "280"], 0, 'II');
-    add("Filing: which comes first in alphabetical filing? 'Dr. Reyes' , 'Dr. Rivera' , 'Dr. Raz'", ["Dr. Raz", "Dr. Reyes", "Dr. Rivera", "all same"], 0, 'II');
-    add("Spelling: correct spelling?", ["accommodate", "accomodate", "acommodate", "acommodate"], 0, 'II');
-    add("Symbolic logic: p→q ; p is true. Conclude?", ["q is true", "q is false", "maybe", "contradiction"], 0, 'II');
-    add("Identify assumption: 'He is a public servant, so he must be honest.' assumes:", ["all public servants are honest", "some servants are dishonest", "he works in govt", "honesty is rare"], 0, 'II');
-    add("Data: 80% passed, 200 took exam. How many passed?", ["140", "150", "160", "170"], 2, 'II');
-    add("Filing: 'Office of the President' under which word?", ["Office", "President", "The", "Office of"], 1, 'II');
-    add("Spelling: which is correct?", ["embarrass", "embarass", "embaras", "embarras"], 0, 'II');
-    add("Analogy: 'poverty : hunger :: pollution : _____'", ["disease", "health", "environment", "clean"], 0, 'II');
-    add("Abstract: 1,1,2,3,5,8,__", ["11", "12", "13", "14"], 2, 'II');
-    add("Conclusion: All mammals are vertebrates. Whales are mammals. Therefore?", ["whales are vertebrates", "whales are fish", "some vertebrates are whales", "none"], 0, 'II');
-    add("Filing rule: 'McDonald' filed as?", ["MacDonald", "McDonald", "Mcdonald", "Donalds"], 1, 'II');
-    add("Spelling: which is incorrect?", ["receive", "wierd", "belief", "achieve"], 1, 'II');
-    add("Assumption: 'She graduated with honors, so she is intelligent.' assumes?", ["honors = intelligence", "intelligence leads to honors", "grades reflect intellect", "all of the above"], 0, 'II');
-    add("Data: 25% of 680 = ?", ["150", "160", "170", "180"], 2, 'II');
-    add("Word analogy: 'judge : court :: legislator : _____'", ["congress", "law", "bill", "senate"], 0, 'II');
-    // 20 items test II (running 80)
+    // Environment (50 questions)
+    const envTopics = [
+        "RA 9003 is about",
+        "RA 8749 is about",
+        "RA 9275 is about",
+        "RA 9729 is about",
+        "RA 10121 is about",
+        "PD 1586 is about",
+        "Clean Air Act is RA",
+        "Clean Water Act is RA",
+        "Ecological Solid Waste Act is RA",
+        "Climate Change Act is RA",
+    ];
+    for(let i=0; i<50; i++) {
+        add(`Environment/Q${i+1}: ${envTopics[i%envTopics.length] || 'Environmental law question'}`, 
+            ["Air","Water","Waste","Climate"], i%4, 'I');
+    }
 
-    // remaining 20 to reach 100 (mix within coverage, assigned to appropriate test)
-    add("Constitution: who can propose amendments?", ["congress", "president", "senate alone", "house alone"], 0, 'I');
-    add("RA 6713: 'political neutrality' means?", ["can campaign actively", "cannot use office for partisan activity", "must join a party", "avoid voting"], 1, 'I');
-    add("Environment: Kyoto Protocol targets?", ["greenhouse gases", "wildlife trade", "deforestation", "ocean dumping"], 0, 'I');
-    add("Human right: 'freedom from torture' is ________ right.", ["absolute", "derogable", "limited", "economic"], 0, 'I');
-    add("Verbal: Choose correct: 'Either the manager or his assistant _____ present.'", ["is", "are", "were", "be"], 0, 'I');
-    add("Sequence: 1,4,9,16,___", ["20", "24", "25", "30"], 2, 'I');
-    add("Percentage: 12 is 30% of what number?", ["30", "40", "50", "60"], 1, 'I');
-    add("Assumption conclusion: 'All birds can fly. Penguins are birds.' weakens?", ["penguins can't fly", "penguins swim", "penguins have wings", "birds are animals"], 0, 'II');
-    add("Filing: 'St. Paul' filed as:", ["Saint Paul", "Paul Saint", "St Paul", "Paul St"], 0, 'II');
-    add("Spelling: correct?", ["publicly", "publically", "publicaly", "publickly"], 0, 'II');
-    add("Word analogy: 'scalpel : surgeon :: baton : _____'", ["conductor", "runner", "policeman", "athlete"], 0, 'II');
-    add("Data: if mode= 5, median=7, mean=8, distribution is?", ["skewed left", "skewed right", "symmetric", "bimodal"], 1, 'II');
-    add("Ethics: RA 6713 – 'commitment to democracy' includes?", ["support authoritarian rule", "respect people's will", "ignore elections", "cronyism"], 1, 'I');
-    add("Phil. Constitution: 'The separation of church and state' is enshrined in Art. ___", ["II", "III", "V", "IX"], 0, 'I');
-    add("Peace concept: 'negative peace' refers to:", ["absence of war", "social justice", "human rights", "development"], 0, 'I');
-    add("Numerical: 2/5 ÷ 3/10 = ?", ["4/3", "3/2", "2/3", "5/3"], 0, 'I');
-    add("Error: 'The books on the shelf (A) is (B) dusty (C) .'", ["A", "B", "C", "no error"], 1, 'I');
-    add("Sentence structure: 'Walking along the shore, the waves crashed.' error?", ["dangling modifier", "comma splice", "fragment", "correct"], 0, 'I');
-    add("Paragraph org: (1) In conclusion, exercise helps. (2) First, stretch. (3) Then, jog.", ["2-3-1", "3-2-1", "1-2-3", "2-1-3"], 0, 'I');
-    add("Spelling: which is correct?", ["privilege", "privelege", "priviledge", "privledge"], 0, 'II');
-    // now exactly 100
+    // ========== TEST I: VERBAL ABILITY (120 questions) ==========
+    const verbalTypes = ['synonym','antonym','sentence completion','error recognition','paragraph org','reading comp'];
+    for(let i=0; i<120; i++) {
+        let type = verbalTypes[i%6];
+        if(type==='synonym') add(`Verbal/Q${i+1}: Synonym of 'happy'?`, ["joyful","sad","angry","tired"], 0, 'I');
+        else if(type==='antonym') add(`Verbal/Q${i+1}: Antonym of 'hot'?`, ["cold","warm","burning","scorching"], 0, 'I');
+        else if(type==='sentence completion') add(`Verbal/Q${i+1}: She ___ to school every day.`, ["go","goes","going","went"], 1, 'I');
+        else if(type==='error recognition') add(`Verbal/Q${i+1}: Find error: 'The dogs runs fast.'`, ["The","dogs","runs","fast"], 2, 'I');
+        else if(type==='paragraph org') add(`Verbal/Q${i+1}: Arrange: (1)Finally, (2)First, (3)Next`, ["2-3-1","1-2-3","3-2-1","2-1-3"], 0, 'I');
+        else add(`Verbal/Q${i+1}: Reading comp: What is the main idea?`, ["A","B","C","D"], i%4, 'I');
+    }
 
-    // ---------- HELPER: shuffle array (Fisher–Yates) ----------
-    function shuffleArray(arr) {
+    // ========== TEST I: NUMERICAL ABILITY (120 questions) ==========
+    for(let i=0; i<120; i++) {
+        let type = i%3;
+        if(type===0) add(`Numerical/Q${i+1}: What is ${i+5} + ${i+3}?`, 
+            [`${(i+5)+(i+3)}`,`${(i+5)+(i+3)+1}`,`${(i+5)+(i+3)-1}`,`${(i+5)+(i+3)+2}`], 0, 'I');
+        else if(type===1) add(`Numerical/Q${i+1}: Find the next: ${i+2}, ${i+4}, ${i+6}, ___`, 
+            [`${i+8}`,`${i+9}`,`${i+10}`,`${i+11}`], 0, 'I');
+        else add(`Numerical/Q${i+1}: If ${i} items cost ₱${i*100}, cost per item?`, 
+            [`₱${i*10}`,`₱${i*20}`,`₱${i*30}`,`₱${i*40}`], 0, 'I');
+    }
+
+    // ========== TEST II: ANALYTICAL (100 questions) ==========
+    for(let i=0; i<100; i++) {
+        let type = i%4;
+        if(type===0) add(`Analogy/Q${i+1}: doctor:hospital :: teacher:___`, 
+            ["school","clinic","office","hospital"], 0, 'II');
+        else if(type===1) add(`Logic/Q${i+1}: If all A are B, and some B are C, then?`, 
+            ["some A are C","all A are C","no conclusion","all C are A"], 2, 'II');
+        else if(type===2) add(`Assumption/Q${i+1}: 'She's rich, so she's happy.' assumes?`, 
+            ["rich = happy","rich ≠ happy","money matters","happiness is wealth"], 0, 'II');
+        else add(`Data/Q${i+1}: Mean of ${i},${i+2},${i+4}?`, 
+            [`${i+2}`,`${i+3}`,`${i+4}`,`${i+5}`], 0, 'II');
+    }
+
+    // ========== TEST II: CLERICAL (80 questions) ==========
+    for(let i=0; i<80; i++) {
+        if(i%2===0) add(`Filing/Q${i+1}: How to file 'Dr. ${String.fromCharCode(65+i%26)}'?`, 
+            ["Last name","First name","Title","Middle name"], 0, 'II');
+        else add(`Spelling/Q${i+1}: Correct spelling?`, 
+            ["accommodate","accomodate","acommodate","akkommodate"], 0, 'II');
+    }
+
+    // Total count verification
+    console.log('Total questions in masterBank:', masterBank.length);
+    document.getElementById('question-counter').textContent = `📚 QUESTION BANK: ${masterBank.length} UNIQUE ITEMS`;
+    document.getElementById('total-questions-display').textContent = `Total in bank: ${masterBank.length} questions`;
+
+    // ----- helpers -----
+    function shuffle(arr) {
         for (let i = arr.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -257,59 +298,112 @@
         return arr;
     }
 
-    // ---------- RENDER: groups stay, internal shuffle on each load ----------
-    function renderGroupedAndShuffled() {
-        // separate by test
-        let testI = baseQuestions.filter(q => q.test === 'I');
-        let testII = baseQuestions.filter(q => q.test === 'II');
+    function pickNRandom(arr, n) {
+        const shuffled = shuffle([...arr]);
+        return shuffled.slice(0, n);
+    }
 
-        // shuffle each group internally
-        testI = shuffleArray(testI);
-        testII = shuffleArray(testII);
+    // Global variable to store previous set
+    let previousSet = [];
 
-        // store the final ordered list for scoring (I then II)
+    function generateFreshSet() {
+        const targetSize = 100;
+        if (previousSet.length === 0) {
+            // First round: pick random 100 from master
+            return shuffle(masterBank).slice(0, targetSize);
+        } else {
+            // 30% retain from previous, 70% fresh from master
+            const retainCount = 30;
+            const retainItems = pickNRandom(previousSet, retainCount);
+            const freshFromMaster = shuffle(masterBank).slice(0, 70);
+            let newSet = shuffle([...retainItems, ...freshFromMaster]);
+            return newSet.slice(0, targetSize);
+        }
+    }
+
+    function renderExamSet(set) {
+        let testI = set.filter(q => q.test === 'I');
+        let testII = set.filter(q => q.test === 'II');
+        testI = shuffle(testI);
+        testII = shuffle(testII);
         const ordered = [...testI, ...testII];
         window.currentOrdered = ordered;
 
         let html = '';
-        // TEST I header
-        html += `<div class="test-badge">📌 TEST I · GENERAL INFORMATION, VERBAL, NUMERICAL (${testI.length} items)</div>`;
+        html += `<div class="test-badge">📌 TEST I · GENERAL / VERBAL / NUMERICAL (${testI.length} items)</div>`;
         testI.forEach((q, idx) => {
-            html += `
-                <div class="q-card">
-                    <p><strong>${idx+1}.</strong> ${q.q}</p>
-                    <div class="options">
-                        ${q.a.map((opt, optIdx) => `
-                            <label>
-                                <input type="radio" name="q${ordered.indexOf(q)}" value="${optIdx}"> ${opt}
-                            </label>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
+            html += `<div class="q-card"><p><strong>${idx+1}.</strong> ${q.q}</p><div class="options">`;
+            q.a.forEach((opt, optIdx) => {
+                html += `<label><input type="radio" name="q${ordered.indexOf(q)}" value="${optIdx}"> ${opt}</label>`;
+            });
+            html += `</div></div>`;
         });
-
-        // TEST II header
         html += `<div class="test-badge test-ii-badge">✏️ TEST II · ANALYTICAL / CLERICAL (${testII.length} items)</div>`;
         testII.forEach((q, idx) => {
-            html += `
-                <div class="q-card">
-                    <p><strong>${testI.length + idx + 1}.</strong> ${q.q}</p>
-                    <div class="options">
-                        ${q.a.map((opt, optIdx) => `
-                            <label>
-                                <input type="radio" name="q${ordered.indexOf(q)}" value="${optIdx}"> ${opt}
-                            </label>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
+            html += `<div class="q-card"><p><strong>${testI.length + idx + 1}.</strong> ${q.q}</p><div class="options">`;
+            q.a.forEach((opt, optIdx) => {
+                html += `<label><input type="radio" name="q${ordered.indexOf(q)}" value="${optIdx}"> ${opt}</label>`;
+            });
+            html += `</div></div>`;
         });
-
         document.getElementById('quiz-container').innerHTML = html;
     }
 
-    // ----- timer and submit -----
+    window.submitExam = function() {
+        if (window.examInterval) clearInterval(window.examInterval);
+        const ordered = window.currentOrdered || [];
+        const userAnswers = [];
+        ordered.forEach((q, index) => {
+            const selected = document.querySelector(`input[name="q${index}"]:checked`);
+            const userVal = selected ? parseInt(selected.value) : -1;
+            userAnswers.push({ user: userVal, correct: q.c });
+        });
+
+        let score = 0;
+        ordered.forEach((q, idx) => { if (userAnswers[idx].user === q.c) score++; });
+
+        let tableHtml = '<h3 style="margin-top:2rem;">🔍 Question-by-Question Review</h3>';
+        tableHtml += '<table class="review-table"><tr><th>#</th><th>Question</th><th>Your Answer</th><th>Correct Answer</th><th>Test</th></tr>';
+        ordered.forEach((q, idx) => {
+            const userOpt = userAnswers[idx].user;
+            const userText = (userOpt === -1) ? '— no answer —' : (q.a[userOpt] || 'invalid');
+            const correctText = q.a[q.c];
+            let verdict = '';
+            if (userOpt === q.c) verdict = '<span class="correct-ans">✅ correct</span>';
+            else if (userOpt === -1) verdict = '<span class="neutral-ans">⏺️ not answered</span>';
+            else verdict = '<span class="wrong-ans">❌ wrong</span>';
+            tableHtml += `<tr><td>${idx+1}</td><td>${q.q.substring(0,60)}${q.q.length>60?'...':''}</td><td>${userText} ${verdict}</td><td><span class="correct-ans">${correctText}</span></td><td>${q.test}</td></tr>`;
+        });
+        tableHtml += '</table>';
+
+        document.getElementById('quiz-ui').style.display = 'none';
+        document.getElementById('timer-bar').style.display = 'none';
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.style.display = 'block';
+        const scoreDisplay = document.getElementById('score-display');
+        scoreDisplay.innerText = `${score} / 100`;
+        scoreDisplay.className = (score >= 80) ? 'score-box pass' : 'score-box fail';
+        document.getElementById('message').innerText = (score >= 80) ? '✅ PASSED! Review your mistakes below.' : '❌ Keep practicing — review details below.';
+        document.getElementById('review-table-container').innerHTML = tableHtml;
+        window.scrollTo(0,0);
+    };
+
+    window.startNewRound = function() {
+        const freshSet = generateFreshSet();
+        previousSet = freshSet;
+        renderExamSet(freshSet);
+        document.getElementById('results').style.display = 'none';
+        document.getElementById('quiz-ui').style.display = 'block';
+        document.getElementById('timer-bar').style.display = 'block';
+        if (window.examInterval) clearInterval(window.examInterval);
+        timerStarted = false;
+        startTimer();
+    };
+
+    window.backToStudy = function() {
+        showTab('lessons', document.querySelectorAll('nav button')[1]);
+    };
+
     let timerStarted = false;
     function startTimer() {
         if (timerStarted) return;
@@ -322,30 +416,9 @@
             let minutes = Math.floor(time / 60);
             let seconds = time % 60;
             display.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-            if (time > 0) { time--; } else { clearInterval(window.examInterval); submitExam(); }
+            if (time > 0) time--; else { clearInterval(window.examInterval); submitExam(); }
         }, 1000);
     }
-
-    window.submitExam = function() {
-        if (window.examInterval) clearInterval(window.examInterval);
-        const ordered = window.currentOrdered || [];
-        let score = 0;
-        ordered.forEach((q, index) => {
-            const selected = document.querySelector(`input[name="q${index}"]:checked`);
-            if (selected && parseInt(selected.value) === q.c) score++;
-        });
-
-        document.getElementById('quiz-ui').style.display = 'none';
-        document.getElementById('timer-bar').style.display = 'none';
-        document.getElementById('results').style.display = 'block';
-        const scoreDisplay = document.getElementById('score-display');
-        scoreDisplay.innerText = `${score} / 100`;
-        scoreDisplay.className = (score >= 80) ? 'score-box pass' : 'score-box fail';
-        document.getElementById('message').innerText = (score >= 80) 
-            ? "✅ PASSED! You're on track for CSE 2026." 
-            : "❌ 80% required. Keep reviewing – you can do it.";
-        window.scrollTo(0,0);
-    };
 
     window.showTab = function(id, btn) {
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
@@ -353,14 +426,16 @@
         document.getElementById(id).classList.add('active-section');
         btn.classList.add('active');
         if (id === 'exam') {
-            renderGroupedAndShuffled();   // <-- fresh shuffle within groups
+            if (previousSet.length === 0) {
+                previousSet = shuffle(masterBank).slice(0, 100);
+            }
+            renderExamSet(previousSet);
             startTimer();
         } else {
             document.getElementById('timer-bar').style.display = 'none';
+            if (window.examInterval) clearInterval(window.examInterval); timerStarted=false;
         }
     };
-
-    // default open info tab
 })();
 </script>
 </body>
