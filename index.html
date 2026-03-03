@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSE 2026 · TEST I & TEST II (grouped)</title>
+    <title>CSE 2026 · grouped tests with internal shuffle</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         :root { --primary: #0038a8; --secondary: #ce1126; --accent: #f1c40f; --bg: #f4f7f6; }
@@ -36,7 +36,6 @@
         .fail { color: #c03a2b; }
         hr { border: 1px dashed var(--primary); margin: 2rem 0; opacity: 0.3; }
         .section-intro { background: #fef5e7; padding: 1rem 2rem; border-radius: 40px; margin-bottom: 1rem; border-left: 8px solid var(--accent); font-weight: 500; }
-        .total-questions { font-weight: 600; background: #e8f0fe; padding: 0.5rem 1.5rem; border-radius: 30px; display: inline-block; }
     </style>
 </head>
 <body>
@@ -47,7 +46,7 @@
 <nav>
     <button onclick="showTab('info', this)" class="active">📋 COVERAGE</button>
     <button onclick="showTab('lessons', this)">📘 STUDY BITS</button>
-    <button onclick="showTab('exam', this)">📝 TEST I + TEST II (grouped)</button>
+    <button onclick="showTab('exam', this)">📝 TEST I + TEST II (shuffled inside groups)</button>
 </nav>
 <div id="timer-bar" class="timer-container">
     ⏳ TIME LEFT: <span id="time">120:00</span>
@@ -107,11 +106,11 @@
         </div>
     </div>
 
-    <!-- TAB 3: EXAM (TEST I then TEST II, grouped) -->
+    <!-- TAB 3: EXAM (grouped, but shuffled within groups on refresh) -->
     <div id="exam" class="section">
         <div id="quiz-ui">
             <h2 style="color: var(--primary);">📋 100-ITEM MOCK EXAM · TEST I & II GROUPED</h2>
-            <p class="section-intro">✅ All TEST I (GenInfo, Verbal, Numerical) appear first, then TEST II (Analytical/Clerical). No mix.</p>
+            <p class="section-intro">🔄 Questions shuffle within each test on every page refresh / retake. Tests remain grouped.</p>
             <div id="quiz-container"></div>
             <button class="btn-submit" onclick="submitExam()">✅ FINISH & CHECK SCORE</button>
         </div>
@@ -119,7 +118,7 @@
             <h2>📊 EXAM RESULT</h2>
             <div id="score-display" class="score-box"></div>
             <p id="message"></p>
-            <button class="btn-submit" onclick="location.reload()">⟳ NEW SHUFFLE (but tests stay grouped)</button>
+            <button class="btn-submit" onclick="location.reload()">⟳ NEW SHUFFLE (within groups)</button>
         </div>
     </div>
 </div>
@@ -249,23 +248,40 @@
     add("Spelling: which is correct?", ["privilege", "privelege", "priviledge", "privledge"], 0, 'II');
     // now exactly 100
 
-    // ---------- RENDER: FIXED ORDER (all test I first, then test II) ----------
-    function renderGroupedExam() {
-        const testIQuestions = baseQuestions.filter(q => q.test === 'I');
-        const testIIQuestions = baseQuestions.filter(q => q.test === 'II');
-        const grouped = [...testIQuestions, ...testIIQuestions];  // I first, then II
+    // ---------- HELPER: shuffle array (Fisher–Yates) ----------
+    function shuffleArray(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+
+    // ---------- RENDER: groups stay, internal shuffle on each load ----------
+    function renderGroupedAndShuffled() {
+        // separate by test
+        let testI = baseQuestions.filter(q => q.test === 'I');
+        let testII = baseQuestions.filter(q => q.test === 'II');
+
+        // shuffle each group internally
+        testI = shuffleArray(testI);
+        testII = shuffleArray(testII);
+
+        // store the final ordered list for scoring (I then II)
+        const ordered = [...testI, ...testII];
+        window.currentOrdered = ordered;
 
         let html = '';
         // TEST I header
-        html += `<div class="test-badge">📌 TEST I · GENERAL INFORMATION, VERBAL, NUMERICAL (${testIQuestions.length} items)</div>`;
-        testIQuestions.forEach((q, idx) => {
+        html += `<div class="test-badge">📌 TEST I · GENERAL INFORMATION, VERBAL, NUMERICAL (${testI.length} items)</div>`;
+        testI.forEach((q, idx) => {
             html += `
                 <div class="q-card">
                     <p><strong>${idx+1}.</strong> ${q.q}</p>
                     <div class="options">
                         ${q.a.map((opt, optIdx) => `
                             <label>
-                                <input type="radio" name="q${grouped.indexOf(q)}" value="${optIdx}"> ${opt}
+                                <input type="radio" name="q${ordered.indexOf(q)}" value="${optIdx}"> ${opt}
                             </label>
                         `).join('')}
                     </div>
@@ -274,15 +290,15 @@
         });
 
         // TEST II header
-        html += `<div class="test-badge test-ii-badge">✏️ TEST II · ANALYTICAL / CLERICAL (${testIIQuestions.length} items)</div>`;
-        testIIQuestions.forEach((q, idx) => {
+        html += `<div class="test-badge test-ii-badge">✏️ TEST II · ANALYTICAL / CLERICAL (${testII.length} items)</div>`;
+        testII.forEach((q, idx) => {
             html += `
                 <div class="q-card">
-                    <p><strong>${testIQuestions.length + idx + 1}.</strong> ${q.q}</p>
+                    <p><strong>${testI.length + idx + 1}.</strong> ${q.q}</p>
                     <div class="options">
                         ${q.a.map((opt, optIdx) => `
                             <label>
-                                <input type="radio" name="q${grouped.indexOf(q)}" value="${optIdx}"> ${opt}
+                                <input type="radio" name="q${ordered.indexOf(q)}" value="${optIdx}"> ${opt}
                             </label>
                         `).join('')}
                     </div>
@@ -291,8 +307,6 @@
         });
 
         document.getElementById('quiz-container').innerHTML = html;
-        // store grouped order for scoring
-        window.currentGrouped = grouped;
     }
 
     // ----- timer and submit -----
@@ -314,9 +328,9 @@
 
     window.submitExam = function() {
         if (window.examInterval) clearInterval(window.examInterval);
-        const grouped = window.currentGrouped || [];
+        const ordered = window.currentOrdered || [];
         let score = 0;
-        grouped.forEach((q, index) => {
+        ordered.forEach((q, index) => {
             const selected = document.querySelector(`input[name="q${index}"]:checked`);
             if (selected && parseInt(selected.value) === q.c) score++;
         });
@@ -339,7 +353,7 @@
         document.getElementById(id).classList.add('active-section');
         btn.classList.add('active');
         if (id === 'exam') {
-            renderGroupedExam();
+            renderGroupedAndShuffled();   // <-- fresh shuffle within groups
             startTimer();
         } else {
             document.getElementById('timer-bar').style.display = 'none';
