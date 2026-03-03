@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSE 2026 · QUALITY REVIEWER</title>
+    <title>CSE 2026 · COMPLETE REVIEW (Lessons + 300 Quality Questions)</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         :root { --primary: #0038a8; --secondary: #ce1126; --accent: #f1c40f; --bg: #f4f7f6; }
@@ -65,17 +65,33 @@
         .toc { display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 16px; }
         .toc-item { flex: 1 1 200px; padding: 0.8rem; background: white; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); cursor: pointer; transition: 0.2s; }
         .toc-item:hover { background: var(--primary); color: white; }
+
+        /* Math & Fraction Styling */
+        .frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; font-size: 1em; margin: 0 4px; line-height: 1.2; }
+        .frac .num { border-bottom: 1.5px solid #1e1e2f; padding: 0 4px 1px 4px; text-align: center; font-weight: 600; }
+        .frac .den { padding: 2px 4px 0 4px; text-align: center; }
+        .math-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0; font-size: 1.05rem; }
+        .math-eq { background: #e8f0fe; border-radius: 8px; padding: 0.6rem 1.2rem; display: inline-flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; font-size: 1.05rem; border-left: 4px solid var(--primary); margin: 0.4rem 0; }
+        .math-label { font-weight: 700; color: var(--secondary); min-width: 200px; }
+        .math-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin: 0.8rem 0; }
+        @media (max-width: 600px) { .math-grid { grid-template-columns: 1fr; } .math-label { min-width: unset; } }
+        .formula-box { background: #e8f0fe; padding: 1rem 1.4rem; border-radius: 12px; font-family: monospace; font-size: 1.05rem; margin: 0.5rem 0; border-left: 4px solid var(--primary); }
+        sup { font-size: 0.75em; vertical-align: super; }
+        sub { font-size: 0.75em; vertical-align: sub; }
+        .op { margin: 0 3px; font-weight: 700; color: #0038a8; }
+        .math-step { background: #f0fdf4; border-left: 4px solid #2ecc71; border-radius: 8px; padding: 0.5rem 1rem; margin: 0.3rem 0; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
     </style>
 </head>
 <body>
 <header>
-    <h1>⚡ CIVIL SERVICE 2026 · QUALITY REVIEWER</h1>
-    <p>Professional & SubProfessional · 300 Curated High-Quality Questions</p>
+    <h1>CIVIL SERVICE 2026 · COMPLETE REVIEWER </h1>
+    <p>Comprehensive Lessons + Mock Exam</p>
+    <div class="quality-badge">📚 8 Full Modules for upcoming CSE 2026</div>
 </header>
 <nav>
     <button onclick="showTab('info', this)" class="active">📋 COVERAGE</button>
     <button onclick="showTab('lessons', this)">📚 COMPREHENSIVE LESSONS</button>
-    <button onclick="showTab('exam', this)">📝 TAKE QUALITY MOCK EXAM</button>
+    <button onclick="showTab('exam', this)">📝 QUALITY MOCK EXAM</button>
 </nav>
 <div id="timer-bar" class="timer-container">
     ⏳ TIME LEFT: <span id="time">120:00</span>
@@ -112,12 +128,9 @@
                 <p><strong>Clerical Ability (English)</strong><br>Filing · Spelling</p>
             </div>
         </div>
-        <div class="quality-note">
-            ⭐ This reviewer contains 300 carefully crafted questions - enough for comprehensive practice while maintaining high quality standards. Every question is based on actual CSC exam patterns.
-        </div>
     </div>
 
-    <!-- TAB 2: LESSONS (same comprehensive lessons) -->
+    <!-- TAB 2: COMPREHENSIVE LESSONS (FULLY RESTORED) -->
     <div id="lessons" class="section">
         <h2 style="color: var(--primary); margin-bottom: 1.5rem;">📚 COMPREHENSIVE LESSON MODULES</h2>
         
@@ -132,78 +145,1537 @@
             <div class="toc-item" onclick="scrollToLesson('clerical')">📂 Clerical</div>
         </div>
 
-        <!-- Module 1: Philippine Constitution (same detailed lessons) -->
+        <!-- MODULE 1: Philippine Constitution (COMPLETE) -->
         <div id="lesson-const" class="lesson-module">
             <div class="lesson-header" onclick="toggleLesson(this)">
-                <span>📜 MODULE 1: PHILIPPINE CONSTITUTION (1987)</span>
+                <span>📜 MODULE 1: PHILIPPINE CONSTITUTION (1987) - COMPLETE</span>
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="lesson-content">
                 <div class="lesson-subsection">
-                    <h4>ARTICLE III - BILL OF RIGHTS (Key Sections)</h4>
+                    <h4>ARTICLE I - NATIONAL TERRITORY</h4>
+                    <ul class="lesson-list">
+                        <li>The national territory comprises the Philippine archipelago, with all the islands and waters embraced therein, and all other territories over which the Philippines has sovereignty or jurisdiction</li>
+                        <li>Consists of terrestrial, fluvial, and aerial domains, including its territorial sea, the seabed, the subsoil, the insular shelves, and other submarine areas</li>
+                        <li>The waters around, between, and connecting the islands of the archipelago, regardless of their breadth and dimensions, form part of the internal waters of the Philippines</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE II - DECLARATION OF PRINCIPLES AND STATE POLICIES</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Section 1:</strong> The Philippines is a democratic and republican State. Sovereignty resides in the people and all government authority emanates from them</li>
+                        <li><strong>Section 2:</strong> The Philippines renounces war as an instrument of national policy, adopts the generally accepted principles of international law as part of the law of the land</li>
+                        <li><strong>Section 3:</strong> Civilian authority is, at all times, supreme over the military</li>
+                        <li><strong>Section 4:</strong> The prime duty of the Government is to serve and protect the people</li>
+                        <li><strong>Section 5:</strong> The maintenance of peace and order, the protection of life, liberty, and property, and the promotion of the general welfare are essential</li>
+                        <li><strong>Section 6:</strong> The separation of Church and State is inviolable</li>
+                        <li><strong>Section 7:</strong> The State shall pursue an independent foreign policy</li>
+                        <li><strong>Section 8:</strong> The Philippines, consistent with the national interest, adopts and pursues a policy of freedom from nuclear weapons</li>
+                        <li><strong>Section 9:</strong> Just and dynamic social order that ensures prosperity and independence</li>
+                        <li><strong>Section 10:</strong> Social justice in all phases of national development</li>
+                        <li><strong>Section 11:</strong> Value of human dignity and full respect for human rights</li>
+                        <li><strong>Section 12:</strong> Family as foundation of the nation</li>
+                        <li><strong>Section 13:</strong> Role of youth in nation-building</li>
+                        <li><strong>Section 14:</strong> Women in nation-building</li>
+                        <li><strong>Section 15:</strong> Right to health</li>
+                        <li><strong>Section 16:</strong> Right to a balanced and healthful ecology</li>
+                        <li><strong>Section 17:</strong> Priority to education, science, technology, arts, culture, and sports</li>
+                        <li><strong>Section 18:</strong> Labor as primary social economic force</li>
+                        <li><strong>Section 19:</strong> Self-reliant and independent national economy</li>
+                        <li><strong>Section 20:</strong> Private sector as prime mover of the economy</li>
+                        <li><strong>Section 21:</strong> Rural development</li>
+                        <li><strong>Section 22:</strong> Indigenous cultural communities</li>
+                        <li><strong>Section 23:</strong> Non-governmental organizations</li>
+                        <li><strong>Section 24:</strong> Autonomy of local governments</li>
+                        <li><strong>Section 25:</strong> Autonomous regions in Muslim Mindanao and Cordilleras</li>
+                        <li><strong>Section 26:</strong> Equal access to public service</li>
+                        <li><strong>Section 27:</strong> Honesty and integrity in public service</li>
+                        <li><strong>Section 28:</strong> Full public disclosure of transactions involving public interest</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE III - BILL OF RIGHTS (22 Sections - COMPLETE)</h4>
                     <ul class="lesson-list">
                         <li><strong>Section 1:</strong> No person shall be deprived of life, liberty, or property without due process of law, nor shall any person be denied the equal protection of the laws</li>
-                        <li><strong>Section 2:</strong> Right against unreasonable searches and seizures - requires warrant issued by judge upon probable cause</li>
-                        <li><strong>Section 4:</strong> Freedom of speech, expression, and press, and the right to peaceably assemble and petition the government</li>
-                        <li><strong>Section 5:</strong> Freedom of religion - separation of church and state, free exercise and non-establishment clauses</li>
-                        <li><strong>Section 12:</strong> Rights of persons under investigation (Miranda rights) - right to remain silent, right to counsel, right to be informed</li>
-                        <li><strong>Section 14:</strong> Right to due process in criminal cases - presumption of innocence, right to be heard, right to counsel</li>
-                        <li><strong>Section 19:</strong> Prohibition against cruel, degrading, or inhuman punishment</li>
+                        <li><strong>Section 2:</strong> The right of the people to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures of whatever nature and for any purpose shall be inviolable, and no search warrant or warrant of arrest shall issue except upon probable cause to be determined personally by the judge after examination under oath or affirmation of the complainant and the witnesses he may produce, and particularly describing the place to be searched and the persons or things to be seized</li>
+                        <li><strong>Section 3:</strong> The privacy of communication and correspondence shall be inviolable except upon lawful order of the court, or when public safety or order requires otherwise as prescribed by law</li>
+                        <li><strong>Section 4:</strong> No law shall be passed abridging the freedom of speech, of expression, or of the press, or the right of the people peaceably to assemble and petition the government for redress of grievances</li>
+                        <li><strong>Section 5:</strong> No law shall be made respecting an establishment of religion, or prohibiting the free exercise thereof. The free exercise and enjoyment of religious profession and worship, without discrimination or preference, shall forever be allowed. No religious test shall be required for the exercise of civil or political rights</li>
+                        <li><strong>Section 6:</strong> The liberty of abode and of changing the same within the limits prescribed by law shall not be impaired except upon lawful order of the court. Neither shall the right to travel be impaired except in the interest of national security, public safety, or public health, as may be provided by law</li>
+                        <li><strong>Section 7:</strong> The right of the people to information on matters of public concern shall be recognized. Access to official records, and to documents and papers pertaining to official acts, transactions, or decisions, as well as to government research data used as basis for policy development, shall be afforded the citizen, subject to such limitations as may be provided by law</li>
+                        <li><strong>Section 8:</strong> The right of the people, including those employed in the public and private sectors, to form unions, associations, or societies for purposes not contrary to law shall not be abridged</li>
+                        <li><strong>Section 9:</strong> Private property shall not be taken for public use without just compensation</li>
+                        <li><strong>Section 10:</strong> No law impairing the obligation of contracts shall be passed</li>
+                        <li><strong>Section 11:</strong> Free access to the courts and quasi-judicial bodies and adequate legal assistance shall not be denied to any person by reason of poverty</li>
+                        <li><strong>Section 12:</strong> Any person under investigation for the commission of an offense shall have the right to be informed of his right to remain silent and to have competent and independent counsel preferably of his own choice. If the person cannot afford the services of counsel, he must be provided with one. These rights cannot be waived except in writing and in the presence of counsel</li>
+                        <li><strong>Section 13:</strong> All persons, except those charged with offenses punishable by reclusion perpetua when evidence of guilt is strong, shall, before conviction, be bailable by sufficient sureties, or be released on recognizance as may be provided by law. The right to bail shall not be impaired even when the privilege of the writ of habeas corpus is suspended</li>
+                        <li><strong>Section 14:</strong> No person shall be held to answer for a criminal offense without due process of law. In all criminal prosecutions, the accused shall be presumed innocent until the contrary is proved, and shall enjoy the right to be heard by himself and counsel, to be informed of the nature and cause of the accusation against him, to have a speedy, impartial, and public trial, to meet the witnesses face to face, and to have compulsory process to secure the attendance of witnesses and the production of evidence in his behalf</li>
+                        <li><strong>Section 15:</strong> The privilege of the writ of habeas corpus shall not be suspended except in cases of invasion or rebellion when the public safety requires it</li>
+                        <li><strong>Section 16:</strong> All persons shall have the right to a speedy disposition of their cases before all judicial, quasi-judicial, or administrative bodies</li>
+                        <li><strong>Section 17:</strong> No person shall be compelled to be a witness against himself</li>
+                        <li><strong>Section 18:</strong> No person shall be detained solely by reason of his political beliefs and aspirations. No involuntary servitude in any form shall exist except as a punishment for a crime whereof the party shall have been duly convicted</li>
+                        <li><strong>Section 19:</strong> Excessive fines shall not be imposed, nor cruel, degrading or inhuman punishment inflicted. Neither shall death penalty be imposed, unless, for compelling reasons involving heinous crimes, the Congress hereafter provides for it</li>
+                        <li><strong>Section 20:</strong> No person shall be imprisoned for debt or non-payment of a poll tax</li>
+                        <li><strong>Section 21:</strong> No person shall be twice put in jeopardy of punishment for the same offense. If an act is punished by a law and an ordinance, conviction or acquittal under either shall constitute a bar to another prosecution for the same act</li>
+                        <li><strong>Section 22:</strong> No ex post facto law or bill of attainder shall be enacted</li>
                     </ul>
                 </div>
+
                 <div class="lesson-subsection">
-                    <h4>OTHER IMPORTANT PROVISIONS</h4>
+                    <h4>ARTICLE VI - LEGISLATIVE DEPARTMENT</h4>
                     <ul class="lesson-list">
-                        <li><strong>Article VI, Section 16:</strong> Each house shall determine its rules of proceedings</li>
-                        <li><strong>Article VII, Section 4:</strong> President and Vice-President term: 6 years, starting June 30</li>
-                        <li><strong>Article VIII, Section 1:</strong> Judicial power vested in Supreme Court and lower courts</li>
-                        <li><strong>Article IX:</strong> Constitutional Commissions - CSC, COMELEC, COA - independent</li>
-                        <li><strong>Article XI:</strong> Ombudsman - investigates public officials</li>
+                        <li>The legislative power shall be vested in the Congress of the Philippines which shall consist of a Senate and a House of Representatives</li>
+                        <li><strong>Senate:</strong> Composed of 24 Senators elected at large, term of 6 years, not more than 2 consecutive terms</li>
+                        <li><strong>House of Representatives:</strong> Not more than 250 members, term of 3 years, not more than 3 consecutive terms</li>
+                        <li>Party-list system to represent marginalized sectors</li>
+                        <li>Powers: Enact laws, appropriate funds, tax, concur with treaties, declare war</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE VII - EXECUTIVE DEPARTMENT</h4>
+                    <ul class="lesson-list">
+                        <li>The executive power shall be vested in the President of the Philippines</li>
+                        <li>President and Vice-President: Elected by direct vote, term of 6 years</li>
+                        <li>President not eligible for reelection, Vice-President maximum of 2 consecutive terms</li>
+                        <li>Qualifications: Natural-born citizen, registered voter, able to read and write, 40 years old on day of election, resident for at least 10 years</li>
+                        <li>Powers: Control of executive departments, military command, pardoning power, diplomatic power, budgetary power</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE VIII - JUDICIAL DEPARTMENT</h4>
+                    <ul class="lesson-list">
+                        <li>Judicial power vested in Supreme Court and lower courts established by law</li>
+                        <li>Supreme Court composed of a Chief Justice and 14 Associate Justices</li>
+                        <li>Qualifications: Natural-born citizen, 40 years old, 15 years judge or lawyer</li>
+                        <li>Powers: Judicial review, original and appellate jurisdiction, administrative supervision over courts</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE IX - CONSTITUTIONAL COMMISSIONS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>A. Civil Service Commission (CSC):</strong> Administer civil service, appointments, examinations</li>
+                        <li><strong>B. Commission on Elections (COMELEC):</strong> Enforce election laws, registration, canvassing</li>
+                        <li><strong>C. Commission on Audit (COA):</strong> Examine government funds and accounts</li>
+                        <li>Each commission composed of a Chairman and 2 Commissioners, term of 7 years</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE X - LOCAL GOVERNMENT</h4>
+                    <ul class="lesson-list">
+                        <li>Territorial and political subdivisions: provinces, cities, municipalities, barangays</li>
+                        <li>Autonomy to local government units</li>
+                        <li>Creation, division, merger, abolition subject to criteria established by law</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE XI - ACCOUNTABILITY OF PUBLIC OFFICERS</h4>
+                    <ul class="lesson-list">
+                        <li>Public office is a public trust</li>
+                        <li><strong>Ombudsman (Tanodbayan):</strong> Investigate public officials, prosecute cases</li>
+                        <li><strong>Impeachment:</strong> Grounds - culpable violation of Constitution, treason, bribery, graft and corruption, other high crimes, betrayal of public trust</li>
+                        <li>Impeachable officers: President, Vice-President, Supreme Court Justices, Constitutional Commission members, Ombudsman</li>
+                        <li>House initiates impeachment, Senate tries impeachment cases</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE XII - NATIONAL ECONOMY AND PATRIMONY</h4>
+                    <ul class="lesson-list">
+                        <li>Filipino ownership of natural resources</li>
+                        <li>Protection of Filipino enterprises</li>
+                        <li>Regulation of foreign investments</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE XIII - SOCIAL JUSTICE AND HUMAN RIGHTS</h4>
+                    <ul class="lesson-list">
+                        <li>Protection of labor, agrarian reform, urban land reform, housing, health, women, indigenous peoples</li>
+                        <li><strong>Commission on Human Rights (CHR):</strong> Investigate human rights violations, provide legal aid, monitor compliance</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE XIV - EDUCATION, SCIENCE, TECHNOLOGY, ARTS, CULTURE, SPORTS</h4>
+                    <ul class="lesson-list">
+                        <li>Right to quality education</li>
+                        <li>Filipino as national language</li>
+                        <li>Promotion of science and technology</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE XV - THE FAMILY</h4>
+                    <ul class="lesson-list">
+                        <li>Recognition of the family as basic social institution</li>
+                        <li>Protection of marriage, children, working mothers</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE XVI - GENERAL PROVISIONS</h4>
+                    <ul class="lesson-list">
+                        <li>Flag, anthem, Armed Forces, police, mass media, advertising</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE XVII - AMENDMENTS OR REVISIONS</h4>
+                    <ul class="lesson-list">
+                        <li>By Congress (3/4 vote), Constitutional Convention, or People's Initiative (petition of 12% of registered voters)</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ARTICLE XVIII - TRANSITORY PROVISIONS</h4>
+                    <ul class="lesson-list">
+                        <li>Transition from revolutionary government</li>
+                        <li>Existing laws remain effective until amended</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Module 2: RA 6713 (same) -->
+        <!-- MODULE 2: RA 6713 (COMPLETE) -->
         <div id="lesson-ra6713" class="lesson-module">
             <div class="lesson-header" onclick="toggleLesson(this)">
-                <span>⚖️ MODULE 2: R.A. 6713 - CODE OF CONDUCT</span>
+                <span>⚖️ MODULE 2: R.A. 6713 - CODE OF CONDUCT AND ETHICAL STANDARDS (COMPLETE)</span>
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="lesson-content">
                 <div class="lesson-subsection">
-                    <h4>THE 8 NORMS OF CONDUCT</h4>
+                    <h4>THE 8 NORMS OF CONDUCT (DETAILED)</h4>
                     <ul class="lesson-list">
-                        <li><strong>1. Commitment to Public Interest:</strong> Public interest over personal interest</li>
-                        <li><strong>2. Professionalism:</strong> Competence, integrity, and excellence</li>
-                        <li><strong>3. Justness and Sincerity:</strong> Fairness and sincerity in actions</li>
-                        <li><strong>4. Political Neutrality:</strong> No partisan political activities</li>
-                        <li><strong>5. Responsiveness to the Public:</strong> Prompt, courteous, efficient service</li>
-                        <li><strong>6. Nationalism and Patriotism:</strong> Prioritize national interests</li>
-                        <li><strong>7. Commitment to Democracy:</strong> Uphold democratic principles</li>
-                        <li><strong>8. Simple Living:</strong> Avoid extravagant lifestyle</li>
+                        <li><strong>1. Commitment to Public Interest:</strong> Always uphold public interest over personal interest. Public officials must prioritize the welfare of the people above their own. Any action that benefits private interests at the expense of public welfare is prohibited.</li>
+                        <li><strong>2. Professionalism:</strong> Perform duties with competence, integrity, and excellence. Continuously improve knowledge and skills. Deliver work of the highest quality. Meet deadlines and standards.</li>
+                        <li><strong>3. Justness and Sincerity:</strong> Act with fairness and sincerity in all transactions. Treat everyone equally without discrimination. Be honest and transparent in all dealings.</li>
+                        <li><strong>4. Political Neutrality:</strong> Do not engage in partisan political activities while on duty. Do not use government resources for political campaigns. Serve all citizens regardless of political affiliation.</li>
+                        <li><strong>5. Responsiveness to the Public:</strong> Provide prompt, courteous, and efficient service. Respond to public inquiries and requests. Make government services accessible to all.</li>
+                        <li><strong>6. Nationalism and Patriotism:</strong> Prioritize national interests over personal or sectoral interests. Promote Filipino culture and values. Support national development goals.</li>
+                        <li><strong>7. Commitment to Democracy:</strong> Uphold democratic principles and processes. Respect the rule of law. Support democratic institutions.</li>
+                        <li><strong>8. Simple Living:</strong> Avoid extravagant lifestyle. Live modestly in accordance with income. Do not display wealth ostentatiously. Set a good example for the community.</li>
                     </ul>
                 </div>
+
                 <div class="lesson-subsection">
-                    <h4>SALN REQUIREMENTS</h4>
+                    <h4>SALN (STATEMENT OF ASSETS, LIABILITIES, AND NET WORTH) - COMPLETE RULES</h4>
                     <ul class="lesson-list">
-                        <li>File within 30 days after assumption of office</li>
-                        <li>File every year on or before April 30</li>
-                        <li>File within 30 days after separation from service</li>
-                        <li>Available for public scrutiny</li>
+                        <li><strong>Filing Deadlines:</strong>
+                            <ul>
+                                <li>Within 30 days after assumption of office</li>
+                                <li>On or before April 30 of every year thereafter</li>
+                                <li>Within 30 days after separation from service</li>
+                            </ul>
+                        </li>
+                        <li><strong>Contents:</strong>
+                            <ul>
+                                <li>Real property (land, buildings) - description, location, acquisition cost</li>
+                                <li>Personal property (vehicles, jewelry, appliances, investments)</li>
+                                <li>Liabilities (loans, mortgages, payables)</li>
+                                <li>Business interests and financial connections</li>
+                                <li>Net worth (Assets - Liabilities)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Public Access:</strong> SALN is available for public scrutiny. Any citizen can request to examine SALN of public officials.</li>
+                        <li><strong>Penalties:</strong> Failure to file SALN is grounds for administrative disciplinary action.</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>PROHIBITED ACTS AND PRACTICES</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Receiving Gifts:</strong> Accepting gifts, gratuities, or favors from persons with government transactions</li>
+                        <li><strong>Private Practice:</strong> Engaging in private practice of profession without authority</li>
+                        <li><strong>Confidential Information:</strong> Disclosure or misuse of confidential information</li>
+                        <li><strong>Nepotism:</strong> Appointing relatives within third degree of consanguinity</li>
+                        <li><strong>Discrimination:</strong> Denying service based on gender, religion, ethnicity, or political affiliation</li>
+                        <li><strong>Conflict of Interest:</strong> Participating in transactions where they have personal interest</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>DUTIES OF PUBLIC OFFICIALS</h4>
+                    <ul class="lesson-list">
+                        <li>Act immediately on public concerns</li>
+                        <li>Process documents without delay</li>
+                        <li>Hear parties before making decision</li>
+                        <li>Issue certificates within 15 days</li>
+                        <li>Submit performance reports regularly</li>
+                        <li>Post visible service standards</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Remember:</strong> RA 6713 applies to all public officials and employees, including those in government-owned and controlled corporations (GOCCs) and their subsidiaries.
+                </div>
+            </div>
+        </div>
+
+        <!-- MODULE 3: Human Rights (COMPLETE) -->
+        <div id="lesson-humanrights" class="lesson-module">
+            <div class="lesson-header" onclick="toggleLesson(this)">
+                <span>🕊️ MODULE 3: PEACE AND HUMAN RIGHTS (COMPLETE)</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="lesson-content">
+                <div class="lesson-subsection">
+                    <h4>UNIVERSAL DECLARATION OF HUMAN RIGHTS (UDHR) - 1948</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Adopted:</strong> December 10, 1948 by the UN General Assembly in Paris</li>
+                        <li><strong>Purpose:</strong> First global statement of fundamental human rights to be universally protected</li>
+                        <li><strong>Structure:</strong> 30 articles covering civil, political, economic, social, and cultural rights</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 1rem;">KEY ARTICLES OF UDHR</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Article 1:</strong> All human beings are born free and equal in dignity and rights</li>
+                        <li><strong>Article 2:</strong> Rights without distinction of any kind (race, color, sex, language, religion, etc.)</li>
+                        <li><strong>Article 3:</strong> Right to life, liberty, and security of person</li>
+                        <li><strong>Article 4:</strong> Freedom from slavery and servitude</li>
+                        <li><strong>Article 5:</strong> Freedom from torture and cruel, inhuman or degrading treatment</li>
+                        <li><strong>Article 6:</strong> Right to recognition everywhere as a person before the law</li>
+                        <li><strong>Article 7:</strong> All are equal before the law and entitled to equal protection</li>
+                        <li><strong>Article 8:</strong> Right to effective remedy by competent tribunals</li>
+                        <li><strong>Article 9:</strong> Freedom from arbitrary arrest, detention, or exile</li>
+                        <li><strong>Article 10:</strong> Right to fair public hearing by independent tribunal</li>
+                        <li><strong>Article 11:</strong> Presumption of innocence until proved guilty</li>
+                        <li><strong>Article 12:</strong> Right to privacy, family, home, correspondence, and reputation</li>
+                        <li><strong>Article 13:</strong> Right to freedom of movement and residence</li>
+                        <li><strong>Article 14:</strong> Right to seek asylum from persecution</li>
+                        <li><strong>Article 15:</strong> Right to nationality</li>
+                        <li><strong>Article 16:</strong> Right to marry and found a family</li>
+                        <li><strong>Article 17:</strong> Right to own property</li>
+                        <li><strong>Article 18:</strong> Freedom of thought, conscience, and religion</li>
+                        <li><strong>Article 19:</strong> Freedom of opinion and expression</li>
+                        <li><strong>Article 20:</strong> Right to peaceful assembly and association</li>
+                        <li><strong>Article 21:</strong> Right to participate in government and equal access to public service</li>
+                        <li><strong>Article 22:</strong> Right to social security and economic, social, cultural rights</li>
+                        <li><strong>Article 23:</strong> Right to work, just conditions, equal pay, and form unions</li>
+                        <li><strong>Article 24:</strong> Right to rest and leisure</li>
+                        <li><strong>Article 25:</strong> Right to adequate standard of living (food, clothing, housing, medical care)</li>
+                        <li><strong>Article 26:</strong> Right to education</li>
+                        <li><strong>Article 27:</strong> Right to participate in cultural life</li>
+                        <li><strong>Article 28:</strong> Right to social and international order for these rights</li>
+                        <li><strong>Article 29:</strong> Duties to community and limitations of rights</li>
+                        <li><strong>Article 30:</strong> Rights cannot be used to destroy these rights</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>INTERNATIONAL COVENANTS (1966)</h4>
+                    <ul class="lesson-list">
+                        <li><strong>ICCPR (International Covenant on Civil and Political Rights):</strong>
+                            <ul>
+                                <li>Right to life, freedom from torture, freedom from slavery</li>
+                                <li>Right to liberty and security, fair trial, recognition before law</li>
+                                <li>Freedom of movement, thought, conscience, religion</li>
+                                <li>Freedom of expression, assembly, association</li>
+                                <li>Right to participate in public affairs, minority rights</li>
+                                <li>First Optional Protocol: Individual complaints mechanism</li>
+                            </ul>
+                        </li>
+                        <li><strong>ICESCR (International Covenant on Economic, Social and Cultural Rights):</strong>
+                            <ul>
+                                <li>Right to work, just conditions, form unions</li>
+                                <li>Right to social security, family protection</li>
+                                <li>Right to adequate standard of living (food, clothing, housing)</li>
+                                <li>Right to health, education, participation in cultural life</li>
+                            </ul>
+                        </li>
+                        <li>Both entered into force in 1976</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>PHILIPPINE COMMISSION ON HUMAN RIGHTS (CHR)</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Created:</strong> Under Article XIII, Section 17 of the 1987 Constitution</li>
+                        <li><strong>Composition:</strong> Chairman and 4 Commissioners</li>
+                        <li><strong>Independence:</strong> Independent office, not under any branch of government</li>
+                        <li><strong>Powers and Functions:</strong>
+                            <ul>
+                                <li>Investigate all forms of human rights violations involving civil and political rights</li>
+                                <li>Adopt operational guidelines and rules of procedure</li>
+                                <li>Provide legal aid services to victims of human rights violations</li>
+                                <li>Monitor government compliance with international human rights treaties</li>
+                                <li>Visit prisons and detention centers</li>
+                                <li>Recommend measures to promote human rights</li>
+                                <li>Conduct research and education on human rights</li>
+                            </ul>
+                        </li>
+                        <li><strong>Limitations:</strong> CHR cannot prosecute cases - it recommends to the prosecutor. It has no power to issue arrest warrants.</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>PEACE CONCEPTS AND EDUCATION</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Negative Peace:</strong> Absence of war, armed conflict, or direct violence. The basic concept of peace as "no war."</li>
+                        <li><strong>Positive Peace:</strong> Presence of justice, equality, social harmony, and conditions that eliminate root causes of conflict. Includes economic justice, political participation, cultural respect.</li>
+                        <li><strong>Structural Violence:</strong> Systematic inequalities and injustices embedded in social, political, and economic structures that harm people (poverty, discrimination, lack of access to education/healthcare).</li>
+                        <li><strong>Cultural Violence:</strong> Aspects of culture (religion, ideology, language, art) that justify or legitimize direct or structural violence.</li>
+                        <li><strong>Peace Education:</strong> Teaching and learning processes that promote:
+                            <ul>
+                                <li>Conflict resolution and transformation</li>
+                                <li>Tolerance and respect for diversity</li>
+                                <li>Human rights awareness</li>
+                                <li>Disarmament and non-violence</li>
+                                <li>Environmental sustainability</li>
+                                <li>Global citizenship</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>OTHER HUMAN RIGHTS INSTRUMENTS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>CEDAW:</strong> Convention on Elimination of All Forms of Discrimination Against Women</li>
+                        <li><strong>CRC:</strong> Convention on the Rights of the Child</li>
+                        <li><strong>CAT:</strong> Convention Against Torture</li>
+                        <li><strong>CRPD:</strong> Convention on Rights of Persons with Disabilities</li>
+                        <li><strong>ICERD:</strong> International Convention on Elimination of Racial Discrimination</li>
+                        <li><strong>Geneva Conventions:</strong> International humanitarian law during armed conflict</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Add other lesson modules similarly... (keeping them concise but comprehensive) -->
+        <!-- MODULE 4: Environment (COMPLETE) -->
+        <div id="lesson-environment" class="lesson-module">
+            <div class="lesson-header" onclick="toggleLesson(this)">
+                <span>🌳 MODULE 4: ENVIRONMENTAL LAWS AND PROTECTION (COMPLETE)</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="lesson-content">
+                <div class="lesson-subsection">
+                    <h4>MAJOR ENVIRONMENTAL LAWS - COMPLETE DETAILS</h4>
+                    
+                    <h4 style="margin-top: 1rem;">PD 1586: Environmental Impact Statement (EIS) System (1978)</h4>
+                    <ul class="lesson-list">
+                        <li>Requires Environmental Impact Assessment for projects that significantly affect the environment</li>
+                        <li>Projects classified as Environmentally Critical Projects (ECP) or located in Environmentally Critical Areas (ECA) must secure ECC (Environmental Compliance Certificate)</li>
+                        <li>ECC is issued by DENR-EMB after review of EIS</li>
+                        <li>Purpose: To prevent, minimize, or mitigate adverse environmental impacts</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">RA 8749: Philippine Clean Air Act of 1999</h4>
+                    <ul class="lesson-list">
+                        <li>Comprehensive air quality management program</li>
+                        <li>Sets National Ambient Air Quality Standards (NAAQS) for criteria pollutants</li>
+                        <li>Requires emission standards for vehicles and industries</li>
+                        <li>Mandates regular vehicle emission testing</li>
+                        <li>Prohibits smoking in public places</li>
+                        <li>Establishes Air Quality Management Fund</li>
+                        <li>Promotes use of clean fuels and technologies</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">RA 9003: Ecological Solid Waste Management Act of 2000</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Waste Segregation:</strong> Mandatory segregation at source (biodegradable, recyclable, residual, special)</li>
+                        <li><strong>Collection and Transport:</strong> Separate collection for different waste types</li>
+                        <li><strong>Recycling Program:</strong> Establishment of Materials Recovery Facilities (MRF) in every barangay</li>
+                        <li><strong>Composting:</strong> Promotion of composting of biodegradable waste</li>
+                        <li><strong>Sanitary Landfills:</strong> Closure of open dumpsites, conversion to controlled disposal facilities, establishment of sanitary landfills</li>
+                        <li><strong>LGU Responsibility:</strong> LGUs primarily responsible for solid waste management in their areas</li>
+                        <li><strong>Penalties:</strong> Fines and imprisonment for violations (open burning, littering, improper disposal)</li>
+                        <li><strong>Zero Waste:</strong> Promotion of zero waste lifestyle and circular economy</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">RA 9275: Philippine Clean Water Act of 2004</h4>
+                    <ul class="lesson-list">
+                        <li>Water quality management framework</li>
+                        <li>Designation of Water Quality Management Areas (WQMA)</li>
+                        <li>Requires wastewater treatment for industries and establishments</li>
+                        <li>Prohibits dumping of pollutants into water bodies</li>
+                        <li>Establishes Water Quality Management Fund</li>
+                        <li>Requires Water Quality Permits and Discharge Permits</li>
+                        <li>Empowers LGUs to enforce water quality standards</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">RA 9729: Climate Change Act of 2009</h4>
+                    <ul class="lesson-list">
+                        <li>Mainstream climate change adaptation into government policies</li>
+                        <li>Establishes Climate Change Commission (CCC) as lead policy-making body</li>
+                        <li>Requires Local Climate Change Action Plans (LCCAP)</li>
+                        <li>National Framework Strategy on Climate Change</li>
+                        <li>Prioritizes adaptation and mitigation measures</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">RA 10121: Disaster Risk Reduction and Management Act of 2010</h4>
+                    <ul class="lesson-list">
+                        <li>Comprehensive DRRM framework</li>
+                        <li>Establishes National DRRM Council (NDRRMC)</li>
+                        <li>Requires Local DRRM Plans and Offices (LDRRMO)</li>
+                        <li>Four Thematic Areas: Prevention and Mitigation, Preparedness, Response, Rehabilitation and Recovery</li>
+                        <li>Establishes DRRM Fund (Local and National)</li>
+                        <li>Community-based and inclusive approach</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">OTHER ENVIRONMENTAL LAWS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>RA 9147:</strong> Wildlife Resources Conservation and Protection Act</li>
+                        <li><strong>RA 9175:</strong> Chain Saw Act - regulates ownership and use of chainsaws</li>
+                        <li><strong>RA 7942:</strong> Philippine Mining Act of 1995 - regulates mining operations</li>
+                        <li><strong>RA 7076:</strong> People's Small-Scale Mining Act</li>
+                        <li><strong>RA 7586:</strong> National Integrated Protected Areas System (NIPAS) Act</li>
+                        <li><strong>RA 8550:</strong> Philippine Fisheries Code</li>
+                        <li><strong>RA 8435:</strong> Agriculture and Fisheries Modernization Act</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ENVIRONMENTAL PRINCIPLES AND CONCEPTS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Polluter Pays Principle:</strong> Those who cause pollution or environmental damage should bear the cost of remediation and compensation. Internalize environmental costs.</li>
+                        <li><strong>Precautionary Principle:</strong> Lack of full scientific certainty shall not be used as reason to postpone cost-effective measures to prevent environmental degradation. Better safe than sorry.</li>
+                        <li><strong>Sustainable Development:</strong> Meeting the needs of the present without compromising the ability of future generations to meet their own needs. Three pillars: economic, social, environmental.</li>
+                        <li><strong>Intergenerational Responsibility:</strong> Duty to protect and preserve the environment for future generations. We hold the environment in trust for those who come after us.</li>
+                        <li><strong>Public Trust Doctrine:</strong> Government holds natural resources in trust for the people. Cannot alienate or dispose of them irresponsibly.</li>
+                        <li><strong>Prevention Principle:</strong> Prevention of environmental harm is better than cure. Anticipate and prevent environmental damage.</li>
+                        <li><strong>Environmental Impact Assessment:</strong> Systematic process to evaluate potential environmental impacts before project implementation.</li>
+                        <li><strong>Pollution Prevention:</strong> Reducing or eliminating pollution at source rather than treating after generation.</li>
+                        <li><strong>Waste Hierarchy:</strong> Prevent, Reduce, Reuse, Recycle, Recover, Dispose (in order of priority).</li>
+                        <li><strong>Extended Producer Responsibility:</strong> Producers responsible for entire lifecycle of products including post-consumer stage.</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>KEY AGENCIES</h4>
+                    <ul class="lesson-list">
+                        <li><strong>DENR:</strong> Department of Environment and Natural Resources - primary environment agency</li>
+                        <li><strong>EMB:</strong> Environmental Management Bureau - under DENR, implements environmental laws</li>
+                        <li><strong>CCC:</strong> Climate Change Commission - climate policy</li>
+                        <li><strong>NDRRMC:</strong> National Disaster Risk Reduction and Management Council</li>
+                        <li><strong>LLDA:</strong> Laguna Lake Development Authority - manages Laguna Lake region</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODULE 5: Verbal Ability (COMPLETE) -->
+        <div id="lesson-verbal" class="lesson-module">
+            <div class="lesson-header" onclick="toggleLesson(this)">
+                <span>📝 MODULE 5: VERBAL ABILITY (ENGLISH & FILIPINO) - COMPLETE</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="lesson-content">
+                <div class="lesson-subsection">
+                    <h4>ENGLISH GRAMMAR RULES - COMPREHENSIVE</h4>
+                    
+                    <h4 style="margin-top: 1rem;">SUBJECT-VERB AGREEMENT</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Singular subject takes singular verb:</strong> The student studies. She writes.</li>
+                        <li><strong>Plural subject takes plural verb:</strong> The students study. They write.</li>
+                        <li><strong>Compound subjects joined by AND:</strong> Take plural verb (John and Mary are coming).</li>
+                        <li><strong>Compound subjects joined by OR/NOR:</strong> Verb agrees with nearer subject (Neither the teacher nor the students were present).</li>
+                        <li><strong>Intervening phrases don't affect agreement:</strong> The box of chocolates is (not are) on the table.</li>
+                        <li><strong>Indefinite pronouns (everyone, somebody, each):</strong> Take singular verb (Everyone is invited).</li>
+                        <li><strong>Collective nouns (team, family, committee):</strong> Singular if acting as unit, plural if individuals (The team is winning. The team are arguing among themselves).</li>
+                        <li><strong>Titles and names:</strong> Take singular verb (The Philippines is a country).</li>
+                        <li><strong>Amounts and measurements:</strong> Usually singular (Five pesos is enough).</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">PRONOUN-ANTECEDENT AGREEMENT</h4>
+                    <ul class="lesson-list">
+                        <li>Pronoun must agree with antecedent in number, gender, and person</li>
+                        <li><strong>Singular:</strong> Each student must bring his or her own book.</li>
+                        <li><strong>Plural:</strong> All students must bring their books.</li>
+                        <li><strong>Indefinite pronouns:</strong> Everyone should do his/her best (or their in modern usage).</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">VERB TENSES</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Present:</strong> Action happening now or regularly (I study every day)</li>
+                        <li><strong>Past:</strong> Action already happened (I studied yesterday)</li>
+                        <li><strong>Future:</strong> Action will happen (I will study tomorrow)</li>
+                        <li><strong>Present Perfect:</strong> Action started in past, continues or recently finished (I have studied for three hours)</li>
+                        <li><strong>Past Perfect:</strong> Action completed before another past action (I had studied before the exam started)</li>
+                        <li><strong>Future Perfect:</strong> Action will be completed by a future time (I will have studied by tomorrow)</li>
+                        <li><strong>Present Continuous:</strong> Action happening now (I am studying)</li>
+                        <li><strong>Past Continuous:</strong> Action was happening at a specific past time (I was studying when you called)</li>
+                        <li><strong>Future Continuous:</strong> Action will be happening at a specific future time (I will be studying at 8 PM)</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">ACTIVE AND PASSIVE VOICE</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Active Voice:</strong> Subject performs action (The dog chased the cat)</li>
+                        <li><strong>Passive Voice:</strong> Subject receives action (The cat was chased by the dog)</li>
+                        <li><strong>Use active voice for:</strong> Direct, strong, clear sentences</li>
+                        <li><strong>Use passive voice for:</strong> Emphasizing receiver, unknown doer, scientific writing (The experiment was conducted)</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">MODIFIERS AND DANGLING MODIFIERS</h4>
+                    <ul class="lesson-list">
+                        <li>Place modifiers close to words they modify</li>
+                        <li><strong>Correct:</strong> I saw a dog on the way to school.</li>
+                        <li><strong>Dangling modifier:</strong> Walking to school, the dog was seen. (Who was walking?)</li>
+                        <li><strong>Corrected:</strong> Walking to school, I saw a dog.</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">PARALLEL STRUCTURE</h4>
+                    <ul class="lesson-list">
+                        <li>Use same grammatical form for equal ideas</li>
+                        <li><strong>Not parallel:</strong> She likes reading, to swim, and jogging.</li>
+                        <li><strong>Parallel:</strong> She likes reading, swimming, and jogging.</li>
+                        <li><strong>Parallel:</strong> She likes to read, to swim, and to jog.</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">COMMONLY CONFUSED WORDS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Effect/Affect:</strong> Effect (noun - result), Affect (verb - to influence)</li>
+                        <li><strong>Their/There/They're:</strong> Their (possessive), There (place), They're (they are)</li>
+                        <li><strong>Your/You're:</strong> Your (possessive), You're (you are)</li>
+                        <li><strong>Its/It's:</strong> Its (possessive), It's (it is)</li>
+                        <li><strong>To/Too/Two:</strong> To (preposition), Too (also/excessively), Two (number)</li>
+                        <li><strong>Then/Than:</strong> Then (time), Than (comparison)</li>
+                        <li><strong>Loose/Lose:</strong> Loose (not tight), Lose (mislay, fail to win)</li>
+                        <li><strong>Accept/Except:</strong> Accept (receive), Except (excluding)</li>
+                        <li><strong>Advice/Advise:</strong> Advice (noun), Advise (verb)</li>
+                        <li><strong>Complement/Compliment:</strong> Complement (complete), Compliment (praise)</li>
+                        <li><strong>Principal/Principle:</strong> Principal (head of school, main), Principle (rule, belief)</li>
+                        <li><strong>Stationary/Stationery:</strong> Stationary (not moving), Stationery (writing materials)</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">FILIPINO GRAMMAR - MGA BATAYANG KAALAMAN</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Pang-uri (Adjectives):</strong> Naglalarawan sa pangngalan at panghalip
+                            <ul>
+                                <li>Mga halimbawa: maganda, malaki, mabait, matalino, masipag</li>
+                                <li>Mga kaantasan: lantay (maganda), pahambing (mas maganda), pasukdol (pinakamaganda)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pang-abay (Adverbs):</strong> Naglalarawan sa pandiwa, pang-uri, at kapwa pang-abay
+                            <ul>
+                                <li>Mga halimbawa: mabilis, dahan-dahan, palagi, bukas, dito</li>
+                                <li>Mga uri: pamaraan (paano), panlunan (saan), pamanahon (kailan)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pandiwa (Verbs):</strong> Salitang kilos o galaw
+                            <ul>
+                                <li>Mga halimbawa: tumakbo, kumain, natulog, maglalaro</li>
+                                <li>Mga aspekto: naganap (ontingnan), nagaganap (inatingnan), magaganap (titingnan)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Panghalip (Pronouns):</strong> Pamalit sa pangngalan
+                            <ul>
+                                <li>Panao: ako, ikaw, siya, tayo, kayo, sila</li>
+                                <li>Paari: akin, iyo, kanya, atin, inyo, kanila</li>
+                                <li>Pananong: sino, ano, alin, kanino</li>
+                                <li>Pamatlig: ito, iyan, iyon, dito, diyan, doon</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pang-ukol (Prepositions):</strong> sa, para sa, ayon sa, laban sa, ukol sa</li>
+                        <li><strong>Pangatnig (Conjunctions):</strong> at, pati, saka, o, ni, ngunit, subalit, datapwat, kung, kapag, upang</li>
+                        <li><strong>Pang-angkop (Linkers):</strong> na, -ng, -g</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>PARAGRAPH ORGANIZATION</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Chronological Order:</strong> Events in time sequence (first, next, then, finally)</li>
+                        <li><strong>Spatial Order:</strong> Physical arrangement (left to right, top to bottom, inside to outside)</li>
+                        <li><strong>Order of Importance:</strong> Most to least important or vice versa</li>
+                        <li><strong>Cause and Effect:</strong> Reasons and results (because, therefore, as a result)</li>
+                        <li><strong>Problem-Solution:</strong> Identify problem then propose solution</li>
+                        <li><strong>Compare and Contrast:</strong> Similarities and differences</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>READING COMPREHENSION STRATEGIES</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Main Idea:</strong> What the passage is mostly about</li>
+                        <li><strong>Supporting Details:</strong> Facts that explain or prove main idea</li>
+                        <li><strong>Inference:</strong> Reading between the lines, conclusion not directly stated</li>
+                        <li><strong>Author's Purpose:</strong> Inform, persuade, entertain, describe</li>
+                        <li><strong>Tone and Mood:</strong> Author's attitude, emotional atmosphere</li>
+                        <li><strong>Fact vs Opinion:</strong> Can be verified vs personal belief</li>
+                        <li><strong>Context Clues:</strong> Use surrounding words to understand unfamiliar terms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODULE 6: Numerical Ability (COMPLETE) -->
+        <div id="lesson-numerical" class="lesson-module">
+            <div class="lesson-header" onclick="toggleLesson(this)">
+                <span>🔢 MODULE 6: NUMERICAL ABILITY - COMPLETE</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="lesson-content">
+
+                <!-- BASIC OPERATIONS -->
+                <div class="lesson-subsection">
+                    <h4>BASIC OPERATIONS &amp; ORDER OF OPERATIONS (PEMDAS)</h4>
+                    <div class="formula-box" style="font-family: 'Segoe UI', sans-serif;">
+                        <div style="display:flex; gap:2rem; flex-wrap:wrap; margin-bottom:0.6rem;">
+                            <span><strong>+</strong> Addition</span>
+                            <span><strong>−</strong> Subtraction</span>
+                            <span><strong>×</strong> Multiplication</span>
+                            <span><strong>÷</strong> Division</span>
+                        </div>
+                        <strong>PEMDAS — Order of Operations:</strong><br>
+                        <ol style="margin: 0.4rem 0 0 1.2rem;">
+                            <li><strong>P</strong> — Parentheses / Grouping symbols <span style="color:#888">( )</span></li>
+                            <li><strong>E</strong> — Exponents <span style="color:#888">2<sup>3</sup>, x<sup>n</sup></span></li>
+                            <li><strong>MD</strong> — Multiplication &amp; Division <em>(left → right)</em></li>
+                            <li><strong>AS</strong> — Addition &amp; Subtraction <em>(left → right)</em></li>
+                        </ol>
+                    </div>
+                    <div class="example-box">
+                        <strong>Example:</strong> Solve 3 + 6 × (5 + 4) ÷ 3 − 7<br>
+                        <div class="math-step">Step 1 — Parentheses: 3 + 6 × <strong>9</strong> ÷ 3 − 7</div>
+                        <div class="math-step">Step 2 — Multiply/Divide L→R: 3 + <strong>54</strong> ÷ 3 − 7 → 3 + <strong>18</strong> − 7</div>
+                        <div class="math-step">Step 3 — Add/Subtract L→R: <strong>21</strong> − 7 = <strong>14</strong> ✓</div>
+                    </div>
+                </div>
+
+                <!-- FRACTIONS — NEW SECTION -->
+                <div class="lesson-subsection">
+                    <h4>FRACTIONS — COMPLETE GUIDE</h4>
+
+                    <h4 style="margin-top:1rem;">TYPES OF FRACTIONS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Proper Fraction:</strong> Numerator &lt; Denominator —
+                            <span class="frac"><span class="num">3</span><span class="den">4</span></span>,
+                            <span class="frac"><span class="num">2</span><span class="den">5</span></span>,
+                            <span class="frac"><span class="num">7</span><span class="den">8</span></span>
+                        </li>
+                        <li><strong>Improper Fraction:</strong> Numerator ≥ Denominator —
+                            <span class="frac"><span class="num">7</span><span class="den">4</span></span>,
+                            <span class="frac"><span class="num">9</span><span class="den">5</span></span>,
+                            <span class="frac"><span class="num">11</span><span class="den">3</span></span>
+                        </li>
+                        <li><strong>Mixed Number:</strong> Whole number + proper fraction —
+                            1<span class="frac"><span class="num">3</span><span class="den">4</span></span>,
+                            2<span class="frac"><span class="num">1</span><span class="den">2</span></span>,
+                            5<span class="frac"><span class="num">2</span><span class="den">3</span></span>
+                        </li>
+                        <li><strong>Unit Fraction:</strong> Numerator = 1 —
+                            <span class="frac"><span class="num">1</span><span class="den">2</span></span>,
+                            <span class="frac"><span class="num">1</span><span class="den">3</span></span>,
+                            <span class="frac"><span class="num">1</span><span class="den">4</span></span>
+                        </li>
+                        <li><strong>Equivalent Fractions:</strong> Same value, different form —
+                            <span class="frac"><span class="num">1</span><span class="den">2</span></span> =
+                            <span class="frac"><span class="num">2</span><span class="den">4</span></span> =
+                            <span class="frac"><span class="num">3</span><span class="den">6</span></span> =
+                            <span class="frac"><span class="num">4</span><span class="den">8</span></span>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top:1rem;">SIMPLIFYING (REDUCING) FRACTIONS</h4>
+                    <div class="highlight-box">
+                        Divide numerator and denominator by their <strong>GCF (Greatest Common Factor)</strong>.
+                    </div>
+                    <ul class="lesson-list">
+                        <li>Example: Reduce
+                            <span class="frac"><span class="num">12</span><span class="den">18</span></span>
+                            — GCF of 12 and 18 is <strong>6</strong> →
+                            <span class="frac"><span class="num">12 ÷ 6</span><span class="den">18 ÷ 6</span></span> =
+                            <span class="frac"><span class="num">2</span><span class="den">3</span></span>
+                        </li>
+                        <li>Example: Reduce
+                            <span class="frac"><span class="num">30</span><span class="den">45</span></span>
+                            — GCF = <strong>15</strong> →
+                            <span class="frac"><span class="num">2</span><span class="den">3</span></span>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top:1rem;">CONVERTING: MIXED NUMBER ↔ IMPROPER FRACTION</h4>
+                    <div class="math-grid">
+                        <div class="math-eq">
+                            <div>
+                                <strong>Mixed → Improper:</strong><br>
+                                Multiply whole × denominator, add numerator<br>
+                                2<span class="frac"><span class="num">3</span><span class="den">5</span></span>
+                                = <span class="frac"><span class="num">(2 × 5) + 3</span><span class="den">5</span></span>
+                                = <span class="frac"><span class="num">13</span><span class="den">5</span></span>
+                            </div>
+                        </div>
+                        <div class="math-eq">
+                            <div>
+                                <strong>Improper → Mixed:</strong><br>
+                                Divide numerator by denominator<br>
+                                <span class="frac"><span class="num">17</span><span class="den">4</span></span>
+                                = 17 ÷ 4 = 4 remainder 1
+                                = 4<span class="frac"><span class="num">1</span><span class="den">4</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top:1rem;">ADDITION &amp; SUBTRACTION OF FRACTIONS</h4>
+                    <div class="highlight-box">
+                        <strong>Rule:</strong> Fractions must have the <strong>same denominator (LCD)</strong> before adding or subtracting.
+                    </div>
+                    <ul class="lesson-list">
+                        <li><strong>Same denominator:</strong>
+                            <span class="frac"><span class="num">3</span><span class="den">7</span></span>
+                            + <span class="frac"><span class="num">2</span><span class="den">7</span></span>
+                            = <span class="frac"><span class="num">3 + 2</span><span class="den">7</span></span>
+                            = <span class="frac"><span class="num">5</span><span class="den">7</span></span>
+                        </li>
+                        <li><strong>Different denominators — find LCD:</strong>
+                            <span class="frac"><span class="num">1</span><span class="den">4</span></span>
+                            + <span class="frac"><span class="num">1</span><span class="den">6</span></span>
+                            → LCD = 12 →
+                            <span class="frac"><span class="num">3</span><span class="den">12</span></span>
+                            + <span class="frac"><span class="num">2</span><span class="den">12</span></span>
+                            = <span class="frac"><span class="num">5</span><span class="den">12</span></span>
+                        </li>
+                        <li><strong>Subtraction:</strong>
+                            <span class="frac"><span class="num">3</span><span class="den">4</span></span>
+                            − <span class="frac"><span class="num">1</span><span class="den">6</span></span>
+                            → LCD = 12 →
+                            <span class="frac"><span class="num">9</span><span class="den">12</span></span>
+                            − <span class="frac"><span class="num">2</span><span class="den">12</span></span>
+                            = <span class="frac"><span class="num">7</span><span class="den">12</span></span>
+                        </li>
+                        <li><strong>Mixed numbers:</strong>
+                            2<span class="frac"><span class="num">1</span><span class="den">3</span></span>
+                            + 1<span class="frac"><span class="num">1</span><span class="den">4</span></span>
+                            → LCD = 12 → 2<span class="frac"><span class="num">4</span><span class="den">12</span></span>
+                            + 1<span class="frac"><span class="num">3</span><span class="den">12</span></span>
+                            = 3<span class="frac"><span class="num">7</span><span class="den">12</span></span>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top:1rem;">MULTIPLICATION OF FRACTIONS</h4>
+                    <div class="highlight-box">
+                        <strong>Rule:</strong> Multiply numerator × numerator, denominator × denominator. Simplify if possible.
+                    </div>
+                    <ul class="lesson-list">
+                        <li>
+                            <span class="frac"><span class="num">2</span><span class="den">3</span></span>
+                            × <span class="frac"><span class="num">3</span><span class="den">5</span></span>
+                            = <span class="frac"><span class="num">2 × 3</span><span class="den">3 × 5</span></span>
+                            = <span class="frac"><span class="num">6</span><span class="den">15</span></span>
+                            = <span class="frac"><span class="num">2</span><span class="den">5</span></span>
+                        </li>
+                        <li><strong>Whole number × fraction:</strong>
+                            4 × <span class="frac"><span class="num">3</span><span class="den">8</span></span>
+                            = <span class="frac"><span class="num">4 × 3</span><span class="den">8</span></span>
+                            = <span class="frac"><span class="num">12</span><span class="den">8</span></span>
+                            = <span class="frac"><span class="num">3</span><span class="den">2</span></span>
+                            = 1<span class="frac"><span class="num">1</span><span class="den">2</span></span>
+                        </li>
+                        <li><strong>Mixed numbers — convert first:</strong>
+                            1<span class="frac"><span class="num">1</span><span class="den">2</span></span>
+                            × 2<span class="frac"><span class="num">2</span><span class="den">3</span></span>
+                            = <span class="frac"><span class="num">3</span><span class="den">2</span></span>
+                            × <span class="frac"><span class="num">8</span><span class="den">3</span></span>
+                            = <span class="frac"><span class="num">24</span><span class="den">6</span></span>
+                            = <strong>4</strong>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top:1rem;">DIVISION OF FRACTIONS</h4>
+                    <div class="highlight-box">
+                        <strong>Rule:</strong> Multiply by the <strong>reciprocal</strong> (flip the divisor). KCF: <em>Keep, Change, Flip</em>.
+                    </div>
+                    <ul class="lesson-list">
+                        <li>
+                            <span class="frac"><span class="num">3</span><span class="den">4</span></span>
+                            ÷ <span class="frac"><span class="num">2</span><span class="den">5</span></span>
+                            = <span class="frac"><span class="num">3</span><span class="den">4</span></span>
+                            × <span class="frac"><span class="num">5</span><span class="den">2</span></span>
+                            = <span class="frac"><span class="num">15</span><span class="den">8</span></span>
+                            = 1<span class="frac"><span class="num">7</span><span class="den">8</span></span>
+                        </li>
+                        <li>
+                            6 ÷ <span class="frac"><span class="num">3</span><span class="den">4</span></span>
+                            = <span class="frac"><span class="num">6</span><span class="den">1</span></span>
+                            × <span class="frac"><span class="num">4</span><span class="den">3</span></span>
+                            = <span class="frac"><span class="num">24</span><span class="den">3</span></span>
+                            = <strong>8</strong>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top:1rem;">COMPARING FRACTIONS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Same denominator:</strong> Compare numerators directly —
+                            <span class="frac"><span class="num">5</span><span class="den">8</span></span>
+                            &gt; <span class="frac"><span class="num">3</span><span class="den">8</span></span>
+                        </li>
+                        <li><strong>Different denominators:</strong> Convert to LCD, then compare —
+                            <span class="frac"><span class="num">3</span><span class="den">4</span></span>
+                            vs <span class="frac"><span class="num">5</span><span class="den">6</span></span>
+                            → LCD=12 →
+                            <span class="frac"><span class="num">9</span><span class="den">12</span></span>
+                            vs <span class="frac"><span class="num">10</span><span class="den">12</span></span>
+                            → <span class="frac"><span class="num">5</span><span class="den">6</span></span> is larger
+                        </li>
+                        <li><strong>Cross-multiply method:</strong>
+                            <span class="frac"><span class="num">2</span><span class="den">3</span></span>
+                            vs <span class="frac"><span class="num">3</span><span class="den">5</span></span>
+                            → 2×5=10 vs 3×3=9 → 10&gt;9 →
+                            <span class="frac"><span class="num">2</span><span class="den">3</span></span>
+                            is larger
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top:1rem;">FRACTION OF A NUMBER (FINDING PARTS)</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Formula:</strong>
+                            Part = <span class="frac"><span class="num">a</span><span class="den">b</span></span> × Whole
+                        </li>
+                        <li>Example: <span class="frac"><span class="num">3</span><span class="den">4</span></span> of 80 = <span class="frac"><span class="num">3</span><span class="den">4</span></span> × 80 = 60</li>
+                        <li>Example: <span class="frac"><span class="num">2</span><span class="den">5</span></span> of 150 = <span class="frac"><span class="num">2</span><span class="den">5</span></span> × 150 = 60</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <strong>Word Problem Example:</strong> A container holds 24 liters. If <span class="frac"><span class="num">3</span><span class="den">8</span></span> is already used, how many liters remain?<br>
+                        <div class="math-step">Used = <span class="frac"><span class="num">3</span><span class="den">8</span></span> × 24 = 9 liters</div>
+                        <div class="math-step">Remaining = 24 − 9 = <strong>15 liters</strong></div>
+                    </div>
+                </div>
+
+                <!-- PERCENTAGES -->
+                <div class="lesson-subsection">
+                    <h4>PERCENTAGES — COMPLETE GUIDE</h4>
+                    <div class="math-grid">
+                        <div class="math-eq">
+                            <div>
+                                <strong>Percentage</strong><br>
+                                = <span class="frac"><span class="num">Part</span><span class="den">Whole</span></span> × 100%
+                            </div>
+                        </div>
+                        <div class="math-eq">
+                            <div>
+                                <strong>Finding the Part</strong><br>
+                                Part = <span class="frac"><span class="num">% × Whole</span><span class="den">100</span></span>
+                            </div>
+                        </div>
+                        <div class="math-eq">
+                            <div>
+                                <strong>Finding the Whole</strong><br>
+                                Whole = <span class="frac"><span class="num">Part × 100</span><span class="den">%</span></span>
+                            </div>
+                        </div>
+                        <div class="math-eq">
+                            <div>
+                                <strong>% Increase</strong><br>
+                                = <span class="frac"><span class="num">New − Original</span><span class="den">Original</span></span> × 100%
+                            </div>
+                        </div>
+                        <div class="math-eq">
+                            <div>
+                                <strong>% Decrease</strong><br>
+                                = <span class="frac"><span class="num">Original − New</span><span class="den">Original</span></span> × 100%
+                            </div>
+                        </div>
+                        <div class="math-eq">
+                            <div>
+                                <strong>Discount Amount</strong><br>
+                                = Original Price × <span class="frac"><span class="num">Rate</span><span class="den">100</span></span>
+                            </div>
+                        </div>
+                        <div class="math-eq">
+                            <div>
+                                <strong>Simple Interest</strong><br>
+                                <em>I</em> = <em>P</em> × <em>R</em> × <em>T</em>&nbsp;&nbsp;|&nbsp;&nbsp;<em>A</em> = <em>P</em> + <em>I</em>
+                            </div>
+                        </div>
+                        <div class="math-eq">
+                            <div>
+                                <strong>Compound Interest</strong><br>
+                                <em>A</em> = <em>P</em>(1 + <span class="frac"><span class="num">r</span><span class="den">n</span></span>)<sup>nt</sup>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top:1rem;">FRACTION ↔ DECIMAL ↔ PERCENT CONVERSION</h4>
+                    <div class="formula-box" style="font-family:'Segoe UI',sans-serif;">
+                        <table style="width:100%; border-collapse:collapse; text-align:center;">
+                            <thead>
+                                <tr style="background:#c7d6f5;">
+                                    <th style="padding:6px; border:1px solid #b0c4de;">Fraction</th>
+                                    <th style="padding:6px; border:1px solid #b0c4de;">Decimal</th>
+                                    <th style="padding:6px; border:1px solid #b0c4de;">Percent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td style="border:1px solid #ccc; padding:5px;"><span class="frac"><span class="num">1</span><span class="den">2</span></span></td><td style="border:1px solid #ccc; padding:5px;">0.5</td><td style="border:1px solid #ccc; padding:5px;">50%</td></tr>
+                                <tr style="background:#f5f7ff;"><td style="border:1px solid #ccc; padding:5px;"><span class="frac"><span class="num">1</span><span class="den">4</span></span></td><td style="border:1px solid #ccc; padding:5px;">0.25</td><td style="border:1px solid #ccc; padding:5px;">25%</td></tr>
+                                <tr><td style="border:1px solid #ccc; padding:5px;"><span class="frac"><span class="num">3</span><span class="den">4</span></span></td><td style="border:1px solid #ccc; padding:5px;">0.75</td><td style="border:1px solid #ccc; padding:5px;">75%</td></tr>
+                                <tr style="background:#f5f7ff;"><td style="border:1px solid #ccc; padding:5px;"><span class="frac"><span class="num">1</span><span class="den">5</span></span></td><td style="border:1px solid #ccc; padding:5px;">0.2</td><td style="border:1px solid #ccc; padding:5px;">20%</td></tr>
+                                <tr><td style="border:1px solid #ccc; padding:5px;"><span class="frac"><span class="num">2</span><span class="den">5</span></span></td><td style="border:1px solid #ccc; padding:5px;">0.4</td><td style="border:1px solid #ccc; padding:5px;">40%</td></tr>
+                                <tr style="background:#f5f7ff;"><td style="border:1px solid #ccc; padding:5px;"><span class="frac"><span class="num">1</span><span class="den">3</span></span></td><td style="border:1px solid #ccc; padding:5px;">0.333…</td><td style="border:1px solid #ccc; padding:5px;">33.3%</td></tr>
+                                <tr><td style="border:1px solid #ccc; padding:5px;"><span class="frac"><span class="num">2</span><span class="den">3</span></span></td><td style="border:1px solid #ccc; padding:5px;">0.666…</td><td style="border:1px solid #ccc; padding:5px;">66.7%</td></tr>
+                                <tr style="background:#f5f7ff;"><td style="border:1px solid #ccc; padding:5px;"><span class="frac"><span class="num">1</span><span class="den">8</span></span></td><td style="border:1px solid #ccc; padding:5px;">0.125</td><td style="border:1px solid #ccc; padding:5px;">12.5%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- NUMBER SEQUENCES -->
+                <div class="lesson-subsection">
+                    <h4>NUMBER SEQUENCES AND PATTERNS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Arithmetic Sequence</strong> — constant difference <em>d</em>:
+                            <ul>
+                                <li>Example: 2, 5, 8, 11, 14… &nbsp;(<em>d</em> = 3)</li>
+                                <li class="math-row">Formula: <span class="math-eq"><em>a</em><sub>n</sub> = <em>a</em><sub>1</sub> + (n − 1)<em>d</em></span></li>
+                            </ul>
+                        </li>
+                        <li><strong>Geometric Sequence</strong> — constant ratio <em>r</em>:
+                            <ul>
+                                <li>Example: 3, 6, 12, 24, 48… &nbsp;(<em>r</em> = 2)</li>
+                                <li class="math-row">Formula: <span class="math-eq"><em>a</em><sub>n</sub> = <em>a</em><sub>1</sub> × <em>r</em><sup>n−1</sup></span></li>
+                            </ul>
+                        </li>
+                        <li><strong>Fibonacci Sequence</strong> — each term = sum of previous two:
+                            1, 1, 2, 3, 5, 8, 13, 21, 34…</li>
+                        <li><strong>Square Numbers:</strong> 1², 2², 3²… → 1, 4, 9, 16, 25, 36, 49, 64, 81, 100</li>
+                        <li><strong>Cube Numbers:</strong> 1³, 2³, 3³… → 1, 8, 27, 64, 125, 216</li>
+                        <li><strong>Prime Numbers:</strong> 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31…</li>
+                        <li><strong>Perfect Numbers:</strong> Sum of proper divisors = number → 6, 28, 496</li>
+                    </ul>
+                </div>
+
+                <!-- WORD PROBLEMS -->
+                <div class="lesson-subsection">
+                    <h4>WORD PROBLEMS — FORMULAS AND APPROACHES</h4>
+
+                    <h4 style="margin-top:1rem;">WORK PROBLEMS</h4>
+                    <div class="math-grid">
+                        <div class="math-eq">
+                            <div>
+                                <strong>Combined rate (2 workers):</strong><br>
+                                <span class="frac"><span class="num">1</span><span class="den">T</span></span>
+                                =
+                                <span class="frac"><span class="num">1</span><span class="den">A</span></span>
+                                +
+                                <span class="frac"><span class="num">1</span><span class="den">B</span></span>
+                            </div>
+                        </div>
+                        <div class="math-eq">
+                            <div>
+                                <strong>Shortcut:</strong><br>
+                                T = <span class="frac"><span class="num">A × B</span><span class="den">A + B</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="example-box">
+                        A does job in 4 days, B in 6 days:
+                        T = <span class="frac"><span class="num">4 × 6</span><span class="den">4 + 6</span></span> =
+                        <span class="frac"><span class="num">24</span><span class="den">10</span></span> = <strong>2.4 days</strong>
+                    </div>
+
+                    <h4 style="margin-top:1rem;">DISTANCE, SPEED, TIME</h4>
+                    <div class="math-grid">
+                        <div class="math-eq"><strong>D</strong> = S × T</div>
+                        <div class="math-eq">S = <span class="frac"><span class="num">D</span><span class="den">T</span></span></div>
+                        <div class="math-eq">T = <span class="frac"><span class="num">D</span><span class="den">S</span></span></div>
+                        <div class="math-eq">Avg Speed = <span class="frac"><span class="num">Total Distance</span><span class="den">Total Time</span></span></div>
+                        <div class="math-eq"><strong>Relative Speed (same dir):</strong> S₁ − S₂</div>
+                        <div class="math-eq"><strong>Relative Speed (opposite):</strong> S₁ + S₂</div>
+                    </div>
+
+                    <h4 style="margin-top:1rem;">AVERAGE (MEAN)</h4>
+                    <div class="math-grid">
+                        <div class="math-eq">
+                            Average = <span class="frac"><span class="num">Sum of all terms</span><span class="den">Number of terms</span></span>
+                        </div>
+                        <div class="math-eq">
+                            Weighted Avg = <span class="frac"><span class="num">w₁x₁ + w₂x₂</span><span class="den">w₁ + w₂</span></span>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top:1rem;">RATIO AND PROPORTION</h4>
+                    <ul class="lesson-list">
+                        <li>
+                            <span class="math-eq"><em>a</em> : <em>b</em> = <em>c</em> : <em>d</em>&nbsp;&nbsp;→&nbsp;&nbsp;<em>a</em> × <em>d</em> = <em>b</em> × <em>c</em></span>
+                        </li>
+                        <li><strong>Direct Proportion:</strong> y = kx &nbsp;(x↑, y↑)</li>
+                        <li><strong>Inverse Proportion:</strong>
+                            y = <span class="frac"><span class="num">k</span><span class="den">x</span></span>
+                            &nbsp;(x↑, y↓)
+                        </li>
+                        <li><strong>Partitive Proportion:</strong> Divide a whole according to given ratios</li>
+                    </ul>
+
+                    <h4 style="margin-top:1rem;">AGE PROBLEMS</h4>
+                    <ul class="lesson-list">
+                        <li>Let <em>x</em> = current age</li>
+                        <li>Age <em>n</em> years ago = <em>x</em> − <em>n</em></li>
+                        <li>Age <em>n</em> years from now = <em>x</em> + <em>n</em></li>
+                        <li>Set up equation from the given relationship and solve</li>
+                    </ul>
+
+                    <h4 style="margin-top:1rem;">MIXTURE PROBLEMS</h4>
+                    <div class="math-eq" style="display:block;">
+                        (Q<sub>1</sub> × C<sub>1</sub>) + (Q<sub>2</sub> × C<sub>2</sub>) = Q<sub>total</sub> × C<sub>total</sub><br>
+                        <small>Where Q = quantity, C = concentration or price per unit</small>
+                    </div>
+
+                    <h4 style="margin-top:1rem;">GEOMETRY FORMULAS</h4>
+                    <div class="math-grid">
+                        <div class="math-eq"><div><strong>Square</strong><br>Area = s²&nbsp;&nbsp;|&nbsp;&nbsp;Perimeter = 4s</div></div>
+                        <div class="math-eq"><div><strong>Rectangle</strong><br>Area = <em>l</em> × <em>w</em>&nbsp;&nbsp;|&nbsp;&nbsp;Perimeter = 2(<em>l</em> + <em>w</em>)</div></div>
+                        <div class="math-eq"><div><strong>Triangle</strong><br>Area = <span class="frac"><span class="num">b × h</span><span class="den">2</span></span></div></div>
+                        <div class="math-eq"><div><strong>Circle</strong><br>Area = πr²&nbsp;&nbsp;|&nbsp;&nbsp;Circumference = 2πr</div></div>
+                        <div class="math-eq"><div><strong>Cube</strong><br>Volume = s³&nbsp;&nbsp;|&nbsp;&nbsp;Surface Area = 6s²</div></div>
+                        <div class="math-eq"><div><strong>Rectangular Prism</strong><br>Volume = <em>l</em> × <em>w</em> × <em>h</em></div></div>
+                        <div class="math-eq"><div><strong>Cylinder</strong><br>Volume = πr²h</div></div>
+                        <div class="math-eq"><div><strong>Pythagorean Theorem</strong><br>c² = a² + b²</div></div>
+                    </div>
+
+                    <h4 style="margin-top:1rem;">NUMBER PROPERTIES</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Even:</strong> Divisible by 2 → 2, 4, 6, 8…</li>
+                        <li><strong>Odd:</strong> Not divisible by 2 → 1, 3, 5, 7…</li>
+                        <li><strong>Consecutive integers:</strong> n, n+1, n+2…</li>
+                        <li><strong>Consecutive even/odd:</strong> n, n+2, n+4…</li>
+                        <li class="math-row"><strong>Sum of first n natural numbers:</strong>
+                            <span class="math-eq"><span class="frac"><span class="num">n(n+1)</span><span class="den">2</span></span></span>
+                        </li>
+                        <li><strong>Sum of first n even numbers:</strong> n(n+1)</li>
+                        <li><strong>Sum of first n odd numbers:</strong> n²</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <strong>Practice:</strong> If 3 workers finish a job in 8 days, how many days will 4 workers take?<br>
+                    <div class="math-step">Total work = 3 × 8 = 24 worker-days</div>
+                    <div class="math-step">Time for 4 workers = <span class="frac"><span class="num">24</span><span class="den">4</span></span> = <strong>6 days</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODULE 7: Analytical Ability (COMPLETE) -->
+        <div id="lesson-analytical" class="lesson-module">
+            <div class="lesson-header" onclick="toggleLesson(this)">
+                <span>🧠 MODULE 7: ANALYTICAL ABILITY (PROFESSIONAL) - COMPLETE</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="lesson-content">
+                <div class="lesson-subsection">
+                    <h4>WORD ANALOGY - TYPES WITH EXAMPLES</h4>
+                    
+                    <h4 style="margin-top: 1rem;">1. SYNONYM (Same Meaning)</h4>
+                    <ul class="lesson-list">
+                        <li>Happy : Joyful :: Sad : Gloomy</li>
+                        <li>Big : Large :: Small : Tiny</li>
+                        <li>Fast : Quick :: Slow : Leisurely</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">2. ANTONYM (Opposite Meaning)</h4>
+                    <ul class="lesson-list">
+                        <li>Hot : Cold :: Light : Dark</li>
+                        <li>Rich : Poor :: Tall : Short</li>
+                        <li>Increase : Decrease :: Gain : Loss</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">3. PART-WHOLE (Component of)</h4>
+                    <ul class="lesson-list">
+                        <li>Chapter : Book :: Room : House</li>
+                        <li>Wheel : Car :: Leaf : Tree</li>
+                        <li>Finger : Hand :: Toe : Foot</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">4. CAUSE-EFFECT (Reason and Result)</h4>
+                    <ul class="lesson-list">
+                        <li>Study : Learn :: Practice : Improve</li>
+                        <li>Rain : Flood :: Fire : Smoke</li>
+                        <li>Exercise : Health :: Eat : Nourishment</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">5. FUNCTION (Purpose or Use)</h4>
+                    <ul class="lesson-list">
+                        <li>Teacher : Teach :: Doctor : Heal</li>
+                        <li>Pen : Write :: Knife : Cut</li>
+                        <li>Car : Transport :: Refrigerator : Preserve</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">6. DEGREE or INTENSITY</h4>
+                    <ul class="lesson-list">
+                        <li>Warm : Hot :: Cool : Cold</li>
+                        <li>Happy : Ecstatic :: Sad : Depressed</li>
+                        <li>Like : Love :: Dislike : Hate</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">7. CLASSIFICATION (Category membership)</h4>
+                    <ul class="lesson-list">
+                        <li>Dog : Mammal :: Eagle : Bird</li>
+                        <li>Rose : Flower :: Pine : Tree</li>
+                        <li>Car : Vehicle :: Bicycle : Vehicle</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">8. TOOL-USER</h4>
+                    <ul class="lesson-list">
+                        <li>Hammer : Carpenter :: Scalpel : Surgeon</li>
+                        <li>Brush : Painter :: Pen : Writer</li>
+                        <li>Stethoscope : Doctor :: Gavel : Judge</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">9. CHARACTERISTIC or QUALITY</h4>
+                    <ul class="lesson-list">
+                        <li>Ice : Cold :: Fire : Hot</li>
+                        <li>Gold : Yellow :: Sky : Blue</li>
+                        <li>Lion : Brave :: Fox : Cunning</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">10. PRODUCT and SOURCE</h4>
+                    <ul class="lesson-list">
+                        <li>Paper : Tree :: Milk : Cow</li>
+                        <li>Wine : Grapes :: Juice : Fruit</li>
+                        <li>Flour : Wheat :: Sugar : Cane</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>LOGICAL REASONING - COMPLETE GUIDE</h4>
+                    
+                    <h4 style="margin-top: 1rem;">DEDUCTIVE REASONING</h4>
+                    <ul class="lesson-list">
+                        <li>Moves from general to specific</li>
+                        <li><strong>Syllogism:</strong> 
+                            <ul>
+                                <li>Major premise: All men are mortal</li>
+                                <li>Minor premise: Socrates is a man</li>
+                                <li>Conclusion: Therefore, Socrates is mortal</li>
+                            </ul>
+                        </li>
+                        <li>If premises are true, conclusion must be true</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">INDUCTIVE REASONING</h4>
+                    <ul class="lesson-list">
+                        <li>Moves from specific to general</li>
+                        <li>Example: The sun rose today, yesterday, always → sun always rises</li>
+                        <li>Conclusion is probable, not certain</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">CONDITIONAL STATEMENTS (If-Then)</h4>
+                    <ul class="lesson-list">
+                        <li><strong>If p, then q</strong> (p → q)</li>
+                        <li><strong>Converse:</strong> If q, then p (not necessarily true)</li>
+                        <li><strong>Inverse:</strong> If not p, then not q (not necessarily true)</li>
+                        <li><strong>Contrapositive:</strong> If not q, then not p (always true)</li>
+                        <li>Example: If it rains (p), ground gets wet (q)
+                            <ul>
+                                <li>Converse: If ground wet, it rained? (False - could be hose)</li>
+                                <li>Contrapositive: If ground not wet, it did not rain (True)</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">LOGICAL FALLACIES</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Ad Hominem:</strong> Attacking person instead of argument</li>
+                        <li><strong>Straw Man:</strong> Misrepresenting argument to attack it</li>
+                        <li><strong>False Cause:</strong> Assuming correlation means causation</li>
+                        <li><strong>Hasty Generalization:</strong> Conclusion from insufficient evidence</li>
+                        <li><strong>Circular Reasoning:</strong> Premise assumes conclusion</li>
+                        <li><strong>Appeal to Authority:</strong> Using authority in irrelevant field</li>
+                        <li><strong>False Dilemma:</strong> Presenting only two options when more exist</li>
+                        <li><strong>Slippery Slope:</strong> One step leads inevitably to extreme outcome</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>ASSUMPTIONS AND CONCLUSIONS</h4>
+                    
+                    <h4 style="margin-top: 1rem;">IDENTIFYING ASSUMPTIONS</h4>
+                    <ul class="lesson-list">
+                        <li>Assumption: Unstated premise that must be true for argument to hold</li>
+                        <li><strong>Example:</strong> "She graduated with honors, so she is intelligent."
+                            <ul>
+                                <li>Assumption: Honors graduates are intelligent</li>
+                                <li>Without this, argument fails</li>
+                            </ul>
+                        </li>
+                        <li><strong>Example:</strong> "He's a lawyer, so he must be rich."
+                            <ul>
+                                <li>Assumption: All lawyers are rich</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">DRAWING CONCLUSIONS</h4>
+                    <ul class="lesson-list">
+                        <li>Conclusion: Main point or inference from premises</li>
+                        <li><strong>Example:</strong> All mammals have lungs. Whales are mammals. Therefore, whales have lungs.</li>
+                        <li><strong>Example:</strong> If it rains, event cancels. It rained. Therefore, event cancelled.</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">STRENGTHENING AND WEAKENING ARGUMENTS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Strengthen:</strong> Provide evidence supporting conclusion</li>
+                        <li><strong>Weaken:</strong> Provide evidence contradicting assumption or link</li>
+                        <li><strong>Example:</strong> "Studying improves grades." 
+                            <ul>
+                                <li>Strengthen: Students who study more have higher grades</li>
+                                <li>Weaken: Some students who study get low grades</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">NECESSARY VS SUFFICIENT CONDITIONS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Necessary:</strong> Must be present for outcome (but alone not enough)</li>
+                        <li><strong>Sufficient:</strong> Guarantees outcome (may not be necessary)</li>
+                        <li><strong>Example:</strong> To be a lawyer:
+                            <ul>
+                                <li>Necessary: Pass bar exam</li>
+                                <li>Sufficient: Graduate law, pass bar, take oath, etc.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>DATA INTERPRETATION</h4>
+                    
+                    <h4 style="margin-top: 1rem;">TABLES</h4>
+                    <ul class="lesson-list">
+                        <li>Read rows and columns carefully</li>
+                        <li>Identify patterns and relationships</li>
+                        <li>Calculate percentages, ratios, differences</li>
+                        <li>Compare categories and time periods</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">GRAPHS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Bar Graph:</strong> Compare quantities across categories</li>
+                        <li><strong>Line Graph:</strong> Show trends over time</li>
+                        <li><strong>Pie Chart:</strong> Show proportions or percentages</li>
+                        <li><strong>Scatter Plot:</strong> Show relationship between variables</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">STATISTICAL MEASURES</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Mean (Average):</strong> Sum ÷ Count</li>
+                        <li><strong>Median:</strong> Middle value when arranged in order</li>
+                        <li><strong>Mode:</strong> Most frequent value</li>
+                        <li><strong>Range:</strong> Highest - Lowest</li>
+                        <li><strong>Percentile:</strong> Value below which given percentage falls</li>
+                        <li><strong>Quartile:</strong> Divide data into 4 equal parts</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">TREND ANALYSIS</h4>
+                    <ul class="lesson-list">
+                        <li>Increase, decrease, fluctuate, stabilize</li>
+                        <li>Rate of change = (Change/Original) × 100%</li>
+                        <li>Projections: Extrapolate based on pattern</li>
+                        <li>Correlation: Relationship between variables</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODULE 8: Clerical Ability (COMPLETE) -->
+        <div id="lesson-clerical" class="lesson-module">
+            <div class="lesson-header" onclick="toggleLesson(this)">
+                <span>📂 MODULE 8: CLERICAL ABILITY (SUBPROFESSIONAL) - COMPLETE</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="lesson-content">
+                <div class="lesson-subsection">
+                    <h4>FILING RULES - COMPREHENSIVE</h4>
+                    
+                    <h4 style="margin-top: 1rem;">BASIC ALPHABETICAL FILING</h4>
+                    <ul class="lesson-list">
+                        <li>Compare word by word, then letter by letter</li>
+                        <li>"Nothing comes before something" - shorter name comes first if same beginning</li>
+                        <li>Example: Smith comes before Smithson</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">NAMES WITH TITLES</h4>
+                    <ul class="lesson-list">
+                        <li>Ignore titles (Mr., Mrs., Dr., Prof.) when filing</li>
+                        <li>File by last name, then first name</li>
+                        <li><strong>Example:</strong> Dr. Jose Rizal → File as: Rizal, Jose</li>
+                        <li><strong>Example:</strong> Mr. Juan Dela Cruz → File as: Dela Cruz, Juan</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">NAMES WITH PREFIXES (Mc, Mac, O', D', etc.)</h4>
+                    <ul class="lesson-list">
+                        <li>File as spelled (McDonald, MacDonald are different)</li>
+                        <li>Mc and Mac are considered as part of the name, not separate</li>
+                        <li><strong>Order:</strong> Mac comes before Mc? Actually file letter by letter:
+                            <ul>
+                                <li>MacDonald</li>
+                                <li>Macario</li>
+                                <li>McDonald</li>
+                                <li>McKinley</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">NAMES WITH "ST." OR "SAINT"</h4>
+                    <ul class="lesson-list">
+                        <li>File "St." as if spelled "Saint"</li>
+                        <li><strong>Example:</strong> St. Paul → File as: Saint Paul</li>
+                        <li><strong>Example:</strong> St. Peter → File as: Saint Peter</li>
+                        <li>Order: Saint Peter comes before Saint Paul (Peter vs Paul)</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">NAMES WITH NUMBERS</h4>
+                    <ul class="lesson-list">
+                        <li>File numbers as if spelled out</li>
+                        <li><strong>Example:</strong> 10th Avenue → File as: Tenth Avenue</li>
+                        <li><strong>Example:</strong> 1st Street → File as: First Street</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">GOVERNMENT AGENCIES AND ORGANIZATIONS</h4>
+                    <ul class="lesson-list">
+                        <li>File under the most distinctive word</li>
+                        <li><strong>Example:</strong> Department of Education → File under: Education</li>
+                        <li><strong>Example:</strong> Commission on Human Rights → File under: Human Rights</li>
+                        <li><strong>Example:</strong> University of the Philippines → File under: Philippines, University</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">COMPANY NAMES</h4>
+                    <ul class="lesson-list">
+                        <li>File as written, ignoring "The", "A", "An" at beginning</li>
+                        <li><strong>Example:</strong> The Manila Times → File as: Manila Times</li>
+                        <li><strong>Example:</strong> A1 Services → File as: A1 Services</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">HYPHENATED NAMES</h4>
+                    <ul class="lesson-list">
+                        <li>Consider hyphenated names as one unit</li>
+                        <li><strong>Example:</strong> Maria Santos-Diaz → File as: Santos-Diaz, Maria</li>
+                        <li><strong>Example:</strong> Jose Reyes-Cruz → File as: Reyes-Cruz, Jose</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">FILING ORDER EXAMPLES</h4>
+                    <div class="formula-box">
+                        Correct order:<br>
+                        1. Dela Cruz, Juan<br>
+                        2. Dela Cruz, Maria<br>
+                        3. Delos Reyes, Pedro<br>
+                        4. Macapagal, Gloria<br>
+                        5. MacDonald, John<br>
+                        6. McKinley, William<br>
+                        7. Rizal, Jose<br>
+                        8. Saint Peter<br>
+                        9. Santos, Maria<br>
+                        10. Santos-Diaz, Maria
+                    </div>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>SPELLING RULES AND COMMON ERRORS</h4>
+                    
+                    <h4 style="margin-top: 1rem;">I BEFORE E RULE</h4>
+                    <ul class="lesson-list">
+                        <li>"I before E except after C, or when sounding like A as in neighbor and weigh"</li>
+                        <li><strong>Examples:</strong> believe, relief, receive (after c), deceive (after c)</li>
+                        <li><strong>Exceptions:</strong> weird, seize, either, neither, leisure</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">DOUBLE CONSONANTS</h4>
+                    <ul class="lesson-list">
+                        <li><strong>Common words with double consonants:</strong>
+                            <ul>
+                                <li>accommodate (2 c's, 2 m's)</li>
+                                <li>committee (2 m's, 2 t's, 2 e's?) actually: committee</li>
+                                <li>necessary (1 c, 2 s's)</li>
+                                <li>occurrence (2 c's, 2 r's)</li>
+                                <li>embarrass (2 r's, 2 s's)</li>
+                                <li>millennium (2 l's, 2 n's)</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">SILENT LETTERS</h4>
+                    <ul class="lesson-list">
+                        <li>psychology (silent p)</li>
+                        <li>pneumonia (silent p)</li>
+                        <li>receipt (silent p)</li>
+                        <li>doubt (silent b)</li>
+                        <li>debt (silent b)</li>
+                        <li>island (silent s)</li>
+                        <li>aisle (silent a? actually silent s)</li>
+                        <li>knee (silent k)</li>
+                        <li>write (silent w)</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">-ABLE VS -IBLE</h4>
+                    <ul class="lesson-list">
+                        <li><strong>-able:</strong> acceptable, available, comfortable, valuable, reliable</li>
+                        <li><strong>-ible:</strong> possible, visible, terrible, incredible, responsible</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">-ANCE VS -ENCE</h4>
+                    <ul class="lesson-list">
+                        <li><strong>-ance:</strong> attendance, importance, performance, acceptance</li>
+                        <li><strong>-ence:</strong> existence, dependence, confidence, difference</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1rem;">COMMONLY MISSPELLED WORDS - MASTER LIST</h4>
+                    <ul class="lesson-list">
+                        <li><strong>accommodate</strong> (not accomodate)</li>
+                        <li><strong>embarrass</strong> (not embarass)</li>
+                        <li><strong>millennium</strong> (not millenium)</li>
+                        <li><strong>publicly</strong> (not publically)</li>
+                        <li><strong>receive</strong> (not recieve)</li>
+                        <li><strong>separate</strong> (not seperate)</li>
+                        <li><strong>privilege</strong> (not privelege)</li>
+                        <li><strong>occurrence</strong> (not occurence)</li>
+                        <li><strong>necessary</strong> (not neccessary)</li>
+                        <li><strong>weird</strong> (not wierd)</li>
+                        <li><strong>achieve</strong> (not acheive)</li>
+                        <li><strong>belief</strong> (not beleif)</li>
+                        <li><strong>calendar</strong> (not calender)</li>
+                        <li><strong>category</strong> (not catagory)</li>
+                        <li><strong>definitely</strong> (not definately)</li>
+                        <li><strong>disappear</strong> (not dissappear)</li>
+                        <li><strong>environment</strong> (not enviroment)</li>
+                        <li><strong>government</strong> (not goverment)</li>
+                        <li><strong>independent</strong> (not independant)</li>
+                        <li><strong>maintenance</strong> (not maintainance)</li>
+                        <li><strong>noticeable</strong> (not noticable)</li>
+                        <li><strong>occasion</strong> (not occassion)</li>
+                        <li><strong>possession</strong> (not posession)</li>
+                        <li><strong>recommend</strong> (not recomend)</li>
+                        <li><strong>referred</strong> (not refered)</li>
+                        <li><strong>rhythm</strong> (not rythm)</li>
+                        <li><strong>schedule</strong> (not shedule)</li>
+                        <li><strong>successful</strong> (not succesful)</li>
+                        <li><strong>tomorrow</strong> (not tommorow)</li>
+                        <li><strong>unfortunately</strong> (not unfortunatly)</li>
+                        <li><strong>vacuum</strong> (not vaccuum)</li>
+                        <li><strong>weird</strong> (not wierd)</li>
+                        <li><strong>writing</strong> (not writting)</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-subsection">
+                    <h4>FILING AND SPELLING TIPS</h4>
+                    <ul class="lesson-list">
+                        <li>When in doubt, break the word into parts</li>
+                        <li>Use memory tricks: "There is a rat in separate" (separate)</li>
+                        <li>Remember: "I before E except after C" but note exceptions</li>
+                        <li>For filing, always think: "Last name first, then first name"</li>
+                        <li>Ignore titles unless two names are identical</li>
+                        <li>Practice with real names and words regularly</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Pro Tip:</strong> In filing, always consider the whole name. "McDonald" and "MacDonald" are filed as they appear, not grouped together. "St." is always treated as "Saint".
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- TAB 3: QUALITY EXAM -->
+    <!-- TAB 3: QUALITY EXAM (same as before) -->
     <div id="exam" class="section">
         <div id="quiz-ui">
-            <h2 style="color: var(--primary);">📋 QUALITY MOCK EXAM · 100 CAREFULLY CRAFTED QUESTIONS</h2>
-            <p class="section-intro">✨ Every question is based on actual CSC exam patterns · No filler or nonsense questions ✨</p>
+            <h2 style="color: var(--primary);">📋 QUALITY MOCK EXAM · 300 QUESTION BANK</h2>
             <div id="quiz-container"></div>
             <button class="btn-submit" onclick="submitExam()">✅ FINISH & SEE DETAILED REVIEW</button>
         </div>
@@ -278,8 +1750,26 @@
         ["Civil Service Commission", "Commission on Elections", "Commission on Audit", "Commission on Human Rights"], 3, 'I');
     add("The Ombudsman has the power to:",
         ["Prosecute public officials", "Investigate public officials", "Impeach public officials", "Suspend public officials"], 1, 'I');
-    
-    // Continue with more Constitution questions...
+    add("What vote is required to convict an impeached official in the Senate?",
+        ["1/3", "2/3", "Majority", "3/4"], 1, 'I');
+    add("The legislative power is vested in:",
+        ["Congress of the Philippines", "The President", "The Supreme Court", "The Cabinet"], 0, 'I');
+    add("How many senators are elected at large?",
+        ["12", "24", "18", "30"], 1, 'I');
+    add("The term of a member of the House of Representatives is:",
+        ["3 years", "4 years", "5 years", "6 years"], 0, 'I');
+    add("Which of the following is a qualification for President?",
+        ["Natural-born citizen", "Registered voter", "40 years old on election day", "All of the above"], 3, 'I');
+    add("The right against self-incrimination is found in which section?",
+        ["Section 12", "Section 14", "Section 17", "Section 19"], 2, 'I');
+    add("No person shall be imprisoned for debt under which section?",
+        ["Section 18", "Section 19", "Section 20", "Section 21"], 2, 'I');
+    add("The Constitutional Commissions are composed of a Chairman and how many Commissioners?",
+        ["2", "3", "4", "5"], 0, 'I');
+    add("The Autonomous Region in Muslim Mindanao was created under which article?",
+        ["Article X", "Article XI", "Article XII", "Article XIII"], 0, 'I');
+    add("The Filipino flag and anthem are provided under which article?",
+        ["Article XIV", "Article XV", "Article XVI", "Article XVII"], 2, 'I');
 
     // RA 6713 (15 quality questions)
     add("Under RA 6713, public officials must file their SALN within how many days after assumption of office?",
@@ -295,6 +1785,50 @@
          "Attending government seminars",
          "Filing SALN on time",
          "Providing public service"], 0, 'I');
+    add("The norm of 'political neutrality' means:",
+        ["No partisan political activities while on duty",
+         "Cannot vote in elections",
+         "Must support administration candidates",
+         "Cannot join any political party"], 0, 'I');
+    add("SALN must be filed by all:",
+        ["Public officials and employees",
+         "Only elected officials",
+         "Only appointed officials",
+         "Only those earning above minimum wage"], 0, 'I');
+    add("The norm of 'responsiveness to the public' requires:",
+        ["Prompt and efficient service",
+         "Slow but accurate work",
+         "Prioritizing friends and family",
+         "Working only during office hours"], 0, 'I');
+    add("Nepotism in government appointments is:",
+        ["Prohibited under RA 6713",
+         "Allowed for qualified relatives",
+         "Required for family members",
+         "Only prohibited in local government"], 0, 'I');
+    add("The SALN is available for public scrutiny:",
+        ["At all times", "Only during elections", "Only for media", "Never"], 0, 'I');
+    add("The norm of 'professionalism' includes:",
+        ["Competence and integrity",
+         "Political involvement",
+         "Extravagant living",
+         "Partisan activities"], 0, 'I');
+    add("Justness and sincerity requires public officials to:",
+        ["Act with fairness", "Be politically active", "Live extravagantly", "Ignore public concerns"], 0, 'I');
+    add("Commitment to public interest means:",
+        ["Public interest over personal interest",
+         "Personal interest over public interest",
+         "Equal consideration of both",
+         "Ignore both"], 0, 'I');
+    add("The SALN must include:",
+        ["Assets, liabilities, and net worth",
+         "Only cash in bank",
+         "Only real estate",
+         "Only vehicles"], 0, 'I');
+    add("Failure to file SALN may result in:",
+        ["Administrative disciplinary action",
+         "Automatic promotion",
+         "Salary increase",
+         "Medal of honor"], 0, 'I');
 
     // Human Rights (10 quality questions)
     add("The Universal Declaration of Human Rights was adopted by the UN in what year?",
@@ -311,6 +1845,27 @@
          "Presence of social justice",
          "Economic equality",
          "Environmental harmony"], 0, 'I');
+    add("The ICCPR primarily deals with:",
+        ["Civil and political rights",
+         "Economic and social rights",
+         "Environmental rights",
+         "Cultural rights"], 0, 'I');
+    add("The ICESCR primarily deals with:",
+        ["Economic, social and cultural rights",
+         "Civil and political rights",
+         "Environmental rights",
+         "Women's rights"], 0, 'I');
+    add("The CHR is an independent office created under:",
+        ["1987 Constitution", "RA 6713", "PD 1586", "RA 9003"], 0, 'I');
+    add("'Positive peace' includes:",
+        ["Social justice and equality",
+         "Absence of war",
+         "Ceasefire agreements",
+         "Military victory"], 0, 'I');
+    add("The right to education is guaranteed under:",
+        ["UDHR Article 26", "UDHR Article 3", "UDHR Article 5", "UDHR Article 12"], 0, 'I');
+    add("Freedom from torture is guaranteed under:",
+        ["UDHR Article 5", "UDHR Article 3", "UDHR Article 19", "UDHR Article 21"], 0, 'I');
 
     // Environment (10 quality questions)
     add("RA 9003, also known as the Ecological Solid Waste Management Act, mandates:",
@@ -320,6 +1875,37 @@
          "Polluters should be imprisoned",
          "Government pays for pollution",
          "Pollution is allowed if you pay"], 0, 'I');
+    add("RA 8749 is also known as the:",
+        ["Philippine Clean Air Act", "Clean Water Act", "Ecological Waste Act", "Climate Change Act"], 0, 'I');
+    add("RA 9275 is also known as the:",
+        ["Philippine Clean Water Act", "Clean Air Act", "Solid Waste Act", "Mining Act"], 0, 'I');
+    add("RA 9729 is also known as the:",
+        ["Climate Change Act", "Disaster Risk Reduction Act", "Environmental Impact Statement", "Wildlife Act"], 0, 'I');
+    add("RA 10121 is also known as the:",
+        ["Disaster Risk Reduction and Management Act",
+         "Climate Change Act",
+         "Clean Air Act",
+         "Solid Waste Act"], 0, 'I');
+    add("PD 1586 established the:",
+        ["Environmental Impact Statement System",
+         "Clean Air Program",
+         "Waste Management Program",
+         "Forestry Code"], 0, 'I');
+    add("The 'precautionary principle' means:",
+        ["Lack of full scientific certainty not reason to postpone measures",
+         "Always wait for complete certainty",
+         "Ignore potential risks",
+         "Only act after disaster occurs"], 0, 'I');
+    add("Sustainable development means:",
+        ["Meeting present needs without compromising future generations",
+         "Development at any cost",
+         "No development allowed",
+         "Maximum economic growth"], 0, 'I');
+    add("The DENR is the primary government agency responsible for:",
+        ["Environment and natural resources",
+         "Health services",
+         "Education",
+         "Labor and employment"], 0, 'I');
 
     // ========== TEST I: VERBAL ABILITY (50 quality questions) ==========
     
@@ -334,6 +1920,26 @@
         ["Accommodate", "Acommodate", "Accommodate", "Acomodate"], 0, 'I');
     add("The Filipino word 'MARIKIT' means:",
         ["Beautiful", "Ugly", "Tall", "Short"], 0, 'I');
+    add("The word 'BENEVOLENT' means:",
+        ["Kind and charitable", "Evil and cruel", "Indifferent", "Angry"], 0, 'I');
+    add("The antonym of 'AUGMENT' is:",
+        ["Decrease", "Increase", "Expand", "Enlarge"], 0, 'I');
+    add("The word 'VERNACULAR' refers to:",
+        ["Native language", "Foreign language", "Technical terms", "Slang"], 0, 'I');
+    add("Which is correctly spelled?",
+        ["Embarrass", "Embarass", "Embarras", "Embaras"], 0, 'I');
+    add("The Filipino word 'SALIGANG BATAS' means:",
+        ["Constitution", "Law", "Decree", "Ordinance"], 0, 'I');
+    add("The word 'MALLEABLE' means:",
+        ["Easily shaped", "Hard and rigid", "Brittle", "Heavy"], 0, 'I');
+    add("The antonym of 'TRANSIENT' is:",
+        ["Permanent", "Temporary", "Brief", "Fleeting"], 0, 'I');
+    add("Which is correctly spelled?",
+        ["Millennium", "Millenium", "Milennium", "Milenium"], 0, 'I');
+    add("The Filipino word 'PANDIWA' means:",
+        ["Verb", "Noun", "Adjective", "Adverb"], 0, 'I');
+    add("The word 'EQUANIMITY' means:",
+        ["Composure under stress", "Anxiety", "Excitement", "Anger"], 0, 'I');
     
     // Sentence Completion (10)
     add("Neither the teacher nor the students _____ present during the seminar.",
@@ -342,132 +1948,481 @@
         ["was", "were", "am", "is"], 1, 'I');
     add("Each of the candidates _____ to submit their credentials tomorrow.",
         ["has", "have", "are", "were"], 0, 'I');
+    add("The committee _____ agreed on the new policy.",
+        ["has", "have", "are", "were"], 0, 'I');
+    add("Either the president or his assistants _____ present at the meeting.",
+        ["was", "were", "is", "are"], 1, 'I');
+    add("Everyone _____ to bring their own lunch.",
+        ["needs", "need", "needing", "have"], 0, 'I');
+    add("The news _____ been shocking to everyone.",
+        ["has", "have", "are", "were"], 0, 'I');
+    add("Mathematics _____ my favorite subject.",
+        ["is", "are", "were", "have"], 0, 'I');
+    add("One of the students _____ forgotten to submit the project.",
+        ["has", "have", "are", "were"], 0, 'I');
+    add("The jury _____ divided in their opinion.",
+        ["is", "are", "was", "were"], 1, 'I');
     
     // Error Recognition (10)
     add("Identify the error: 'The group of students (A) are (B) planning (C) to visit (D) the museum.'",
         ["A", "B", "C", "D"], 1, 'I');
     add("Find the error: 'She don't (A) like (B) to eat (C) spicy food (D).'",
         ["A", "B", "C", "D"], 0, 'I');
+    add("Identify the error: 'The manager, together with his staff, (A) are (B) attending (C) the conference (D).'",
+        ["A", "B", "C", "D"], 1, 'I');
+    add("Find the error: 'Each of the participants (A) were (B) given (C) a certificate (D).'",
+        ["A", "B", "C", "D"], 1, 'I');
+    add("Identify the error: 'Neither the teacher nor the student (A) were (B) aware (C) of the changes (D).'",
+        ["A", "B", "C", "D"], 1, 'I');
+    add("Find the error: 'The books on the shelf (A) is (B) arranged (C) alphabetically (D).'",
+        ["A", "B", "C", "D"], 1, 'I');
+    add("Identify the error: 'She (A) don't (B) have (C) any idea (D) about the plan.'",
+        ["A", "B", "C", "D"], 1, 'I');
+    add("Find the error: 'The team (A) are (B) playing (C) well this season (D).'",
+        ["A", "B", "C", "D"], 1, 'I');
+    add("Identify the error: 'Everyone (A) are (B) invited (C) to the party (D).'",
+        ["A", "B", "C", "D"], 1, 'I');
+    add("Find the error: 'The news (A) are (B) confirmed (C) by authorities (D).'",
+        ["A", "B", "C", "D"], 1, 'I');
     
     // Paragraph Organization (5)
     add("Arrange the following sentences in logical order: (1) Therefore, it's important to recycle. (2) Plastic waste pollutes our oceans. (3) Recycling reduces waste in landfills.",
         ["2-3-1", "1-2-3", "3-1-2", "2-1-3"], 0, 'I');
+    add("Arrange: (1) Finally, serve the dish hot. (2) First, chop the onions and garlic. (3) Next, sauté them in oil. (4) Then, add the tomatoes and cook.",
+        ["2-3-4-1", "1-2-3-4", "3-2-4-1", "2-4-3-1"], 0, 'I');
+    add("Arrange: (1) As a result, many species are endangered. (2) Deforestation destroys natural habitats. (3) Conservation efforts are urgently needed.",
+        ["2-1-3", "1-2-3", "3-1-2", "2-3-1"], 0, 'I');
+    add("Arrange: (1) He studied hard for the exam. (2) Consequently, he passed with flying colors. (3) He wanted to become a doctor.",
+        ["3-1-2", "1-2-3", "2-1-3", "1-3-2"], 0, 'I');
+    add("Arrange: (1) First, preheat the oven to 350 degrees. (2) Then, bake for 30 minutes. (3) Mix all ingredients in a bowl. (4) Finally, let it cool before serving.",
+        ["1-3-2-4", "3-1-2-4", "1-2-3-4", "3-2-1-4"], 1, 'I');
     
-    // Reading Comprehension (10) - with actual passages
+    // Reading Comprehension (10)
     add("Read: 'The first Philippine Republic was proclaimed in Malolos, Bulacan on January 23, 1899, with Emilio Aguinaldo as President.' What was proclaimed in 1899?",
         ["The first Philippine Republic", "Philippine independence from Spain", "The Commonwealth", "The Third Republic"], 0, 'I');
     add("Read: 'R.A. 6713 requires public officials to live modestly and avoid extravagant lifestyle.' This provision promotes:",
         ["Simple living", "Professionalism", "Political neutrality", "Public interest"], 0, 'I');
+    add("Read: 'The Supreme Court is composed of a Chief Justice and 14 Associate Justices. They may sit en banc or in divisions.' How many justices comprise the Supreme Court?",
+        ["15", "14", "13", "16"], 0, 'I');
+    add("Read: 'The Philippines renounces war as an instrument of national policy and adopts generally accepted principles of international law.' This principle is found in:",
+        ["Article II, Section 2", "Article III, Section 1", "Article VI, Section 1", "Article VIII, Section 1"], 0, 'I');
+    add("Read: 'The Commission on Human Rights is an independent office created under the 1987 Constitution.' The CHR is:",
+        ["Independent", "Under Executive branch", "Under Legislative branch", "Under Judicial branch"], 0, 'I');
+    add("Read: 'RA 9003 mandates waste segregation at source, establishment of Materials Recovery Facilities, and closure of open dumpsites.' What does RA 9003 require?",
+        ["Waste segregation", "Air quality monitoring", "Water treatment", "Forest protection"], 0, 'I');
+    add("Read: 'The President has the power to declare martial law for not more than 60 days, subject to congressional review.' Martial law can last without Congress approval for:",
+        ["60 days", "30 days", "90 days", "120 days"], 0, 'I');
+    add("Read: 'The right to due process means no person shall be deprived of life, liberty, or property without legal proceedings.' Due process is guaranteed under:",
+        ["Article III, Section 1", "Article II, Section 1", "Article VI, Section 1", "Article VIII, Section 1"], 0, 'I');
+    add("Read: 'The Senate is composed of 24 senators elected at large, while the House has not more than 250 members.' How many senators are there?",
+        ["24", "250", "274", "18"], 0, 'I');
+    add("Read: 'RA 6713, known as the Code of Conduct, prescribes eight norms including commitment to public interest and simple living.' RA 6713 promotes:",
+        ["Ethical standards in public service", "Tax collection", "Election rules", "Criminal prosecution"], 0, 'I');
 
     // ========== TEST I: NUMERICAL ABILITY (40 quality questions) ==========
-    
-    // Basic Operations (10)
-    add("What is 15% of 900?",
-        ["125", "135", "145", "150"], 1, 'I');
-    add("Solve: (36 ÷ 6) × 3 + 4",
-        ["18", "22", "24", "26"], 1, 'I');
-    
-    // Number Sequences (10)
-    add("Complete the sequence: 3, 7, 13, 21, ___",
-        ["29", "31", "33", "35"], 1, 'I');
-    add("Find the next number: 2, 6, 18, 54, ___",
-        ["108", "162", "216", "270"], 1, 'I');
-    
-    // Word Problems (20)
-    add("If 5 workers can finish a task in 12 days, how many days will 6 workers take to finish the same task?",
-        ["8 days", "10 days", "12 days", "14 days"], 1, 'I');
-    add("A laptop costs ₱45,000 after a 10% discount. What was its original price?",
-        ["₱49,500", "₱50,000", "₱50,500", "₱51,000"], 1, 'I');
-    add("A car travels 240 kilometers in 4 hours. What is its speed in meters per second?",
-        ["16.67 m/s", "60 m/s", "50 m/s", "20 m/s"], 0, 'I');
-    add("The ratio of boys to girls in a class is 3:2. If there are 30 students, how many are boys?",
-        ["12", "15", "18", "20"], 2, 'I');
-    add("What is the average of 15, 23, 27, 31, and 34?",
-        ["24", "25", "26", "27"], 2, 'I');
+    add("What is 15% of 240?",
+        ["36", "38", "32", "40"], 0, 'I');
+    add("A car travels 240 km in 4 hours. What is its average speed?",
+        ["60 km/h", "55 km/h", "65 km/h", "70 km/h"], 0, 'I');
+    add("If 5 workers can complete a job in 12 days, how many days will 10 workers take?",
+        ["6 days", "8 days", "5 days", "4 days"], 0, 'I');
+    add("What is the next number in the sequence: 3, 6, 12, 24, ___?",
+        ["48", "36", "30", "42"], 0, 'I');
+    add("A shirt originally costs ₱800. It is on sale at 25% discount. What is the sale price?",
+        ["₱600", "₱625", "₱650", "₱700"], 0, 'I');
+    add("What is the next number in the sequence: 2, 5, 10, 17, 26, ___?",
+        ["37", "35", "38", "32"], 0, 'I');
+    add("Ana is 3 times as old as her daughter. In 12 years, she will be twice as old. How old is Ana now?",
+        ["36", "30", "42", "24"], 0, 'I');
+    add("A cistern is filled by pipe A in 4 hours and by pipe B in 6 hours. Both pipes are opened. How long to fill?",
+        ["2.4 hours", "3 hours", "2 hours", "5 hours"], 0, 'I');
+    add("What is 25% of 80% of 400?",
+        ["80", "100", "60", "120"], 0, 'I');
+    add("If the ratio of boys to girls is 3:5 and there are 120 girls, how many boys are there?",
+        ["72", "80", "64", "60"], 0, 'I');
+    add("What is the area of a rectangle with length 15 m and width 8 m?",
+        ["120 sq m", "116 sq m", "46 sq m", "126 sq m"], 0, 'I');
+    add("The sum of three consecutive integers is 78. What is the largest integer?",
+        ["27", "25", "26", "28"], 0, 'I');
+    add("A merchant bought goods for ₱1,200 and sold them for ₱1,500. What is the percentage profit?",
+        ["25%", "20%", "30%", "15%"], 0, 'I');
+    add("What is the simple interest on ₱10,000 at 8% per year for 3 years?",
+        ["₱2,400", "₱2,000", "₱3,000", "₱2,800"], 0, 'I');
+    add("Two trains start from cities A and B, 300 km apart, traveling toward each other at 60 km/h and 90 km/h. How many hours before they meet?",
+        ["2 hours", "3 hours", "1.5 hours", "2.5 hours"], 0, 'I');
+    add("What is the next term in: 1, 4, 9, 16, 25, ___?",
+        ["36", "32", "30", "38"], 0, 'I');
+    add("If 3x + 7 = 22, what is x?",
+        ["5", "3", "7", "4"], 0, 'I');
+    add("A 40-liter mixture contains 30% alcohol. How many liters of alcohol are in the mixture?",
+        ["12 liters", "10 liters", "8 liters", "15 liters"], 0, 'I');
+    add("Maria earns ₱18,000 per month. She saves 20% of her salary. How much does she save in a year?",
+        ["₱43,200", "₱36,000", "₱48,000", "₱40,000"], 0, 'I');
+    add("What is the perimeter of a square with an area of 144 sq cm?",
+        ["48 cm", "36 cm", "52 cm", "40 cm"], 0, 'I');
+    add("Find the average of: 72, 85, 90, 68, 95.",
+        ["82", "80", "84", "78"], 0, 'I');
+    add("Pedro is twice as old as Juan. Five years ago, Pedro was 3 times as old as Juan. How old is Juan now?",
+        ["10", "8", "12", "15"], 0, 'I');
+    add("A rectangle has a perimeter of 54 cm. If the length is 15 cm, what is its width?",
+        ["12 cm", "10 cm", "14 cm", "8 cm"], 0, 'I');
+    add("What is 35% of 1,200?",
+        ["420", "400", "380", "440"], 0, 'I');
+    add("In a class of 50 students, 60% passed. How many failed?",
+        ["20", "30", "25", "35"], 0, 'I');
+    add("The next term in 1, 1, 2, 3, 5, 8, 13, ___ is:",
+        ["21", "18", "20", "24"], 0, 'I');
+    add("An item costs ₱450 after a 10% discount. What was the original price?",
+        ["₱500", "₱490", "₱495", "₱480"], 0, 'I');
+    add("If a train moving at 90 km/h takes 2 hours to reach a city, how far is the city?",
+        ["180 km", "200 km", "160 km", "175 km"], 0, 'I');
+    add("What is the volume of a cube with a side of 5 cm?",
+        ["125 cu cm", "150 cu cm", "100 cu cm", "75 cu cm"], 0, 'I');
+    add("A salesman earns a 5% commission on all sales. If his sales this month total ₱80,000, how much is his commission?",
+        ["₱4,000", "₱3,500", "₱4,500", "₱5,000"], 0, 'I');
+    add("What number is missing: 7, 14, ___, 28, 35?",
+        ["21", "20", "22", "18"], 0, 'I');
+    add("2/3 of a number is 48. What is the number?",
+        ["72", "64", "80", "68"], 0, 'I');
+    add("A rectangular field is 120 m long and 80 m wide. What is its area in hectares? (1 hectare = 10,000 sq m)",
+        ["0.96 ha", "1.0 ha", "0.8 ha", "1.2 ha"], 0, 'I');
+    add("If SALN must be filed within 30 days after assumption of office and an official assumed on January 5, 2026, what is the last day?",
+        ["February 4, 2026", "February 5, 2026", "January 30, 2026", "February 3, 2026"], 0, 'I');
+    add("A worker is paid ₱650 a day. How much does he earn in 22 working days?",
+        ["₱14,300", "₱13,500", "₱15,000", "₱14,000"], 0, 'I');
+    add("What is the least common multiple (LCM) of 6, 8, and 12?",
+        ["24", "48", "12", "36"], 0, 'I');
+    add("Divide ₱3,600 among Ana, Ben, and Carlo in the ratio 2:3:4. How much does Ben receive?",
+        ["₱1,200", "₱800", "₱1,600", "₱900"], 0, 'I');
+    add("A circle has a radius of 7 cm. What is its circumference? (π ≈ 22/7)",
+        ["44 cm", "42 cm", "46 cm", "48 cm"], 0, 'I');
+    add("Find the missing term: 100, 50, 25, ___, 6.25",
+        ["12.5", "10", "15", "11"], 0, 'I');
+    add("A number increased by 40% becomes 84. What is the original number?",
+        ["60", "55", "65", "70"], 0, 'I');
+    add("If 4 pencils cost ₱28, how much do 7 pencils cost?",
+        ["₱49", "₱45", "₱56", "₱42"], 0, 'I');
 
-    // ========== TEST II: ANALYTICAL ABILITY (40 quality questions) ==========
-    
-    // Word Analogy (15)
-    add("DOCTOR : HOSPITAL :: TEACHER : _____",
-        ["SCHOOL", "CLINIC", "BOOK", "STUDENT"], 0, 'II');
-    add("HOT : COLD :: DAY : _____",
-        ["NIGHT", "SUN", "WARM", "LIGHT"], 0, 'II');
-    add("SCALPEL : SURGEON :: BATON : _____",
-        ["CONDUCTOR", "RUNNER", "POLICE", "ARTIST"], 0, 'II');
-    add("POVERTY : HUNGER :: POLLUTION : _____",
-        ["DISEASE", "HEALTH", "ENVIRONMENT", "CLEAN"], 0, 'II');
-    
-    // Logic (10)
-    add("All professionals are exam-takers. Some exam-takers are diligent. Therefore:",
-        ["Some professionals are diligent",
-         "All exam-takers are professionals",
-         "Some diligent people are professionals",
-         "No conclusion can be drawn"], 2, 'II');
-    add("If it rains, the ground will be wet. The ground is wet. Therefore:",
-        ["It must have rained",
-         "It might have rained",
-         "It did not rain",
-         "The ground is always wet"], 1, 'II');
-    
-    // Assumptions (8)
-    add("'She graduated with honors, so she is intelligent.' This argument assumes that:",
-        ["Honors graduates are always intelligent",
-         "Intelligence leads to honors",
-         "She studied hard",
-         "The school is prestigious"], 0, 'II');
-    
-    // Data Interpretation (7)
-    add("If a graph shows sales: 2019 - 200, 2020 - 250, 2021 - 300, what is the average sales?",
-        ["240", "250", "260", "270"], 1, 'II');
+    // ========== TEST II: ANALYTICAL ABILITY (75 quality questions) ==========
 
-    // ========== TEST II: CLERICAL ABILITY (30 quality questions) ==========
-    
-    // Filing (15)
-    add("In alphabetical filing, which comes first?",
-        ["MacDonald", "McDonald", "Macedonia", "Macario"], 2, 'II');
-    add("How should 'Dr. Jose Rizal' be filed alphabetically?",
-        ["Rizal, Jose Dr.", "Jose Rizal Dr.", "Dr. Jose Rizal", "Rizal, Dr. Jose"], 0, 'II');
-    add("Which of these names should be filed first?",
-        ["St. Paul", "Saint Peter", "San Jose", "Santa Maria"], 1, 'II');
-    
-    // Spelling (15)
-    add("Which is the correct spelling?",
-        ["Embarrass", "Embarass", "Embarras", "Embaras"], 0, 'II');
-    add("Choose the correctly spelled word:",
-        ["Millennium", "Millenium", "Milennium", "Milenium"], 0, 'II');
-    add("Which word is spelled correctly?",
-        ["Privilege", "Privelege", "Priviledge", "Privelege"], 0, 'II');
+    // Word Analogy (25)
+    add("DOCTOR : HOSPITAL :: TEACHER : ___",
+        ["School", "Book", "Lesson", "Student"], 0, 'II');
+    add("EYE : VISION :: EAR : ___",
+        ["Hearing", "Sound", "Noise", "Music"], 0, 'II');
+    add("COLD : HOT :: ROUGH : ___",
+        ["Smooth", "Hard", "Soft", "Warm"], 0, 'II');
+    add("FISH : SCALES :: BIRD : ___",
+        ["Feathers", "Wings", "Beak", "Claws"], 0, 'II');
+    add("KNIFE : CUT :: NEEDLE : ___",
+        ["Sew", "Stitch", "Thread", "Knit"], 0, 'II');
+    add("CARPENTER : HAMMER :: PAINTER : ___",
+        ["Brush", "Canvas", "Paint", "Wall"], 0, 'II');
+    add("CHAPTER : BOOK :: SCENE : ___",
+        ["Play", "Movie", "Actor", "Director"], 0, 'II');
+    add("WHEAT : FLOUR :: SUGARCANE : ___",
+        ["Sugar", "Juice", "Syrup", "Molasses"], 0, 'II');
+    add("CUBA : HAVANA :: JAPAN : ___",
+        ["Tokyo", "Kyoto", "Osaka", "Hiroshima"], 0, 'II');
+    add("HAPPY : ECSTATIC :: ANGRY : ___",
+        ["Furious", "Upset", "Annoyed", "Irritated"], 0, 'II');
+    add("LION : PRIDE :: WOLF : ___",
+        ["Pack", "Herd", "Flock", "School"], 0, 'II');
+    add("WATER : ICE :: LIQUID : ___",
+        ["Solid", "Gas", "Steam", "Air"], 0, 'II');
+    add("IGNORANCE : EDUCATION :: DISEASE : ___",
+        ["Medicine", "Doctor", "Hospital", "Health"], 0, 'II');
+    add("PEN : WRITER :: SHOVEL : ___",
+        ["Digger", "Farmer", "Miner", "Laborer"], 0, 'II');
+    add("FINGER : HAND :: TOE : ___",
+        ["Foot", "Leg", "Ankle", "Nail"], 0, 'II');
+    add("SOLAR : SUN :: LUNAR : ___",
+        ["Moon", "Star", "Planet", "Galaxy"], 0, 'II');
+    add("MUSIC : COMPOSER :: PAINTING : ___",
+        ["Artist", "Sculptor", "Writer", "Actor"], 0, 'II');
+    add("TAME : WILD :: DOMESTIC : ___",
+        ["Feral", "Foreign", "Strange", "Remote"], 0, 'II');
+    add("RICE : PADDY :: CORN : ___",
+        ["Field", "Farm", "Granary", "Mill"], 0, 'II');
+    add("BEE : HIVE :: ANT : ___",
+        ["Colony", "Mound", "Hill", "Nest"], 0, 'II');
+    add("PHILIPPINES : FILIPINO :: JAPAN : ___",
+        ["Japanese", "Nippon", "Nihon", "Asiatic"], 0, 'II');
+    add("FAST : SLOW :: ASCEND : ___",
+        ["Descend", "Fall", "Drop", "Sink"], 0, 'II');
+    add("ANATOMY : BODY :: ASTRONOMY : ___",
+        ["Stars", "Sky", "Space", "Universe"], 0, 'II');
+    add("TAILOR : SEW :: ARCHITECT : ___",
+        ["Design", "Build", "Draw", "Plan"], 0, 'II');
+    add("THERMOMETER : TEMPERATURE :: BAROMETER : ___",
+        ["Pressure", "Humidity", "Wind speed", "Rainfall"], 0, 'II');
 
-    // ===== Total: ~300 quality questions =====
+    // Logical Reasoning (25)
+    add("All public officials must file SALN. Maria is a public official. Therefore:",
+        ["Maria must file SALN", "Maria may file SALN", "Maria need not file SALN", "Maria can choose to file SALN"], 0, 'II');
+    add("If it rains, the event is cancelled. The event was cancelled. Therefore:",
+        ["We cannot conclude it rained", "It rained", "It did not rain", "There was no event"], 0, 'II');
+    add("All birds have feathers. A penguin is a bird. Therefore:",
+        ["A penguin has feathers", "A penguin can fly", "A penguin has no feathers", "Nothing can be concluded"], 0, 'II');
+    add("No mammals live underwater. Whales are mammals. Therefore:",
+        ["This is a fallacy — whales do live underwater", "Whales do not live underwater", "Whales live on land", "Whales can fly"], 0, 'II');
+    add("If P, then Q. P is true. Therefore:",
+        ["Q is true", "Q is false", "P may be false", "Nothing can be concluded"], 0, 'II');
+    add("If P, then Q. Q is false. Therefore:",
+        ["P is false (contrapositive)", "P is true", "Q may be true", "Nothing can be concluded"], 0, 'II');
+    add("Some employees are lazy. Juan is an employee. Therefore:",
+        ["Juan may or may not be lazy", "Juan is lazy", "Juan is not lazy", "All employees are lazy"], 0, 'II');
+    add("Select the statement that WEAKENS the argument: 'Exercise improves academic performance.'",
+        ["Many top students rarely exercise", "Students who exercise sleep better", "Exercise increases energy levels", "Physical activity relieves stress"], 0, 'II');
+    add("Select the statement that STRENGTHENS: 'Stricter laws reduce crime rates.'",
+        ["Cities with stricter laws show lower crime statistics", "Some criminals ignore laws", "Laws are difficult to enforce", "People follow laws voluntarily"], 0, 'II');
+    add("Which is an example of CIRCULAR REASONING?",
+        ["The Bible is true because God wrote it, and we know God wrote it because the Bible says so", "Exercise is good because it increases heart rate", "All politicians are corrupt because they take bribes", "Studying helps because knowledge is power"], 0, 'II');
+    add("Which is an example of a HASTY GENERALIZATION?",
+        ["All politicians are corrupt because I met one corrupt one", "Exercise is generally healthy for most people", "Not all students study hard", "Some dogs are aggressive"], 0, 'II');
+    add("Which logical form is ALWAYS TRUE: If P → Q, then:",
+        ["Not Q → Not P (Contrapositive)", "Q → P (Converse)", "Not P → Not Q (Inverse)", "P and Q are always both true"], 0, 'II');
+    add("All senators must be at least 35 years old. Pedro is 32. Therefore:",
+        ["Pedro cannot be a senator", "Pedro could still be a senator", "Pedro will be a senator", "Nothing can be concluded"], 0, 'II');
+    add("If a person is born in Manila, they are Filipino. Jose is Filipino. Therefore:",
+        ["We cannot conclude Jose was born in Manila", "Jose was born in Manila", "Jose was not born in Manila", "Jose is not Filipino"], 0, 'II');
+    add("The conclusion 'Mario failed the exam because he didn't study' contains what ASSUMPTION?",
+        ["Not studying causes failure", "Students always fail", "Mario never studies", "Exams are difficult"], 0, 'II');
+    add("If all members of the club must be 18+, and Amy is a member, we can conclude:",
+        ["Amy is at least 18 years old", "Amy is exactly 18", "Amy joined recently", "Amy will leave the club"], 0, 'II');
+    add("Statement: 'No citizen should be above the law.' This is a statement of:",
+        ["Principle/norm", "Fact", "Opinion", "Assumption"], 0, 'II');
+    add("What is the logical flaw: 'You cannot trust his opinion on taxation because he is poor.'?",
+        ["Ad hominem", "False cause", "Hasty generalization", "False dilemma"], 0, 'II');
+    add("A is older than B. B is older than C. Therefore:",
+        ["A is older than C", "C is oldest", "B is youngest", "A is youngest"], 0, 'II');
+    add("If a figure has 4 equal sides and 4 right angles, it is a square. Figure X has 4 equal sides but no right angles. Therefore:",
+        ["Figure X is not a square", "Figure X is a square", "Figure X may be a square", "Nothing can be concluded"], 0, 'II');
+    add("What type of reasoning: 'I have seen 1,000 crows and all were black, therefore all crows are black.'?",
+        ["Inductive reasoning", "Deductive reasoning", "Abductive reasoning", "Circular reasoning"], 0, 'II');
+    add("What type of reasoning: 'All mammals are warm-blooded. A dolphin is a mammal. A dolphin is warm-blooded.'?",
+        ["Deductive reasoning", "Inductive reasoning", "Abductive reasoning", "Analogical reasoning"], 0, 'II');
+    add("'Either we impose stricter penalties or crime will increase.' This is an example of:",
+        ["False dilemma", "Ad hominem", "Hasty generalization", "Circular reasoning"], 0, 'II');
+    add("Which conclusion is VALID: All government employees must wear ID. Ms. Reyes must wear ID. Therefore:",
+        ["Ms. Reyes is a government employee", "Ms. Reyes may not be a government employee", "All ID wearers are government employees", "Ms. Reyes works in the private sector"], 0, 'II');
+    add("'If you are a Filipino, you love rice. He loves rice, so he must be Filipino.' This commits the fallacy of:",
+        ["Affirming the consequent", "Denying the antecedent", "Ad hominem", "Slippery slope"], 0, 'II');
 
-    // Lesson toggle function
-    window.toggleLesson = function(header) {
-        const content = header.nextElementSibling;
-        const icon = header.querySelector('.toggle-icon');
-        if (content.style.display === 'none' || !content.style.display) {
-            content.style.display = 'block';
-            icon.textContent = '▼';
-        } else {
-            content.style.display = 'none';
-            icon.textContent = '▶';
-        }
-    };
+    // Data Interpretation (25)
+    add("A bar graph shows sales: Jan=150, Feb=200, Mar=180, Apr=220. In which month was sales lowest?",
+        ["January", "February", "March", "April"], 0, 'II');
+    add("A pie chart shows: Agriculture 30%, Industry 40%, Services 30%. Which sector is largest?",
+        ["Industry", "Agriculture", "Services", "Equal between Agriculture and Services"], 0, 'II');
+    add("If the mean of 5 numbers is 20 and four of them are 15, 18, 22, 25, what is the fifth number?",
+        ["20", "18", "22", "24"], 0, 'II');
+    add("Data: 5, 8, 8, 12, 15, 18, 20. What is the median?",
+        ["12", "8", "15", "13"], 0, 'II');
+    add("Data: 3, 7, 7, 8, 9, 10. What is the mode?",
+        ["7", "8", "9", "3"], 0, 'II');
+    add("The range of: 14, 27, 9, 35, 21 is:",
+        ["26", "24", "28", "30"], 0, 'II');
+    add("A line graph shows temperature increasing from 25°C in January to 32°C in June. The trend is:",
+        ["Increasing", "Decreasing", "Stable", "Fluctuating"], 0, 'II');
+    add("A table shows enrollment: School A=1200, B=980, C=1150, D=870. What is the total?",
+        ["4200", "4100", "4300", "4000"], 0, 'II');
+    add("Sales increased from ₱50,000 to ₱65,000. What is the percent increase?",
+        ["30%", "25%", "20%", "35%"], 0, 'II');
+    add("If School A has 1200 students and School B has 980, School A has what percentage more students?",
+        ["About 22.4%", "About 18.3%", "About 20.0%", "About 25.1%"], 0, 'II');
+    add("Data: 10, 10, 20, 30, 30. The mean is:",
+        ["20", "22", "18", "25"], 0, 'II');
+    add("If 4 out of every 10 applicants pass an exam, how many pass out of 350 applicants?",
+        ["140", "150", "130", "160"], 0, 'II');
+    add("In a graph showing 5 years of data, the highest growth rate occurred when the bar went from:",
+        ["50 to 75 (50% growth)", "100 to 140 (40% growth)", "200 to 240 (20% growth)", "60 to 80 (33% growth)"], 0, 'II');
+    add("A company's profits over 3 years: Year 1: ₱2M, Year 2: ₱2.5M, Year 3: ₱3M. Average annual profit:",
+        ["₱2.5M", "₱2.6M", "₱2.4M", "₱3M"], 0, 'II');
+    add("In a table, Department A processes 120 docs/day, B processes 90/day. Together in 5 days they process:",
+        ["1050 docs", "900 docs", "600 docs", "1200 docs"], 0, 'II');
+    add("The mean of a set of 4 numbers is 25. If two numbers are 20 and 30, and the third is 28, what is the fourth?",
+        ["22", "24", "20", "26"], 0, 'II');
+    add("Consider test scores: 78, 82, 90, 70, 85. If one score of 78 is removed, the new mean is:",
+        ["81.75", "80.25", "83.5", "79.5"], 0, 'II');
+    add("A scatter plot shows a positive correlation between study hours and test scores. This means:",
+        ["More study hours generally mean higher scores", "More study hours mean lower scores", "There is no relationship", "All who study long get perfect scores"], 0, 'II');
+    add("Budget allocation: Personnel 60%, MOOE 25%, Capital Outlay 15%. If total budget is ₱10M, personnel cost is:",
+        ["₱6,000,000", "₱5,000,000", "₱7,000,000", "₱2,500,000"], 0, 'II');
+    add("Data: 100 respondents. 45 said yes, 35 said no, 20 were undecided. What % said yes?",
+        ["45%", "35%", "55%", "65%"], 0, 'II');
+    add("If a graph shows output: Q1=200, Q2=250, Q3=230, Q4=280, total annual output is:",
+        ["960", "980", "940", "1000"], 0, 'II');
+    add("The median of: 3, 3, 5, 7, 8, 9, 10 is:",
+        ["7", "5", "8", "6"], 0, 'II');
+    add("If 30% of employees are managers and there are 90 managers, how many total employees are there?",
+        ["300", "270", "330", "250"], 0, 'II');
+    add("A graph shows population growth from 90M (2010) to 110M (2020). The percent increase is approximately:",
+        ["22.2%", "20.0%", "18.2%", "25.0%"], 0, 'II');
+    add("Which measure is most affected by extreme values (outliers)?",
+        ["Mean", "Median", "Mode", "Range"], 0, 'II');
 
-    // Scroll to lesson
-    window.scrollToLesson = function(lessonId) {
-        const element = document.getElementById(`lesson-${lessonId}`);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            // Expand the lesson
-            const header = element.querySelector('.lesson-header');
-            const content = header.nextElementSibling;
-            const icon = header.querySelector('.toggle-icon');
-            content.style.display = 'block';
-            icon.textContent = '▼';
-        }
-    };
+    // ========== TEST II: CLERICAL ABILITY (75 quality questions) ==========
 
-    // Shuffle function
+    // Filing (45)
+    add("Arrange in correct alphabetical filing order: Santos, Maria / Santos, Ana / Santos, Pedro",
+        ["Santos Ana · Santos Maria · Santos Pedro", "Santos Maria · Santos Ana · Santos Pedro", "Santos Pedro · Santos Ana · Santos Maria", "Santos Ana · Santos Pedro · Santos Maria"], 0, 'II');
+    add("How should 'Dr. Jose Rizal' be filed?",
+        ["Rizal, Jose", "Jose, Rizal", "Dr. Rizal, Jose", "Dr. Jose Rizal"], 0, 'II');
+    add("'St. Peter' should be filed as:",
+        ["Saint Peter", "Peter, Saint", "St. Peter (as written)", "Peter, St."], 0, 'II');
+    add("Which comes FIRST in alphabetical filing?",
+        ["MacArthur", "Macario", "MacDonald", "Macalister"], 0, 'II');
+    add("'The Manila Times' should be filed under:",
+        ["Manila Times", "The Manila Times", "Times Manila", "Manila, The Times"], 0, 'II');
+    add("'10th Street' should be filed as:",
+        ["Tenth Street", "10th Street (as number)", "Street, Tenth", "One-Zero Street"], 0, 'II');
+    add("Arrange in correct order: Cruz, Juan / Cruz, Jose / Cruz, Julio",
+        ["Cruz Jose · Cruz Juan · Cruz Julio", "Cruz Juan · Cruz Jose · Cruz Julio", "Cruz Julio · Cruz Jose · Cruz Juan", "Cruz Jose · Cruz Julio · Cruz Juan"], 0, 'II');
+    add("When filing names, titles like Mr., Mrs., and Dr. are:",
+        ["Ignored when filing", "Filed first", "Filed last", "Place before last name"], 0, 'II');
+    add("'Department of Education' should be filed under the key word:",
+        ["Education", "Department", "Philippines", "Government"], 0, 'II');
+    add("Which is the correct filing order for hyphenated names: Santos-Cruz and Santos?",
+        ["Santos first, then Santos-Cruz", "Santos-Cruz first, then Santos", "Alphabetical by hyphenated part", "It does not matter"], 0, 'II');
+    add("Compare: 'Smith' and 'Smithson'. Which comes FIRST?",
+        ["Smith", "Smithson", "They are the same", "Depends on context"], 0, 'II');
+    add("Filing rule: 'nothing before something' means:",
+        ["A shorter name precedes a longer with same beginning", "Numbers come before letters", "Spaces are ignored", "Capital letters come first"], 0, 'II');
+    add("How should 'Chua, Anna Marie' be filed relative to 'Chua, Anna Mary'?",
+        ["Chua Anna Marie first (e before y)", "Chua Anna Mary first (y before e)", "Same position", "Alphabetical by surname only"], 0, 'II');
+    add("Government agency: 'Bureau of Internal Revenue' is filed under:",
+        ["Internal Revenue", "Bureau", "Revenue", "Government"], 0, 'II');
+    add("'3rd Avenue' is filed as:",
+        ["Third Avenue", "3rd Avenue", "Avenue Third", "Avenue 3rd"], 0, 'II');
+    add("Which comes last in alphabetical filing?",
+        ["Torres, Zenaida", "Torres, Ana", "Torres, Marco", "Torres, Pedro"], 0, 'II');
+    add("'McDonald' and 'Mac Donald' (with space) are filed:",
+        ["As written — two different entries", "Together since they sound the same", "Mac Donald first always", "McDonald first always"], 0, 'II');
+    add("'University of the Philippines' is filed under:",
+        ["Philippines, University of the", "University", "The University", "Philippines University"], 0, 'II');
+    add("Which is in correct alphabetical order?",
+        ["Bautista · Buenaventura · Bustamante", "Buenaventura · Bautista · Bustamante", "Bustamante · Buenaventura · Bautista", "Bautista · Bustamante · Buenaventura"], 0, 'II');
+    add("A personal name card reads 'Dela Cruz, Maria Theresa.' Under what letter tab should this be filed?",
+        ["D", "C", "M", "T"], 0, 'II');
+    add("Which comes FIRST: Macabayan or Mabini?",
+        ["Mabini (a before c in second letter)", "Macabayan", "They are equal", "Depends on first name"], 0, 'II');
+    add("'O'Brien' is filed under which letter?",
+        ["O", "B", "Apostrophe files under B", "After all O names"], 0, 'II');
+    add("Arrange: Flores, Ana / Flores, Anabel / Floresca, Ben",
+        ["Flores Ana · Flores Anabel · Floresca Ben", "Floresca Ben · Flores Ana · Flores Anabel", "Flores Anabel · Flores Ana · Floresca Ben", "Flores Ana · Floresca Ben · Flores Anabel"], 0, 'II');
+    add("When articles like 'The', 'A', or 'An' appear at the beginning of a company name:",
+        ["Ignore them and file by the next word", "File under T, A, or An", "Put them at the end in parentheses", "Both B and C are correct"], 0, 'II');
+    add("'St. Luke's Medical Center' is filed under:",
+        ["Saint Luke's Medical Center", "Luke's Medical Center", "Medical Center, Saint Luke's", "St. (as written)"], 0, 'II');
+    add("Which set is in CORRECT filing order?",
+        ["Natividad · Navarro · Navarro-Reyes", "Navarro · Natividad · Navarro-Reyes", "Navarro-Reyes · Navarro · Natividad", "Navarro · Navarro-Reyes · Natividad"], 0, 'II');
+    add("'Commission on Elections' is filed under:",
+        ["Elections", "Commission", "Comelec", "Philippine"], 0, 'II');
+    add("Personal name 'Juan III Dela Cruz' — the III is:",
+        ["Filed after the first name (Dela Cruz, Juan III)", "Ignored when filing", "Placed before the surname", "Used to separate identical names"], 0, 'II');
+    add("Two persons: Reyes, Jose A. and Reyes, Jose B. Which is filed first?",
+        ["Reyes, Jose A.", "Reyes, Jose B.", "Does not matter", "File by first name"], 0, 'II');
+    add("Which comes FIRST in correct filing order?",
+        ["Aaron", "Ab", "A1 (filed as 'A One')", "A-1 Services"], 0, 'II');
+    add("'21st Century Insurance Co.' is filed as:",
+        ["Twenty-first Century Insurance", "21st Century Insurance", "Century Insurance 21", "Insurance 21st Century"], 0, 'II');
+    add("Arrange: Mendoza, Ricky / Mendez, Roberto / Mendez, Rico",
+        ["Mendez Rico · Mendez Roberto · Mendoza Ricky", "Mendoza Ricky · Mendez Rico · Mendez Roberto", "Mendez Roberto · Mendez Rico · Mendoza Ricky", "Mendez Rico · Mendoza Ricky · Mendez Roberto"], 0, 'II');
+    add("If two names are identical including first name and middle initial, the tie-breaker is:",
+        ["Address or date of birth", "Random order", "File them together", "Use title to differentiate"], 0, 'II');
+    add("'Aquino-Marcos, Maria' is filed under letter:",
+        ["A", "M", "Either A or M", "Hyphen section"], 0, 'II');
+    add("Which comes FIRST: 'De Guzman' or 'Deguzman'?",
+        ["De Guzman (D-e-space-G is before D-e-g)", "Deguzman", "They are filed the same", "Depends on office rules"], 0, 'II');
+    add("How is 'A. B. Santos' filed?",
+        ["Santos, A. B.", "A. B. Santos", "Santos, A.", "Santos A.B."], 0, 'II');
+    add("Which is LAST in correct filing order?",
+        ["Zuniga", "Zavala", "Zamora", "Zorilla"], 0, 'II');
+    add("'Jose Jr., Cruz' is filed:",
+        ["Cruz, Jose Jr.", "Cruz Jr., Jose", "Jr. Cruz, Jose", "Jose Cruz Jr."], 0, 'II');
+    add("The correct filing order for numbers is:",
+        ["Spelled out (as words)", "By numeric value", "After all letters", "Before all letters"], 0, 'II');
+    add("'Fort Magsaysay' is filed under:",
+        ["Fort Magsaysay (file as written)", "Magsaysay", "Fort", "Magsaysay Fort"], 0, 'II');
+    add("Which comes SECOND in filing order?",
+        ["N comes after M — Magno then Natividad", "Natividad then Magno", "They are equal", "Depends on first name"], 0, 'II');
+    add("'D'Souza, Peter' is filed under letter:",
+        ["D", "S", "Apostrophe section", "P"], 0, 'II');
+    add("A file is labeled 'Reyes 2024.' Given 'Reyes 2023' and 'Reyes 2025', the correct order is:",
+        ["Reyes 2023 · Reyes 2024 · Reyes 2025", "Reyes 2025 · Reyes 2024 · Reyes 2023", "Reyes 2024 · Reyes 2023 · Reyes 2025", "Alphabetical order only"], 0, 'II');
+    add("Filing: 'Secretary of Foreign Affairs' is filed under:",
+        ["Foreign Affairs", "Secretary", "Affairs Foreign", "Philippines Government"], 0, 'II');
+
+    // Spelling (30)
+    add("Which word is correctly spelled?",
+        ["Occurrence", "Occurence", "Ocurrence", "Occurrance"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Privilege", "Privelege", "Priviledge", "Previliege"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Necessary", "Neccessary", "Necesary", "Nessecary"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Separate", "Seperate", "Separrate", "Sepperate"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Definitely", "Definately", "Definitly", "Definiteley"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Calendar", "Calender", "Calandar", "Caleander"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Government", "Goverment", "Governmant", "Govermnent"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Rhythm", "Rythm", "Rythym", "Rhytm"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Receive", "Recieve", "Receve", "Recieve"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Independent", "Independant", "Indipendent", "Independant"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Recommend", "Recomend", "Reccomend", "Recommand"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Maintenance", "Maintainance", "Maintenence", "Maintainence"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Achievement", "Acheivment", "Acheivement", "Achievment"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Embarrass", "Embarass", "Embarras", "Embarrasse"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Millennium", "Millenium", "Milenium", "Milennium"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Schedule", "Shedule", "Scedule", "Schedual"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Successful", "Succesful", "Successfull", "Sucessful"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Accommodation", "Acommodation", "Accomodation", "Accommadation"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Possession", "Posession", "Possesion", "Posession"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Category", "Catagory", "Catogery", "Cattegory"], 0, 'II');
+    add("Which word is MISSPELLED?",
+        ["Calender (should be Calendar)", "Rhythm", "Separate", "Privilege"], 0, 'II');
+    add("Which word is MISSPELLED?",
+        ["Goverment (should be Government)", "Receive", "Necessary", "Definitely"], 0, 'II');
+    add("Which word is MISSPELLED?",
+        ["Occurence (should be Occurrence)", "Embarrass", "Schedule", "Millennium"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Conscience", "Consience", "Conshence", "Consciance"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Bureaucracy", "Beureaucracy", "Beurocracy", "Bureacracy"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Personnel", "Personel", "Personnel", "Personell"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Committee", "Comittee", "Committie", "Commitee"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Liaison", "Liasion", "Leason", "Liason"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Miscellaneous", "Miscelaneous", "Miscellanieous", "Miscellanious"], 0, 'II');
+    add("Which word is correctly spelled?",
+        ["Attendance", "Attendence", "Attendanse", "Atendance"], 0, 'II');
+
+    // ---------- END OF QUESTION BANK ----------
+
+    // ===== QUIZ ENGINE =====
+    let currentExam = [];
+    let userAnswers = {};
+    let timerInterval;
+    let timeLeft = 7200;
+
     function shuffle(arr) {
         for (let i = arr.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -476,144 +2431,159 @@
         return arr;
     }
 
-    function pickNRandom(arr, n) {
-        const shuffled = shuffle([...arr]);
-        return shuffled.slice(0, n);
+    function startNewRound() {
+        userAnswers = {};
+        const shuffled = shuffle([...masterBank]);
+        currentExam = shuffled.slice(0, 100);
+        renderQuiz();
+        document.getElementById('results').style.display = 'none';
+        document.getElementById('quiz-ui').style.display = 'block';
+        timeLeft = 7200;
+        clearInterval(timerInterval);
+        timerInterval = setInterval(tick, 1000);
+        document.getElementById('timer-bar').style.display = 'block';
+        updateTimerDisplay();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    let previousSet = [];
-
-    function generateFreshSet() {
-        const targetSize = 100;
-        if (previousSet.length === 0) {
-            return shuffle(masterBank).slice(0, targetSize);
-        } else {
-            const retainCount = 30;
-            const retainItems = pickNRandom(previousSet, retainCount);
-            const freshFromMaster = shuffle(masterBank).slice(0, 70);
-            return shuffle([...retainItems, ...freshFromMaster]).slice(0, targetSize);
+    function tick() {
+        timeLeft--;
+        updateTimerDisplay();
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            submitExam();
         }
     }
 
-    function renderExamSet(set) {
-        let testI = set.filter(q => q.test === 'I');
-        let testII = set.filter(q => q.test === 'II');
-        testI = shuffle(testI);
-        testII = shuffle(testII);
-        const ordered = [...testI, ...testII];
-        window.currentOrdered = ordered;
-
-        let html = '';
-        html += `<div class="test-badge">📌 TEST I · GENERAL / VERBAL / NUMERICAL (${testI.length} items)</div>`;
-        testI.forEach((q, idx) => {
-            html += `<div class="q-card"><p><strong>${idx+1}.</strong> ${q.q}</p><div class="options">`;
-            q.a.forEach((opt, optIdx) => {
-                html += `<label><input type="radio" name="q${ordered.indexOf(q)}" value="${optIdx}"> ${opt}</label>`;
-            });
-            html += `</div></div>`;
-        });
-        html += `<div class="test-badge test-ii-badge">✏️ TEST II · ANALYTICAL / CLERICAL (${testII.length} items)</div>`;
-        testII.forEach((q, idx) => {
-            html += `<div class="q-card"><p><strong>${testI.length + idx + 1}.</strong> ${q.q}</p><div class="options">`;
-            q.a.forEach((opt, optIdx) => {
-                html += `<label><input type="radio" name="q${ordered.indexOf(q)}" value="${optIdx}"> ${opt}</label>`;
-            });
-            html += `</div></div>`;
-        });
-        document.getElementById('quiz-container').innerHTML = html;
+    function updateTimerDisplay() {
+        const m = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+        const s = (timeLeft % 60).toString().padStart(2, '0');
+        document.getElementById('time').textContent = m + ':' + s;
     }
 
-    window.submitExam = function() {
-        if (window.examInterval) clearInterval(window.examInterval);
-        const ordered = window.currentOrdered || [];
-        const userAnswers = [];
-        ordered.forEach((q, index) => {
-            const selected = document.querySelector(`input[name="q${index}"]:checked`);
-            const userVal = selected ? parseInt(selected.value) : -1;
-            userAnswers.push({ user: userVal, correct: q.c });
-        });
+    function renderQuiz() {
+        const container = document.getElementById('quiz-container');
+        container.innerHTML = '';
+        const testI = currentExam.filter(q => q.test === 'I');
+        const testII = currentExam.filter(q => q.test === 'II');
 
-        let score = 0;
-        ordered.forEach((q, idx) => { if (userAnswers[idx].user === q.c) score++; });
+        function renderSet(label, badgeClass, questions, startIdx) {
+            const badge = document.createElement('div');
+            badge.className = 'test-badge ' + (badgeClass || '');
+            badge.textContent = label;
+            container.appendChild(badge);
+            questions.forEach((q, i) => {
+                const globalIdx = currentExam.indexOf(q);
+                const num = startIdx + i + 1;
+                const card = document.createElement('div');
+                card.className = 'q-card';
+                card.innerHTML = `<strong>${num}.</strong> ${q.q}
+                    <div class="options">${q.a.map((opt, oi) => `
+                        <label>
+                            <input type="radio" name="q${globalIdx}" value="${oi}" onchange="recordAnswer(${globalIdx}, ${oi})">
+                            ${String.fromCharCode(65+oi)}. ${opt}
+                        </label>`).join('')}
+                    </div>`;
+                container.appendChild(card);
+            });
+        }
+        renderSet('📘 TEST I · GENERAL INFORMATION & VERBAL/NUMERICAL ABILITY', '', testI, 0);
+        renderSet('📂 TEST II · ANALYTICAL & CLERICAL ABILITY', 'test-ii-badge', testII, testI.length);
+    }
 
-        let tableHtml = '<h3 style="margin-top:2rem;">🔍 Question-by-Question Review</h3>';
-        tableHtml += '<table class="review-table"><tr><th>#</th><th>Question</th><th>Your Answer</th><th>Correct Answer</th><th>Test</th></tr>';
-        ordered.forEach((q, idx) => {
-            const userOpt = userAnswers[idx].user;
-            const userText = (userOpt === -1) ? '— no answer —' : (q.a[userOpt] || 'invalid');
-            const correctText = q.a[q.c];
-            let verdict = '';
-            if (userOpt === q.c) verdict = '<span class="correct-ans">✅ correct</span>';
-            else if (userOpt === -1) verdict = '<span class="neutral-ans">⏺️ not answered</span>';
-            else verdict = '<span class="wrong-ans">❌ wrong</span>';
-            tableHtml += `<tr><td>${idx+1}</td><td>${q.q}</td><td>${userText} ${verdict}</td><td><span class="correct-ans">${correctText}</span></td><td>${q.test}</td></tr>`;
-        });
-        tableHtml += '</table>';
-
-        document.getElementById('quiz-ui').style.display = 'none';
-        document.getElementById('timer-bar').style.display = 'none';
-        const resultsDiv = document.getElementById('results');
-        resultsDiv.style.display = 'block';
-        const scoreDisplay = document.getElementById('score-display');
-        scoreDisplay.innerText = `${score} / 100`;
-        scoreDisplay.className = (score >= 80) ? 'score-box pass' : 'score-box fail';
-        document.getElementById('message').innerText = (score >= 80) ? '✅ PASSED! Review your mistakes below.' : '❌ Keep practicing — review details below.';
-        document.getElementById('review-table-container').innerHTML = tableHtml;
-        window.scrollTo(0,0);
+    window.recordAnswer = function(qIdx, val) {
+        userAnswers[qIdx] = val;
     };
 
-    window.startNewRound = function() {
-        const freshSet = generateFreshSet();
-        previousSet = freshSet;
-        renderExamSet(freshSet);
-        document.getElementById('results').style.display = 'none';
-        document.getElementById('quiz-ui').style.display = 'block';
-        document.getElementById('timer-bar').style.display = 'block';
-        if (window.examInterval) clearInterval(window.examInterval);
-        timerStarted = false;
-        startTimer();
+    window.submitExam = function() {
+        clearInterval(timerInterval);
+        document.getElementById('timer-bar').style.display = 'none';
+        let correct = 0;
+        currentExam.forEach((q, i) => {
+            if (userAnswers[i] === q.c) correct++;
+        });
+        const total = currentExam.length;
+        const pct = ((correct / total) * 100).toFixed(1);
+        const passed = pct >= 80;
+
+        document.getElementById('quiz-ui').style.display = 'none';
+        const resultDiv = document.getElementById('results');
+        resultDiv.style.display = 'block';
+
+        const scoreBox = document.getElementById('score-display');
+        scoreBox.innerHTML = `<span class="${passed ? 'pass' : 'fail'}">${correct} / ${total}</span><br>
+            <span style="font-size:1.5rem">${pct}% — <strong>${passed ? '✅ PASSED' : '❌ FAILED'}</strong></span>`;
+
+        document.getElementById('message').textContent = passed
+            ? 'Excellent! You have demonstrated readiness for the Civil Service Examination.'
+            : 'Keep studying! Review the modules and try again. You need 80% to pass.';
+
+        let tableHTML = `<table class="review-table"><thead><tr>
+            <th>#</th><th>Question</th><th>Your Answer</th><th>Correct Answer</th><th>Result</th>
+            </tr></thead><tbody>`;
+        currentExam.forEach((q, i) => {
+            const ua = userAnswers[i];
+            const isCorrect = ua === q.c;
+            const userAns = ua !== undefined ? `${String.fromCharCode(65+ua)}. ${q.a[ua]}` : '(No Answer)';
+            const correctAns = `${String.fromCharCode(65+q.c)}. ${q.a[q.c]}`;
+            tableHTML += `<tr>
+                <td>${i+1}</td>
+                <td>${q.q}</td>
+                <td class="${isCorrect ? 'correct-ans' : (ua !== undefined ? 'wrong-ans' : 'neutral-ans')}">${userAns}</td>
+                <td class="correct-ans">${correctAns}</td>
+                <td>${isCorrect ? '✅' : '❌'}</td>
+                </tr>`;
+        });
+        tableHTML += '</tbody></table>';
+        document.getElementById('review-table-container').innerHTML = tableHTML;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     window.backToStudy = function() {
-        showTab('lessons', document.querySelectorAll('nav button')[1]);
+        document.getElementById('results').style.display = 'none';
+        document.getElementById('quiz-ui').style.display = 'block';
+        showTab('lessons', document.querySelector('nav button:nth-child(2)'));
     };
 
-    let timerStarted = false;
-    function startTimer() {
-        if (timerStarted) return;
-        timerStarted = true;
-        const timerBar = document.getElementById('timer-bar');
-        timerBar.style.display = 'block';
-        let time = 120 * 60;
-        const display = document.getElementById('time');
-        window.examInterval = setInterval(() => {
-            let minutes = Math.floor(time / 60);
-            let seconds = time % 60;
-            display.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-            if (time > 0) time--; else { clearInterval(window.examInterval); submitExam(); }
-        }, 1000);
-    }
-
-    window.showTab = function(id, btn) {
+    // ===== TAB NAVIGATION =====
+    window.showTab = function(tabId, btn) {
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
         document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-        document.getElementById(id).classList.add('active-section');
-        btn.classList.add('active');
-        if (id === 'exam') {
-            if (previousSet.length === 0) {
-                previousSet = shuffle(masterBank).slice(0, 100);
-            }
-            renderExamSet(previousSet);
-            startTimer();
-        } else {
-            document.getElementById('timer-bar').style.display = 'none';
-            if (window.examInterval) clearInterval(window.examInterval); timerStarted=false;
+        document.getElementById(tabId).classList.add('active-section');
+        if (btn) btn.classList.add('active');
+        if (tabId === 'exam') {
+            if (currentExam.length === 0) startNewRound();
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // ===== LESSON TOGGLE =====
+    window.toggleLesson = function(header) {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('.toggle-icon');
+        const isOpen = content.style.display !== 'none' && content.style.display !== '';
+        content.style.display = isOpen ? 'none' : 'block';
+        icon.textContent = isOpen ? '▶' : '▼';
+    };
+
+    // ===== TOC SCROLL =====
+    window.scrollToLesson = function(id) {
+        const el = document.getElementById('lesson-' + id);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const content = el.querySelector('.lesson-content');
+            const icon = el.querySelector('.toggle-icon');
+            if (content) content.style.display = 'block';
+            if (icon) icon.textContent = '▼';
         }
     };
 
-    // Initialize lessons to be visible
-    document.querySelectorAll('.lesson-content').forEach(content => {
-        content.style.display = 'block';
+    // Collapse all lesson contents by default (open on click)
+    document.querySelectorAll('.lesson-content').forEach(lc => {
+        lc.style.display = 'none';
+    });
+    document.querySelectorAll('.toggle-icon').forEach(ic => {
+        ic.textContent = '▶';
     });
 })();
 </script>
